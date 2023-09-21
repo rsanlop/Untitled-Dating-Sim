@@ -1,4 +1,4 @@
-# Use case name, e.g., process sale
+# Choose Partner.
 
 ## 1. Primary actor and goals
 Who is the main interested party and what goal(s) this use case is designed to help them achieve. For example, for _process sale_:
@@ -11,7 +11,6 @@ __Player__: Wants to explore different partner candidates until they decide on o
 What must be true prior to the start of the use case.
 For example, for _process sale_:
 
-* Player inputs name to start game. 
 * Player has gone on minimum amount of dates required (2-3).
 
 ## 4. Postconditions
@@ -42,45 +41,25 @@ For example, for _process sale_:
 
 skin rose
 
-title Process sale (casual level)
+title Choose Partner (casual level)
 
 'define the lanes
-|#application|Customer|
-|#technology|Cashier|
+|#application|Player|
 |#implementation|System|
 
-|Customer|
+|Player|
 start
-:Arrive at checkout with items to purchase;
+:Reached end of game;
+|System|
+:Gives available options (choose partner or stay single);
 
-|Cashier|
-while (More items?) is (yes)
-  :Enter item info (id and quantity);
-  |System|
-  :Validate line item;
-  :Record line item;
-  :Show line item detail and running total;
-  |Cashier|
-endwhile (no)
-
-
-:Ask for payment type;
-
-|Customer|
-:Indicate payment type;
-
-|Cashier|
-if (Payment type?) is  ( Cash ) then
-:Execute __Pay by cash__;
-else ( Card ) 
-:Execute __Pay by credit card__;
-endif
+|Player|
+:Select choice;
 
 |System|
-:Validate payment;
-:Record payment;
-:Print receipt;
-|Cashier|
-:Hand receipt to customer;
+:Displays ending screen accordingly;
+:Displays ending stats;
+:End game;
+
 stop
 @enduml
