@@ -53,6 +53,9 @@ start
 while (more dates) is (yes) 
 
 repeat
+|System|
+:displays locations;
+|Player|
 
 :Select a location to meet candidate;
 
