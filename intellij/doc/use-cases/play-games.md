@@ -50,7 +50,18 @@ title Play Games (casual level)
 |System|
 start
 :random selection of mini-game;
+switch (mini-game)
+    case (trivia)
+        :initiates trivia game;
+    case (dress up)
+        :initiates dress up game;
+    case (Riddle)
+        :initiates riddle game;
+    case (kissing)
+        :initiates Kissing game;
+ endswitch
 :displays instructions and play options;
+
 
 |Player|
 :presses start;
