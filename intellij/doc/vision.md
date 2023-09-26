@@ -31,4 +31,25 @@ Stakeholder Goals:
 ---
 
 Visual Diagram:
+```plantuml
+@startuml
+
+
+actor "Player" as Player
+
+package "Dating Sim" {
+    usecase "Court Candidates" as court
+    usecase "Play Games" as play
+    usecase "Choose partner" as choose
+    usecase "Save Progress" as save
+}
+
+Player --> court
+Player --> play 
+Player --> choose
+Player --> save
+
+
+@enduml
+
 
