@@ -3,7 +3,7 @@
 ## 1. Primary actor and goals
 Who is the main interested party and what goal(s) this use case is designed to help them achieve. For example, for _process sale_:
 
-__Player__: Wants to explore different partner candidates until they decide on one.
+__Player__: Wants to pick a candidate.
 
 
 ## 2. Preconditions
