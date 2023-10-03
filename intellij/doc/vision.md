@@ -39,13 +39,15 @@ actor "Player" as Player
 
 package "Dating Sim" {
     usecase "Court Candidates" as court
-    usecase "Play Games" as play
+    usecase "Play Game" as play
+    usecase "Play Kissing Game" as kissing
     usecase "Choose partner" as choose
     usecase "Save Progress" as save
 }
 
 Player --> court
 Player --> play 
+Player --> kissing
 Player --> choose
 Player --> save
 
