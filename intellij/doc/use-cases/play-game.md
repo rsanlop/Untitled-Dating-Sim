@@ -1,4 +1,4 @@
-# Play Games.
+# Play Game.
 
 ## 1. Primary actor and goals
 Who is the main interested party and what goal(s) this use case is designed to help them achieve. 
@@ -36,7 +36,7 @@ Please be sure indicate what level of detail the workflow you include represents
 
 skin rose
 
-title Play Games (casual level)
+title Play Game (casual level)
 
 'define the lanes
 |#application|Player|
@@ -47,16 +47,7 @@ title Play Games (casual level)
 |System|
 start
 :random selection of mini-game;
-switch (mini-game)
-    case (trivia)
-        :initiates trivia game;
-    case (dress up)
-        :initiates dress up game;
-    case (Riddle)
-        :initiates riddle game;
-    case (kissing)
-        :initiates Kissing game;
- endswitch
+
 :displays instructions and play options;
 
 
