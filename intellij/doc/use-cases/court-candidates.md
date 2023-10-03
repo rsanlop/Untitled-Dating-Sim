@@ -1,7 +1,7 @@
 # Court Candidates.
 
 ## 1. Primary actor and goals
-Who is the main interested party and what goal(s) this use case is designed to help them achieve. For example, for _process sale_:
+Who is the main interested party and what goal(s) this use case is designed to help them achieve. 
 
 __Player__: Wants to court different potential partners.
 
@@ -9,14 +9,12 @@ __Player__: Wants to court different potential partners.
 ## 2. Preconditions
 
 What must be true prior to the start of the use case.
-For example, for _process sale_:
 
 * Player inputs name to start game.
 
 ## 4. Postconditions
 
 What must be true upon successful completion of the use case.
-For example, for _process sale_:
 
 * Display candidate's thoughts on date.
 
@@ -32,7 +30,6 @@ The workflow can be specified at different levels of detail:
 
 Please be sure indicate what level of detail the workflow you include represents.
 
-For example, for _process sale_:
 
 ```plantuml
 @startuml
