@@ -76,20 +76,20 @@ repeat while ( Date ) is ( No ) not ( Yes )
 :Executes random mini-game;
 switch (mini-game)
     case (trivia) 
-        :executes trivia game;
+        :executes <u>trivia game;
     case (kissing game)
-        :executes kissing game;
+        :executes <u>kissing game;
     case (riddle)
-        :executes riddle game;
+        :executes <u>riddle game;
     case (dress-up)
-        :executes dress-up game;
+        :executes <u>dress-up game;
 endswitch
 :updates affection points;
 endwhile (no)
 |Player|
 :chooses a candidate;
 |System|
-switch (choosing-candidate)
+switch (<u>choosing-candidate)
     case (has enough affection points) 
         :displays good ending screen;
     case (insufficient affection points)
