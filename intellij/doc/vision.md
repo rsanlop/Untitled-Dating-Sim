@@ -17,15 +17,15 @@ are available.
 
 Key Functionality:
 
-Tracks progress through affection points. 
+Tracks progress through mini-games and affection points acquired. 
 
 ---
 
 Stakeholder Goals:
 
 * Court candidates
-* Play mini-games 
-* Save progress 
+* Play mini-game
+* Load progress 
 * Choose a partner (or not)
 
 ---
@@ -41,15 +41,21 @@ package "Dating Sim" {
     usecase "Court Candidates" as court
     usecase "Play Game" as play
     usecase "Play Kissing Game" as kissing
+    usecase "Play Trivia Game" as trivia
+    usecase "Play Dressup Game" as dressup
+    usecase "Play Riddle Game" as riddle
     usecase "Choose partner" as choose
-    usecase "Save Progress" as save
+    usecase "Load Progress" as load
 }
 
 Player --> court
 Player --> play 
 Player --> kissing
+Player --> trivia
+Player --> dressup
+Player --> riddle
 Player --> choose
-Player --> save
+Player --> load
 
 
 @enduml
