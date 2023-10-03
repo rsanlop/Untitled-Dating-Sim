@@ -11,6 +11,7 @@ __Player__: Wants to pick a candidate.
 What must be true prior to the start of the use case.
 
 * Player has gone on minimum amount of dates required (2-3).
+* Player has reached the end of the game.
 
 ## 4. Postconditions
 
@@ -46,7 +47,6 @@ title Choose Partner (casual level)
 
 |Player|
 start
-:Reached end of game;
 |System|
 :Gives available options (choose partner or stay single);
 
