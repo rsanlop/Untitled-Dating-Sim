@@ -64,7 +64,7 @@ switch (mini-game)
 :presses start;
 
 |System|
-:Initiates mini-game;
+:executes mini-game;
 
 |Player|
 :Plays the game;
