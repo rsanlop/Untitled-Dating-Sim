@@ -1,24 +1,23 @@
-# Save Progress
+# Load game 
 
 ## 1. Primary actor and goals
-Who is the main interested party and what goal(s) this use case is designed to help them achieve. For example, for _process sale_:
+Who is the main interested party and what goal(s) this use case is designed to help them achieve. 
 
-__Player__: Wants to save game progress to play at a later time. 
+__Player__: Wants to load game progress to continue gameplay. 
 
 
 ## 2. Preconditions
 
 What must be true prior to the start of the use case.
-For example, for _process sale_:
 
 * Player has gone on at least one date (completed a mini-game).
+* Game has already automatically saved (after each mini-game)
 
 ## 4. Postconditions
 
 What must be true upon successful completion of the use case.
-For example, for _process sale_:
 
-* Player has saved their progress.
+* Player has loaded their progress.
 
 ## 4. Workflow
 
@@ -32,14 +31,12 @@ The workflow can be specified at different levels of detail:
 
 Please be sure indicate what level of detail the workflow you include represents.
 
-For example, for _process sale_:
-
 ```plantuml
 @startuml
 
 skin rose
 
-title Save Progress (casual level)
+title Load Progress (casual level)
 
 'define the lanes
 |#application|Player|
@@ -48,13 +45,13 @@ title Save Progress (casual level)
 |Player|
 start
 :press menu options;
-:selects save option;
+:selects load option;
 
 |System|
-:Saves player's progress;
+:Loads last screen player was on;
 
 |Player|
-:exits game;
+:continues playing;
 
 
 stop
