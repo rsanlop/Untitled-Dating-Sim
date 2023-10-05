@@ -8,6 +8,7 @@ title
     |= Class   |= Attributes |
     | Player| name |
     | Character | name \n affection \n points \n map location|
+    | Mini-game | Type \n Duration  |
     end title
     
     object Player {
@@ -19,7 +20,20 @@ title
     affection points 
     map location
     }
-    Player -right- Character
+    
+    object Minigame{
+    type
+    duration
+    }
+    
+    object EndingScreens{
+    game stats
+    }
+    
+    Player -- Character : interacts with \t\t
+    Player -- Minigame : plays the game
+    Minigame -- Character :determines stats\t\t
+    Minigame -- EndingScreens : leads to
     
     
 @enduml
