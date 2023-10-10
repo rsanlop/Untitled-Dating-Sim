@@ -8,9 +8,11 @@
 public class Character {
     String name;
     String location;
+    int affection;
 
-    public Character(String name, String location){
+    public Character(String name, String location, int affection){
         this.name = name;
         this.location = location;
+        this.affection = affection;
     }
 }
