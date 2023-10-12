@@ -15,14 +15,4 @@ public class Converse {
 
     }
 
-    public boolean start(){
-        Scanner s = new Scanner(System.in);
-        System.out.println("Welcome to our awesome amazing spectacular game!" +
-                " It'll be the best game you've ever played :P" );
-        System.out.println("Dearest Player, please enter your name:");
-        String name = s.nextLine();
-        this.name = name;
-        System.out.println("Hello " + this.name);
-    }
-
 }
