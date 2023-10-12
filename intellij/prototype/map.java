@@ -6,9 +6,14 @@
  */
 
 public class Map {
-    public Map(){
-        List<Character.location> 
 
+    List<String> maplist = new ArrayList<String>(zeus.location, shruck.location, bonny.location,
+            satan.location, jojoson.location);
+    public Map(){}
+    public String getMap(){
+        System.out.println(map);
+        String map = maplist.toString();
+        System.out.println("Map: " + map);
     }
 
 }
