@@ -9,10 +9,9 @@ public class Character {
     String name;
     String location;
     int affection;
-    List<String> startDialogue;
-    List<String> endDialogue;
+    List<String> dialogue;
 
-    public Character(String name, String location, int affection,List<String> dialogue, List<String> endDialogue;){
+    public Character(String name, String location, int affection,List<String> dialogue){
         this.name = name;
         this.location = location;
         this.affection = affection;
