@@ -10,7 +10,7 @@ public class Endings {
     public Endings(){
 
     }
-    public String getEnding(int affection){
+    public void getEnding(int affection){
         if (affection == 100){
             System.out.println("Phew, glad this is the case. Who even needs people? " +
                     "Am I right?");
