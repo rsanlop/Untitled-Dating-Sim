@@ -25,7 +25,8 @@ public class Game {
 
     List<String> jojosond = new ArrayList<String>();
     Character jojoson = new Character("Scarlet Jojoson", "Japan", 0, jojosond);
-
+    List<String> emptyd= new ArrayList<String>();
+    Character empty = new Character("", "", 100, emptyd);
 
 
     public Game(){
@@ -65,8 +66,7 @@ public class Game {
                 "The red headed beauty releases you quickly and takes a step back. She apologizes as you dust yourself off. 'さようなら' she whispers as she leaps upwards" + "\n" +
                 "and disappears in the Tokyo skyline." );
 
-        List<String> emptyd= new ArrayList<String>();
-        Character empty = new Character("", "", 100, emptyd);
+
 
     }
    public void makeCharacterMap(){
@@ -152,6 +152,10 @@ public class Game {
             case "Scarlet Jojoson":
                 System.out.println(jojoson.name);
                 decision = jojoson;
+                break;
+            case ""    :
+                System.out.println("No one");
+                decision = empty;
         }
         Endings endings = new Endings();
         endings.getEnding(decision.affection);
