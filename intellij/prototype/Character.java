@@ -13,6 +13,8 @@ public class Character {
     int affection;
     List<String> dialogue;
 
+    public Character(){}
+
     public Character(String name, String location, int affection, List<String> dialogue){
         this.name = name;
         this.location = location;
