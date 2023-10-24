@@ -17,5 +17,6 @@ public class Character {
         this.name = name;
         this.location = location;
         this.affection = affection;
+        this.dialogue = dialogue;
     }
 }
