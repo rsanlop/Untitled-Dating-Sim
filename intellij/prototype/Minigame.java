@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 /**
  * Minigame cLass that has a list of all the possible minigames
  *
@@ -6,18 +10,17 @@
  */
 
 public class Minigame {
-    List<String> minigames;
+    private List<String> minigames = new ArrayList<>();
 
-    public Minigame(List<String> minigames){
+    public Minigame(){
 
     }
-    public getMinigame(){
-        minigames.add("Kissing Game");
-        minigames.add("Trivia Game");
-        minigames.add("Riddle Game");
-
+    public void addToMinigame(String minigame){
+        this.minigames.add(minigame);
+    }
+    public void getMinigame(){
         Random rand = new Random();
-        System.out.println(minigames[rand.nextInt(minigames.length)]);
+        System.out.println(minigames.get(rand.nextInt(minigames.size())));
 
     }
 }
