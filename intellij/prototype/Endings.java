@@ -14,7 +14,7 @@ public class Endings {
         if (affection == 100){
             System.out.println("Phew, glad this is the case. Who even needs people? " +
                     "Am I right?");
-        } else if (affection > 7) {//the number isnt set yet, this is just a random number
+        } else if (affection > 2) {//the number isnt set yet, this is just a random number
             System.out.println("Woohooo! Good ending! They like you too :)");
         }
         else{
