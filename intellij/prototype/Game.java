@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -7,44 +9,51 @@ import java.util.Scanner;
  * @version 10/10/2023
  */
 public class Game {
-    Player player = new Player();
-    Character zeus = new Character("Zeus", "Olympus", 0,
-            {"*You see a swan. Not just any swan though. It's Zeus! He notices you walk up to the gates and greets you*" +
-                    "Why hello there. You look... rather ravishing. *He whistles as he looks you up and down. (He likes" +
-                    "what he sees.)* Oh, please excuse my disheveled form! *He waddles in a circle at lightning speed" +
-                    "and poof. He's actually kind of ripped. (as a human)* I hope you like what YOU see. *He gives a smug" +
-                    "look*"}
+    Player player = new Player(null);
+    List<String> zeusd = new ArrayList<>();
+    zeusd.add("*You see a swan. Not just any swan though. It's Zeus! He notices you walk up to the gates and greets you*" +
+            "Why hello there. You look... rather ravishing. *He whistles as he looks you up and down. (He likes" +
+            "what he sees.)* Oh, please excuse my disheveled form! *He waddles in a circle at lightning speed" +
+            "and poof. He's actually kind of ripped. (as a human)* I hope you like what YOU see. *He gives a smug" +
+            "look*");
+    List<String> shruckd;
+    shruckd.add("*You see a farty swamp the size of small house, right in front of a run-down tree house* *You see the door slam open" +
+            "and out walks a bumbling green figure.* YOU! *he says as he points his stubby finger in your direction* *He proceeds " +
+            "to stomp towards you.* WHAT ARE YOU DOING IN MY BLOODY SWAMP! *he bellows, as pieces of his stinky dinner fly out his" +
+            "mouth and onto your face.* DON'T TELL ME YOU WANT TO FART IN IT. BECAUSE LET ME TELL YOU. THE ONLY ONE WHO CAN FART IN" +
+            "MY BLOODY SWAMP IS MY BLOODY ARSE!" );
+    List<String> bonnyd;
+    bonnyd.add("You appear at an abandoned Pizzeria, that eerily feels familiar. As you pass through the rickety doors you sense" +
+            "that you are not alone. There's a stage, with one purple character, that seems to be where the old mascots would perform. " +
+            "It's eyes light up as it stares at you. You approach it without knowing why. Then it starts to walk towards you. " +
+            "As it holds out it's hands it says 'Pizza?' in a slow robotic voice. You look at the hands and there is no pizza :(. " +
+            "Afraid of what will happen if you refuse you take the fake pizza and pretend to eat it. After seeing you play along " +
+            "the purple animatronic looks and you and slowly says 'Bonny'." );
+    List<String> satand;
+    List<String> jojosond;
+    List<String> emptyd;
+    Character zeus = new Character("Zeus", "Olympus", 0, zeusd
+    );
+    Character shruck = new Character("Shruck", "Swamp", 0, shruckd
+
             );
-    Character shruck = new Character("Shruck", "Swamp", 0,
-            {"*You see a farty swamp the size of small house, right in front of a run-down tree house* *You see the door slam open" +
-                    "and out walks a bumbling green figure.* YOU! *he says as he points his stubby finger in your direction* *He proceeds " +
-                    "to stomp towards you.* WHAT ARE YOU DOING IN MY BLOODY SWAMP! *he bellows, as pieces of his stinky dinner fly out his" +
-                    "mouth and onto your face.* DON'T TELL ME YOU WANT TO FART IN IT. BECAUSE LET ME TELL YOU. THE ONLY ONE WHO CAN FART IN" +
-                    "MY BLOODY SWAMP IS MY BLOODY ARSE!" }
-            );
-    Character bonny = new Character("Bonny", "Freddy's Pizzeria", 0,
-            {"You appear at an abandoned Pizzeria, that eerily feels familiar. As you pass through the rickety doors you sense" +
-                    "that you are not alone. There's a stage, with one purple character, that seems to be where the old mascots would perform. " +
-                    "It's eyes light up as it stares at you. You approach it without knowing why. Then it starts to walk towards you. " +
-                    "As it holds out it's hands it says 'Pizza?' in a slow robotic voice. You look at the hands and there is no pizza :(. " +
-                    "Afraid of what will happen if you refuse you take the fake pizza and pretend to eat it. After seeing you play along " +
-                    "the purple animatronic looks and you and slowly says 'Bonny'."     }
+    Character bonny = new Character("Bonny", "Freddy's Pizzeria", 0, bonnyd
+
             );
     Character satan = new Character("Satan", "Hell", 0,
-            {"Immediately you feel the immense heat radiating all around you. There's no doubt you are in Hell. Satan stands before you in all her " +
+            satand.add("Immediately you feel the immense heat radiating all around you. There's no doubt you are in Hell. Satan stands before you in all her " +
                     "sultry glory. She seductively catwalks over to you. 'Greetings, or should I say Hell-o.' She bats her eyes and tucks her hair behind her " +
                     "ear proudly. She then says 'Pretty hot in here, right?' as she hold up a finger heart with flames coming out of it and then she can't help but " +
-                    "wink at you. 'Or maybe its just you' she says while pointing at you. You can only help but think Hell yea. "
-            }
+                    "wink at you. 'Or maybe its just you' she says while pointing at you. You can only help but think Hell yea. ")
             );
     Character jojoson = new Character("Scarlet Jojoson", "Japan", 0,
-            {"You arrive in cosmopolitan Tokyo in the middle of the night. The neon lights surround you as you take a look around the alley. All of a sudden, someone " +
+            jojosond.add("You arrive in cosmopolitan Tokyo in the middle of the night. The neon lights surround you as you take a look around the alley. All of a sudden, someone " +
                     "grapples you and tosses you to the ground. 'Who sent you?' the voice yells at you. You have no idea what's going on and just try to get out of their " +
                     "hold. Much to your dismay you cannot escape. Luckily a car passes and lights up your face long enough for the black leather suit wearing assailant to realize you aren't a threat. " +
                     "The red headed beauty releases you quickly and takes a step back. She apologizes as you dust yourself off. 'さようなら' she whispers as she leaps upwards" +
-                    " and disappears in the Tokyo skyline." }
+                    " and disappears in the Tokyo skyline." )
             );
-    Character empty = new Character("", "", 100, []);
+    Character empty = new Character("", "", 100, emptyd);
 
     public static void main (String [] args) {
 

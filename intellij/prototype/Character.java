@@ -1,3 +1,5 @@
+import java.util.List;
+
 /**
  * Character Class
  *
@@ -11,7 +13,7 @@ public class Character {
     int affection;
     List<String> dialogue;
 
-    public Character(String name, String location, int affection,List<String> dialogue){
+    public Character(String name, String location, int affection, List<String> dialogue){
         this.name = name;
         this.location = location;
         this.affection = affection;
