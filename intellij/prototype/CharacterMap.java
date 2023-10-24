@@ -10,8 +10,9 @@ import java.util.List;
 
 public class CharacterMap {
     private List<String> maplist = new ArrayList<>();
-    public CharacterMap(){
-
+    public CharacterMap(){}
+    public CharacterMap(List<String> maplist){
+        this.maplist = maplist;
     }
     public void addToMap(String location){
         this.maplist.add(location);
