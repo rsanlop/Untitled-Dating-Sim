@@ -1,8 +1,10 @@
-package edu.vassar.cmpu203.datingsim;
+package edu.vassar.cmpu203.datingsim.controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import edu.vassar.cmpu203.datingsim.R;
 
 public class MainActivity extends AppCompatActivity {
 

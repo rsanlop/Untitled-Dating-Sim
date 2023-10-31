@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:rotation="0"
+    android:rotationX="2"
+    android:rotationY="4"
+    tools:context=".controller.MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
