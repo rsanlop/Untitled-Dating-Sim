@@ -5,12 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import edu.vassar.cmpu203.datingsim.R;
+import edu.vassar.cmpu203.datingsim.view.IAddNameView;
+import edu.vassar.cmpu203.datingsim.view.AddNameView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements IAddNameView.Listener {
+    IAddNameView addNameView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        addNameView = new AddNameView(this);
+        setContentView(addNameView.getRootView());
     }
 }
