@@ -4,8 +4,10 @@ import android.content.Context;
 import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.button.MaterialButton;
 
 import edu.vassar.cmpu203.datingsim.R;
 import edu.vassar.cmpu203.datingsim.model.Player;
@@ -33,7 +35,7 @@ public class AddNameView implements IAddNameView{
         this.binding = ActivityMainBinding.inflate(LayoutInflater.from(context));
 
         // register add button click listener
-        this.binding.addButton.setOnClickListener(new View.OnClickListener() {
+        this.binding.button.setOnClickListener(new View.OnClickListener() {
 
             /**
              * Called when associated button is clicked.
@@ -42,20 +44,9 @@ public class AddNameView implements IAddNameView{
             @Override
             public void onClick(View v) {
 
-                // retrieves item name
-                final Editable nameEditable = AddNameView.this.binding.nameText.getText();
+                // retrieves name
+                final Editable nameEditable = (Editable) AddNameView.this.binding.nameView.getText();
                 final String nameStr = nameEditable.toString();
-
-
-                // confirm we have both name and qty
-                if (nameStr.length() == 0){
-                    Snackbar.make(v, v.getContext().getString(R.string.missing_item_fields_error),
-                            Snackbar.LENGTH_LONG).show();
-                    return;
-                }
-
-                // clear the input fields to ready them for the next item
-                nameEditable.clear();
 
                 // notify listener (controller)
                 AddNameView.this.listener.onAddedName(nameStr);
@@ -78,7 +69,7 @@ public class AddNameView implements IAddNameView{
      */
     @Override
     public void updateNameDisplay(Player player) {
-        this.binding.nameText.setText(player.toString());
+        this.binding.nameView.setText(player.toString());
     }
 
 }
