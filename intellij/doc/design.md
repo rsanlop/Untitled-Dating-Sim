@@ -81,12 +81,12 @@ class Character{
     name : String
     location : String
     affection : int 
-    dialogue : List of Strings
+    dialogue : List<String>
    
 }
 
 class CharacterMap{
-    maplist : List of Strings
+    maplist : List<String>
     --
     public void addToMap(String location)
     public void getMap()
@@ -103,5 +103,51 @@ class Endings {
     public void getEnding(int affection)
 }
 
-class Game
+class Game{
+    zeusd : List<String>
+    shruckd : List<String>
+    bonnyd : List<String>
+    satand : List<String>
+    jojosond : List<String>
+    
+    zeus : Character
+    shruck : Character
+    bonny : Character
+    satan : Character
+    jojoson : Character
+    
+    --
+    public void makeCharacterMap()
+    public void getCharacter(String location)
+    public void makeMinigame()
+    public void getFinalCharacter(String name)
+    
+}
+
+class Minigame{
+    minigames : List<String>
+    --
+    public void addToMinigame(String minigame)
+    public void getMiniGame()
+}
+
+class Player{
+    name : String 
+    --
+    public String getName(String name)
+}
+
+class UserInterface{
+    public static void main(String [] args)
+
+}
+
+UserInterface .> Controller
+Controller .> Player
+Controller .> Game
+Game .> Character
+Game .> CharacterMap
+Game .> Endings 
+Game .> Minigame
+
 @enduml
