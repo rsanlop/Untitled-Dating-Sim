@@ -1,22 +1,22 @@
-# Play Game.
+# Loop Game
 
 ## 1. Primary actor and goals
-Who is the main interested party and what goal(s) this use case is designed to help them achieve. 
+Who is the main interested party and what goal(s) this use case is designed to help them achieve.
 
-__Player__: Wants to initiate a mini-game while on a date with candidate.
+__Player__: Wants to play our awesome dating simulator.
 
 
 ## 2. Preconditions
 
 What must be true prior to the start of the use case.
 
-* Player chooses to go on a date with candidate
+* Player inputs name to start game.
 
 ## 4. Postconditions
 
 What must be true upon successful completion of the use case.
 
-* Display affection points and game stats after playing game
+* Reaches end of the game
 
 ## 4. Workflow
 
@@ -36,7 +36,7 @@ Please be sure indicate what level of detail the workflow you include represents
 
 skin rose
 
-title Play Game (casual level)
+title Loop Game (casual level)
 
 'define the lanes
 |#application|Player|
@@ -44,28 +44,58 @@ title Play Game (casual level)
 
 
 
-|System|
+|Player|
 start
-:random selection of mini-game;
-
-:displays instructions and play options;
-
-
-|Player|
-:presses start;
+:inputs name;
 
 |System|
-:executes mini-game;
+:game starts up;
+:shows all available candidates;
 
 |Player|
-:Plays the game;
+while (wants to date) is (yes) 
+
+repeat
+|System|
+:displays locations;
+|Player|
+
+:Select a location to meet candidate;
 
 |System|
-:Displays stats at end of game;
+:Shows candidate in selected location;
+:Displays initial dialouge sequence;
+:Asks player to date candidate or not;
 
 |Player|
-:Continues game;
+:Selects Option;
 
-
+|System|
+backward :restart;
+repeat while ( Date ) is ( No ) not ( Yes )
+:Executes random mini-game;
+:display instructions;
+switch (mini-game)
+    case (trivia) 
+        :executes <u>trivia game;
+    case (kissing game)
+        :executes <u>kissing game;
+    case (riddle)
+        :executes <u>riddle game;
+    case (dress-up)
+        :executes <u>dress-up game;
+endswitch
+:updates affection points;
+endwhile (no)
+|Player|
+:chooses a candidate;
+|System|
+switch (<u>choosing-candidate)
+    case (has enough affection points) 
+        :displays good ending screen;
+    case (insufficient affection points)
+        :displays bad ending scene;
+endswitch
+:ends game;
 stop
 @enduml

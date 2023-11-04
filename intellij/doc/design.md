@@ -73,10 +73,35 @@ game -> character : updateAffection(result)
 game -> ending : getEnding(result)
 game -> ui : displayEnding()
 game -> ui : displayDialogue()
+```
 
+```plantuml
 
-
-
+class Character{
+    name : String
+    location : String
+    affection : int 
+    dialogue : List of Strings
    
+}
 
+class CharacterMap{
+    maplist : List of Strings
+    --
+    public void addToMap(String location)
+    public void getMap()
+} 
+
+class Controller {
+    public void controllerGetCharacterMap()
+    public void controllerGetCharacter(String location)
+    public void controllerGetMinigame()
+    public void controllerGetFinalCharacter(String decision)
+}
+
+class Endings {
+    public void getEnding(int affection)
+}
+
+class Game
 @enduml
