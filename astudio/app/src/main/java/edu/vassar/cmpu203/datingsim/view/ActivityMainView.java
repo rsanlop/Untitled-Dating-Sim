@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import android.widget.Button;
 
 import edu.vassar.cmpu203.datingsim.databinding.ActivityMainBinding;
 
@@ -13,6 +14,7 @@ public class ActivityMainView implements IActivityMainView{
 
     FragmentManager fmanager;
     ActivityMainBinding binding;
+    private boolean toggle = false; // dont show other buttons
 
     /**
      * Constructor method.
@@ -48,12 +50,25 @@ public class ActivityMainView implements IActivityMainView{
     }
 
     public void displayMenuOptions(){
-this.binding.musicButton.setVisibility(View.INVISIBLE);
 
+        this.binding.settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (!toggle) { // if true
+                    ActivityMainView.this.binding.soundButton.setVisibility(View.VISIBLE);
+                    ActivityMainView.this.binding.musicButton.setVisibility(View.VISIBLE);
+                    ActivityMainView.this.binding.glossaryButton.setVisibility(View.VISIBLE);
+                    toggle = true;
+                }
+                else{
+                    ActivityMainView.this.binding.soundButton.setVisibility(View.INVISIBLE);
+                    ActivityMainView.this.binding.musicButton.setVisibility(View.INVISIBLE);
+                    ActivityMainView.this.binding.glossaryButton.setVisibility(View.INVISIBLE);
+                    toggle = false;
+                }
+
+            }
+        });
     }
-
-
-
-
-
 }
