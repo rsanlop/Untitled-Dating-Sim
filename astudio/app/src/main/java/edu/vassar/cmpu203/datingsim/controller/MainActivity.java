@@ -7,7 +7,7 @@ import android.os.Bundle;
 import edu.vassar.cmpu203.datingsim.R;
 import edu.vassar.cmpu203.datingsim.model.Player;
 import edu.vassar.cmpu203.datingsim.view.IAddNameView;
-import edu.vassar.cmpu203.datingsim.view.AddNameView;
+//import edu.vassar.cmpu203.datingsim.view.AddNameView;
 
 public class MainActivity extends AppCompatActivity implements IAddNameView.Listener {
     Player curPlayer;
@@ -24,11 +24,11 @@ public class MainActivity extends AppCompatActivity implements IAddNameView.List
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // create view object
+        /*// create view object
         addNameView = new AddNameView(this, this);
 
         // set screen contents
-        setContentView(addNameView.getRootView());
+        setContentView(addNameView.getRootView());*/
     }
 
     /* IAddItemsView.Listener implementation start */
