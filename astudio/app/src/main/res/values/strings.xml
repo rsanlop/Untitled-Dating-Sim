@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Dating Sim</string>
-    <string name="btn">Mofo Button</string>
+    <string name="settingsButton">Settings</string>
+    <string name="glossaryButton">Glossary</string>
+    <string name="restartButton">Restart</string>
+    <string name="musicButton">Music</string>
+    <string name="soundButton">Sound</string>
+
 </resources>
