@@ -6,83 +6,68 @@
     android:layout_height="match_parent"
     tools:context=".controller.MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#EEE9F8"
-        android:orientation="horizontal"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/restartButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:clickable="true"
+        android:contentDescription="@string/restartButton"
+        android:src="@android:drawable/ic_menu_rotate"
+        app:fabCustomSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/soundButton"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/restartButton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="4dp"
-            android:clickable="true"
-            android:contentDescription="@string/restartButton"
-            android:src="@android:drawable/ic_menu_rotate"
-            app:fabCustomSize="40dp"
-            app:layout_constraintEnd_toStartOf="@+id/soundButton"
-            app:layout_constraintTop_toTopOf="parent" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/soundButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:clickable="true"
+        android:contentDescription="@string/soundButton"
+        android:src="@android:drawable/ic_lock_silent_mode_off"
+        app:fabCustomSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/musicButton"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/soundButton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="4dp"
-            android:clickable="true"
-            android:contentDescription="@string/soundButton"
-            android:src="@android:drawable/ic_lock_silent_mode_off"
-            app:fabCustomSize="40dp"
-            app:layout_constraintEnd_toStartOf="@+id/musicButton"
-            app:layout_constraintTop_toTopOf="parent" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/musicButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:clickable="true"
+        android:contentDescription="@string/musicButton"
+        android:src="@android:drawable/ic_btn_speak_now"
+        app:fabCustomSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/settingsButton"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/musicButton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="4dp"
-            android:clickable="true"
-            android:contentDescription="@string/musicButton"
-            android:src="@android:drawable/ic_btn_speak_now"
-            app:fabCustomSize="40dp"
-            app:layout_constraintEnd_toStartOf="@+id/settingsButton"
-            app:layout_constraintTop_toTopOf="parent" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/settingsButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:clickable="true"
+        android:contentDescription="@string/settingsButton"
+        android:src="@android:drawable/ic_menu_manage"
+        android:tint="#21005C"
+        app:fabCustomSize="40dp"
+        app:fabSize="auto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="#21005C" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/settingsButton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:clickable="true"
-            android:contentDescription="@string/settingsButton"
-            android:src="@android:drawable/ic_menu_manage"
-            android:tint="#21005C"
-            app:fabCustomSize="40dp"
-            app:fabSize="auto"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:rippleColor="#21005C" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/glossaryButton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="4dp"
-            android:clickable="true"
-            android:contentDescription="@string/glossaryButton"
-            app:fabCustomSize="40dp"
-            app:layout_constraintEnd_toStartOf="@+id/restartButton"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:drawable/ic_dialog_info" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/glossaryButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:clickable="true"
+        android:contentDescription="@string/glossaryButton"
+        app:fabCustomSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/restartButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_dialog_info" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_width="733dp"
+        android:layout_height="410dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

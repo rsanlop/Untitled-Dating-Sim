@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace = "edu.vassar.cmpu203.datingsim"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "edu.vassar.cmpu203.datingsim"
         minSdk = 30
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 

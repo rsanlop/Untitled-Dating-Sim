@@ -8,6 +8,13 @@ public interface IActivityMainView {
      * Retrieve the graphical widget (android view) at the root of the screen hierarchy/
      * @return the screen's root android view (widget)
      */
+
+    interface Listener {
+
+        void onSettingsClick();
+
+    }
+
     View getRootView();
 
     /**
@@ -18,6 +25,8 @@ public interface IActivityMainView {
      * @param name the name this transaction can be referred by.
      */
     void displayFragment(Fragment fragment, boolean reversible, String name);
+    void hideMenu();
+
 }
 
 

@@ -14,15 +14,19 @@ public class ActivityMainView implements IActivityMainView{
 
     FragmentManager fmanager;
     ActivityMainBinding binding;
-    private boolean toggle = false; // dont show other buttons
+
+    Listener listener;
+
+
 
     /**
      * Constructor method.
      * @param activity The android activity the screen is associated with.
      */
-    public ActivityMainView(FragmentActivity activity){
+    public ActivityMainView(FragmentActivity activity, Listener listener){
         this.fmanager = activity.getSupportFragmentManager();
         this.binding = ActivityMainBinding.inflate(activity.getLayoutInflater());
+        this.listener = listener;
     }
 
     /**
@@ -55,20 +59,17 @@ public class ActivityMainView implements IActivityMainView{
             @Override
             public void onClick(View v) {
 
-                if (!toggle) { // if true
-                    ActivityMainView.this.binding.soundButton.setVisibility(View.VISIBLE);
-                    ActivityMainView.this.binding.musicButton.setVisibility(View.VISIBLE);
-                    ActivityMainView.this.binding.glossaryButton.setVisibility(View.VISIBLE);
-                    toggle = true;
-                }
-                else{
-                    ActivityMainView.this.binding.soundButton.setVisibility(View.INVISIBLE);
-                    ActivityMainView.this.binding.musicButton.setVisibility(View.INVISIBLE);
-                    ActivityMainView.this.binding.glossaryButton.setVisibility(View.INVISIBLE);
-                    toggle = false;
-                }
+                ActivityMainView.this.listener.onSettingsClick();
+
 
             }
         });
+    }
+
+    public void hideMenu() {
+        this.binding.soundButton.setVisibility(View.INVISIBLE);
+        this.binding.musicButton.setVisibility(View.INVISIBLE);
+        this.binding.glossaryButton.setVisibility(View.INVISIBLE);
+        this.binding.restartButton.setVisibility(View.INVISIBLE);
     }
 }
