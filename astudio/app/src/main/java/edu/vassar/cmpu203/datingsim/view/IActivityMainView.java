@@ -13,6 +13,12 @@ public interface IActivityMainView {
 
         void onSettingsClick();
 
+        /*
+             @Override
+             public void onAddedName(String name) {
+                 this.addNameView.updateNameDisplay(curPlayer); // tell ui to update itself
+             }*/
+
     }
 
     View getRootView();
@@ -25,8 +31,11 @@ public interface IActivityMainView {
      * @param name the name this transaction can be referred by.
      */
     void displayFragment(Fragment fragment, boolean reversible, String name);
-    void hideMenu();
 
+    //void onViewCreated();
+
+    void hideMenu();
+    void showMenu();
 }
 
 

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MapFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#C0D8C1">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/swampButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="76dp"
+            android:layout_marginTop="138dp"
+            android:layout_marginEnd="478dp"
+            android:layout_marginBottom="7dp"
+            android:clickable="true"
+            android:contentDescription="@string/swamp"
+            android:src="@android:drawable/ic_menu_mapmode"
+            app:backgroundTint="#6DCF71"
+            app:layout_constraintBottom_toTopOf="@+id/swamp"
+            app:layout_constraintEnd_toStartOf="@+id/hellButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/freds" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/hellButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="610dp"
+            android:layout_marginTop="137dp"
+            android:layout_marginEnd="65dp"
+            android:layout_marginBottom="7dp"
+            android:clickable="true"
+            android:contentDescription="@string/hell"
+            android:src="@android:drawable/stat_sys_download"
+            app:backgroundTint="#F14A4A"
+            app:layout_constraintBottom_toTopOf="@+id/hell"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/japan" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/japanButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="463dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="66dp"
+            android:layout_marginBottom="7dp"
+            android:background="@android:color/holo_red_dark"
+            android:clickable="true"
+            android:contentDescription="@string/japan"
+            android:foregroundTint="#CFBDBD"
+            android:foregroundTintMode="src_over"
+            android:src="@android:drawable/ic_notification_overlay"
+            android:tint="#CD1111"
+            app:backgroundTint="#EDCC6A"
+            app:layout_constraintBottom_toTopOf="@+id/japan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/fredsButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="#553434" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/olympusButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="140dp"
+            android:clickable="true"
+            android:contentDescription="@string/olympus"
+            android:src="@android:drawable/ic_menu_compass"
+            app:backgroundTint="#8DD6F3"
+            app:layout_constraintBottom_toTopOf="@+id/olympus"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fredsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="584dp"
+            android:layout_marginBottom="7dp"
+            android:clickable="true"
+            android:contentDescription="@string/freds"
+            android:src="@android:drawable/ic_lock_idle_charging"
+            app:backgroundTint="#F6744B"
+            app:layout_constraintBottom_toTopOf="@+id/freds"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="2"
+            android:scaleY="2"
+            android:text="@string/title"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/swamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="76dp"
+            android:layout_marginTop="331dp"
+            android:layout_marginBottom="61dp"
+            android:text="@string/swamp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/freds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="76dp"
+            android:layout_marginTop="111dp"
+            android:layout_marginEnd="451dp"
+            android:layout_marginBottom="201dp"
+            android:text="@string/freds"
+            app:layout_constraintBottom_toTopOf="@+id/swamp"
+            app:layout_constraintEnd_toStartOf="@+id/japan"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/olympus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/olympus"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <TextView
+            android:id="@+id/hell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="520dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginBottom="100dp"
+            android:text="@string/hell"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/swamp"
+            app:layout_constraintTop_toBottomOf="@+id/japan" />
+
+        <TextView
+            android:id="@+id/japan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="205dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginEnd="76dp"
+            android:layout_marginBottom="150dp"
+            android:text="@string/japan"
+            app:layout_constraintBottom_toTopOf="@+id/hell"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/title"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

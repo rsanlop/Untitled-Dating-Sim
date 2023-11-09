@@ -1,12 +1,17 @@
 package edu.vassar.cmpu203.datingsim.view;
 
+import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import android.widget.Button;
 
 import edu.vassar.cmpu203.datingsim.databinding.ActivityMainBinding;
 
@@ -17,16 +22,17 @@ public class ActivityMainView implements IActivityMainView{
 
     Listener listener;
 
-
+    private boolean toggle;
 
     /**
      * Constructor method.
      * @param activity The android activity the screen is associated with.
      */
-    public ActivityMainView(FragmentActivity activity, Listener listener){
+    public ActivityMainView(Listener listener, FragmentActivity activity){
         this.fmanager = activity.getSupportFragmentManager();
         this.binding = ActivityMainBinding.inflate(activity.getLayoutInflater());
         this.listener = listener;
+        this.binding.settingsButton.setOnClickListener(v -> listener.onSettingsClick());
     }
 
     /**
@@ -52,16 +58,20 @@ public class ActivityMainView implements IActivityMainView{
         if (addToStack)  ft.addToBackStack(name);
         ft.commit();
     }
+//    @Override
+//    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+//                             Bundle savedInstanceState) {
+//        return this.binding.getRoot();
+//    }
 
-    public void displayMenuOptions(){
 
+    //@Override
+    public void onCreate(Bundle savedInstanceState){
+    Log.d("View Created", "true");
         this.binding.settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                ActivityMainView.this.listener.onSettingsClick();
-
-
+               listener.onSettingsClick();
             }
         });
     }
@@ -71,5 +81,12 @@ public class ActivityMainView implements IActivityMainView{
         this.binding.musicButton.setVisibility(View.INVISIBLE);
         this.binding.glossaryButton.setVisibility(View.INVISIBLE);
         this.binding.restartButton.setVisibility(View.INVISIBLE);
+    }
+
+    public void showMenu() {
+        this.binding.soundButton.setVisibility(View.VISIBLE);
+        this.binding.musicButton.setVisibility(View.VISIBLE);
+        this.binding.glossaryButton.setVisibility(View.VISIBLE);
+        this.binding.restartButton.setVisibility(View.VISIBLE);
     }
 }
