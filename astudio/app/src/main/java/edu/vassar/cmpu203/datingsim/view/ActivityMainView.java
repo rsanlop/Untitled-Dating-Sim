@@ -66,15 +66,15 @@ public class ActivityMainView implements IActivityMainView{
 
 
     //@Override
-    public void onCreate(Bundle savedInstanceState){
-    Log.d("View Created", "true");
-        this.binding.settingsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               listener.onSettingsClick();
-            }
-        });
-    }
+//    public void onCreate(Bundle savedInstanceState){
+//    Log.d("View Created", "true");
+//        this.binding.settingsButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//               listener.onSettingsClick();
+//            }
+//        });
+//    }
 
     public void hideMenu() {
         this.binding.soundButton.setVisibility(View.INVISIBLE);
