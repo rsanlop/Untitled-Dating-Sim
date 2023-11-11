@@ -4,23 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.ZeusFragment">
+    tools:context=".view.BonnyFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#AA2A2A"
-        android:backgroundTint="#C8E2ED">
+        android:background="#CCB8B8"
+        android:backgroundTint="#C8ACFA">
 
         <TextView
-            android:id="@+id/zeusDialogue"
+            android:id="@+id/bonnyDialogue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="206dp"
-            android:layout_marginTop="169dp"
-            android:layout_marginEnd="467dp"
-            android:layout_marginBottom="223dp"
+            android:layout_marginStart="112dp"
+            android:layout_marginTop="186dp"
+            android:layout_marginEnd="561dp"
+            android:layout_marginBottom="206dp"
             android:text="TextView"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -28,38 +27,40 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/zeusImage"
-            android:layout_width="150dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="573dp"
-            android:layout_marginTop="233dp"
-            android:layout_marginEnd="31dp"
-            android:layout_marginBottom="50dp"
-            android:foregroundTint="#00FA0C0C"
-            android:src="@drawable/zeus_by_bonehedtoons_dfo9ww5_fullview"
+            android:id="@+id/bonnyImage"
+            android:layout_width="228dp"
+            android:layout_height="137dp"
+            android:layout_marginStart="523dp"
+            android:layout_marginTop="204dp"
+            android:layout_marginEnd="52dp"
+            android:layout_marginBottom="48dp"
+            android:src="@drawable/five_nights_at_freddy_s_bonnie"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/zeus_by_bonehedtoons_dfo9ww5_fullview"
-            tools:srcCompat="@drawable/zeus_by_bonehedtoons_dfo9ww5_fullview" />
+            app:layout_constraintVertical_bias="1.0"
+            tools:srcCompat="@drawable/five_nights_at_freddy_s_bonnie" />
 
         <TextView
-            android:id="@+id/zeus"
+            android:id="@+id/bonny"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="392dp"
-            android:fontFamily="@font/lexend_mega"
+            android:layout_marginStart="340dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="341dp"
+            android:layout_marginBottom="368dp"
+            android:fontFamily="@font/major_mono_display"
             android:scaleX="3"
             android:scaleY="3"
-            android:text="@string/zeus"
+            android:text="@string/bonny"
+            android:textColor="#440FA3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.499"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

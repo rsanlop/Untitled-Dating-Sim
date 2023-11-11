@@ -5,15 +5,32 @@
     <string name="restartButton">Restart</string>
     <string name="musicButton">Music</string>
     <string name="soundButton">Sound</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    ----------------------------------------------
     <string name="title">Character Map</string>
     <string name="swamp">Swamp</string>
     <string name="freds">Fred\'s Pizzeria</string>
     <string name="olympus">Olympus</string>
     <string name="hell">Hell</string>
     <string name="japan">Japan</string>
+    -----------------------------------------------
+    <string name="titleText">Untitled Dating Sim</string>
+    <string name="continueButton">Continue</string>
+    <string name="startButton">New Game</string>
+    ----------------------------------------------
+    <string name="satan">SATAN</string>
+    <string name="shruck">SHRUCK</string>
+    <string name="zeus">ZEUS</string>
+    <string name="bonny">BONNY</string>
+    <string name="jojoson">SCARLET JOJOSON</string>
+    <string name="jojoson2">JOJOSON</string>
+    <string name="alone">NO ONE</string>
+    <string name="choiceText">Choose a Character</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="zeusDialogue">ZEUS</string>
+    <string name="kissingGame">Kiss Me!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="triviaGame">Trivia Game</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="riddleGame">Riddle Game</string>
 
 
 </resources>

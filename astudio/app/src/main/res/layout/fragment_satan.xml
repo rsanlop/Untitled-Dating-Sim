@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.SatanFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CCB8B8"
+        android:backgroundTint="#F6BAB5">
+
+        <ImageView
+            android:id="@+id/satanImage"
+            android:layout_width="156dp"
+            android:layout_height="159dp"
+            android:layout_marginStart="523dp"
+            android:layout_marginTop="204dp"
+            android:layout_marginEnd="52dp"
+            android:layout_marginBottom="48dp"
+            android:src="@drawable/rko_seunghyeon3582_sexy_devil_woman_in_bikini_8k_detailed_picture_s_4032962c_0244_43d9_9b50_93c2f035806a"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/rko_seunghyeon3582_sexy_devil_woman_in_bikini_8k_detailed_picture_s_4032962c_0244_43d9_9b50_93c2f035806a" />
+
+        <TextView
+            android:id="@+id/satanDialogue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="112dp"
+            android:layout_marginTop="186dp"
+            android:layout_marginEnd="561dp"
+            android:layout_marginBottom="206dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/satan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="340dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="341dp"
+            android:layout_marginBottom="368dp"
+            android:fontFamily="@font/knewave"
+            android:scaleX="3"
+            android:scaleY="3"
+            android:text="@string/satan"
+            android:textColor="#A6160B"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.RiddleGameFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#9A5757"
+        android:backgroundTint="#6DBD70">
+
+        <TextView
+            android:id="@+id/riddleGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="338dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="321dp"
+            android:layout_marginBottom="364dp"
+            android:background="#897AA3"
+            android:backgroundTint="#00FFFFFF"
+            android:fontFamily="@font/fira_mono"
+            android:scaleX="3"
+            android:scaleY="3"
+            android:text="@string/riddleGame"
+            android:textColor="#112C12"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
