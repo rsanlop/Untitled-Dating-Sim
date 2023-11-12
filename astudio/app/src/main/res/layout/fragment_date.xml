@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.DateFragment"/>
+    tools:context=".view.DateFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#C57C7C"
+        android:backgroundTint="#F8B29B">
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="303dp"
+            android:layout_height="87dp"
+            android:layout_marginStart="233dp"
+            android:layout_marginTop="83dp"
+            android:layout_marginEnd="195dp"
+            android:layout_marginBottom="241dp"
+            android:background="#897AA3"
+            android:backgroundTint="#00FFFFFF"
+            android:fontFamily="@font/fira_mono"
+            android:scaleX="2"
+            android:scaleY="2"
+            android:text="@string/date"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/noButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="145dp"
+            android:layout_marginTop="63dp"
+            android:layout_marginEnd="194dp"
+            android:layout_marginBottom="130dp"
+            android:backgroundTint="#801313"
+            android:text="@string/noButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/yesButton"
+            app:layout_constraintTop_toBottomOf="@+id/date" />
+
+        <Button
+            android:id="@+id/yesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="211dp"
+            android:layout_marginTop="63dp"
+            android:layout_marginBottom="130dp"
+            android:backgroundTint="#7E1313"
+            android:text="@string/yesButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/date" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

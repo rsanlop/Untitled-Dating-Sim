@@ -12,6 +12,21 @@
         android:background="#BC5050"
         android:backgroundTint="#E8C898">
 
+        <Button
+            android:id="@+id/triviaNextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="624dp"
+            android:layout_marginTop="330dp"
+            android:layout_marginEnd="19dp"
+            android:layout_marginBottom="33dp"
+            android:backgroundTint="#7E2C13"
+            android:text="@string/NextButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/triviaGame"
             android:layout_width="wrap_content"
@@ -26,7 +41,7 @@
             android:scaleX="3"
             android:scaleY="3"
             android:text="@string/triviaGame"
-            android:textColor="#131212"
+            android:textColor="#7D2B13"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

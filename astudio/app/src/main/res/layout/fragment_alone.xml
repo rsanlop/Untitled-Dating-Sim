@@ -4,46 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F3C0D1"
-    tools:context=".view.KissingGameFragment">
+    android:background="#EAB8B8"
+    tools:context=".view.AloneFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:backgroundTint="#F39FBB">
+        android:background="#DCBEBE"
+        android:backgroundTint="#E8B8C8">
 
-        <Button
-            android:id="@+id/kissingNextButton"
+        <TextView
+            android:id="@+id/aloneDialogue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="624dp"
-            android:layout_marginTop="330dp"
-            android:layout_marginEnd="19dp"
-            android:layout_marginBottom="33dp"
-            android:backgroundTint="#C32258"
-            android:text="@string/NextButton"
+            android:layout_marginStart="112dp"
+            android:layout_marginTop="186dp"
+            android:layout_marginEnd="398dp"
+            android:layout_marginBottom="206dp"
+            android:text="TextView"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/bonnyAffection"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/kissingGame"
+            android:id="@+id/alone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="338dp"
+            android:layout_marginStart="380dp"
             android:layout_marginTop="26dp"
-            android:layout_marginEnd="321dp"
-            android:layout_marginBottom="364dp"
-            android:fontFamily="@font/hachi_maru_pop"
+            android:layout_marginEnd="300dp"
+            android:layout_marginBottom="365dp"
+            android:background="#00FFFFFF"
+            android:backgroundTint="#DA7E9D"
+            android:fontFamily="serif"
             android:scaleX="3"
             android:scaleY="3"
-            android:text="@string/kissingGame"
-            android:textColor="#C11650"
+            android:text="@string/alone"
+            android:textColor="#AA0E43"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </FrameLayout>

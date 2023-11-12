@@ -9,21 +9,21 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import edu.vassar.cmpu203.datingsim.R;
-import edu.vassar.cmpu203.datingsim.databinding.FragmentSatanBinding;
+import edu.vassar.cmpu203.datingsim.databinding.FragmentJojosonBinding;
 import edu.vassar.cmpu203.datingsim.databinding.FragmentZeusBinding;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link SatanFragment#newInstance} factory method to
+ * Use the {@link JojosonFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SatanFragment extends Fragment implements ISatanView {
+public class JojosonFragment extends Fragment implements IJojosonView {
 
-    FragmentSatanBinding binding;
+    FragmentJojosonBinding binding;
     Listener listener;
 
 
-    public SatanFragment(Listener listener) {
+    public JojosonFragment(Listener listener) {
         this.listener = listener;
         // Required empty public constructor
     }
@@ -37,8 +37,8 @@ public class SatanFragment extends Fragment implements ISatanView {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        this.binding = FragmentSatanBinding.inflate(inflater);
-        this.binding.satanDateButton.setOnClickListener(v -> listener.onClickedDate());
+        this.binding = FragmentJojosonBinding.inflate(inflater);
+        this.binding.jojosonDateButton.setOnClickListener(v -> listener.onClickedDate());
         return this.binding.getRoot();
     }
 

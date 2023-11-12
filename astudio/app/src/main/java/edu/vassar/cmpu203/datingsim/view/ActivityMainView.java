@@ -58,23 +58,6 @@ public class ActivityMainView implements IActivityMainView{
         if (addToStack)  ft.addToBackStack(name);
         ft.commit();
     }
-//    @Override
-//    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
-//                             Bundle savedInstanceState) {
-//        return this.binding.getRoot();
-//    }
-
-
-    //@Override
-//    public void onCreate(Bundle savedInstanceState){
-//    Log.d("View Created", "true");
-//        this.binding.settingsButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//               listener.onSettingsClick();
-//            }
-//        });
-//    }
 
     public void hideMenu() {
         this.binding.soundButton.setVisibility(View.INVISIBLE);

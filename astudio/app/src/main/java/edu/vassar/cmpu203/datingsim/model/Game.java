@@ -123,14 +123,6 @@ public class Game {
 
     }
 
-    public void makeMinigame(){
-        Minigame games = new Minigame();
-        games.addToMinigame("Kissing Game");
-        games.addToMinigame("Trivia Game");
-        games.addToMinigame("Riddle Game");
-        games.getMinigame();
-    }
-
     public void getFinalCharacter(String name){
         Character decision = new Character();
 

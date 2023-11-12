@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/zeusLayout"
     tools:context=".view.ZeusFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -12,6 +13,21 @@
         android:layout_height="match_parent"
         android:background="#AA2A2A"
         android:backgroundTint="#C8E2ED">
+
+        <TextView
+            android:id="@+id/zeusAffection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="602dp"
+            android:layout_marginTop="188dp"
+            android:layout_marginEnd="71dp"
+            android:layout_marginBottom="26dp"
+            android:text="TextView"
+            android:textColor="#323030"
+            app:layout_constraintBottom_toTopOf="@+id/zeusImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/zeusDialogue"
@@ -48,18 +64,32 @@
             android:id="@+id/zeus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="392dp"
+            android:layout_marginStart="370dp"
+            android:layout_marginTop="53dp"
+            android:layout_marginEnd="313dp"
+            android:layout_marginBottom="338dp"
             android:fontFamily="@font/lexend_mega"
             android:scaleX="3"
             android:scaleY="3"
             android:text="@string/zeus"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.499"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/zeusDateButton"
+            android:layout_width="98dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="184dp"
+            android:layout_marginTop="96dp"
+            android:layout_marginEnd="298dp"
+            android:layout_marginBottom="91dp"
+            android:text="@string/DateButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/zeusImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/zeusDialogue" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

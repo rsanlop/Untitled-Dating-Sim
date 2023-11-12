@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.jojosonFragment">
+    tools:context=".view.JojosonFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -12,14 +12,28 @@
         android:background="#CCB8B8"
         android:backgroundTint="#000000">
 
+        <Button
+            android:id="@+id/jojosonDateButton"
+            android:layout_width="98dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="184dp"
+            android:layout_marginTop="96dp"
+            android:layout_marginEnd="298dp"
+            android:layout_marginBottom="91dp"
+            android:text="@string/DateButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/zeusImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/zeusDialogue" />
+
         <TextView
             android:id="@+id/jojoson"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="340dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="340dp"
-            android:layout_marginBottom="368dp"
+            android:layout_marginStart="301dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="277dp"
+            android:layout_marginBottom="341dp"
             android:fontFamily="@font/biorhyme_bold"
             android:scaleX="3"
             android:scaleY="3"
@@ -27,10 +41,8 @@
             android:textColor="#9D3516"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.362"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/jojosonImage"

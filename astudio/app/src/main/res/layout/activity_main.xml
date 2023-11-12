@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#4E4460"
     android:backgroundTint="#E4DAF4"
-    tools:context=".controller.MainActivity">
+    tools:context=".controller.MainController">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/restartButton"
@@ -68,7 +68,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
-        android:layout_width="733dp"
+        android:layout_width="820dp"
         android:layout_height="410dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

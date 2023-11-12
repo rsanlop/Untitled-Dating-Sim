@@ -15,14 +15,16 @@ public class Minigame {
     private List<String> minigames = new ArrayList<>();
 
     public Minigame(){
-
+        addToMinigame("Kissing Game");
+        addToMinigame("Trivia Game");
+        addToMinigame("Riddle Game");
     }
     public void addToMinigame(String minigame){
         this.minigames.add(minigame);
     }
-    public void getMinigame(){
+    public String getMinigame(){
         Random rand = new Random();
-        System.out.println(minigames.get(rand.nextInt(minigames.size())));
+        return minigames.get(rand.nextInt(minigames.size()));
 
     }
 }

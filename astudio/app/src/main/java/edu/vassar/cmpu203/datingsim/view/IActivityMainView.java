@@ -13,11 +13,6 @@ public interface IActivityMainView {
 
         void onSettingsClick();
 
-        /*
-             @Override
-             public void onAddedName(String name) {
-                 this.addNameView.updateNameDisplay(curPlayer); // tell ui to update itself
-             }*/
 
     }
 
@@ -27,12 +22,9 @@ public interface IActivityMainView {
      * Replaces the contents of the screen's fragment container with the one passed in as an argument.
      *
      * @param fragment The fragment to be displayed.
-     * @param reversible true if this transaction should be reversible, false otherwise
      * @param name the name this transaction can be referred by.
      */
-    void displayFragment(Fragment fragment, boolean reversible, String name);
-
-    //void onViewCreated();
+    void displayFragment(Fragment fragment, boolean addToStack, String name);
 
     void hideMenu();
     void showMenu();
