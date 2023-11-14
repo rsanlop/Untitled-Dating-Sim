@@ -1,5 +1,7 @@
 package edu.vassar.cmpu203.datingsim.model;
 
+import android.media.Image;
+
 import java.util.List;
 
 /**
@@ -14,6 +16,7 @@ public class Character {
     String location;
     int affection;
     List<String> dialogue;
+    //Image image;
 
     public Character(){}
 
@@ -22,5 +25,6 @@ public class Character {
         this.location = location;
         this.affection = affection;
         this.dialogue = dialogue;
+        //this.image = image;
     }
 }

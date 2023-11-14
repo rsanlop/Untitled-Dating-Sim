@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import edu.vassar.cmpu203.datingsim.model.Player;
 import edu.vassar.cmpu203.datingsim.model.Minigame;
 import edu.vassar.cmpu203.datingsim.model.Character;
@@ -16,6 +19,7 @@ import edu.vassar.cmpu203.datingsim.view.DateFragment;
 import edu.vassar.cmpu203.datingsim.view.IActivityMainView;
 import edu.vassar.cmpu203.datingsim.view.IAddNameView;
 import edu.vassar.cmpu203.datingsim.view.IBonnyView;
+import edu.vassar.cmpu203.datingsim.view.ICharacterView;
 import edu.vassar.cmpu203.datingsim.view.IDateView;
 import edu.vassar.cmpu203.datingsim.view.IJojosonView;
 import edu.vassar.cmpu203.datingsim.view.IKissingGameView;
@@ -39,12 +43,25 @@ import edu.vassar.cmpu203.datingsim.view.TitleFragment;
 import edu.vassar.cmpu203.datingsim.view.TriviaGameFragment;
 import edu.vassar.cmpu203.datingsim.view.ZeusFragment;
 import edu.vassar.cmpu203.datingsim.view.RiddleGameFragment;
+import edu.vassar.cmpu203.datingsim.view.CharacterFragment;
 
 
 public class MainController extends AppCompatActivity implements IActivityMainView.Listener,  ITitleView.Listener, INameView.Listener, IMapView.Listener, IZeusView.Listener, IShruckView.Listener,
-        IJojosonView.Listener, ISatanView.Listener, IBonnyView.Listener, IRiddleGameView.Listener, IKissingGameView.Listener, ITriviaGameView.Listener, IDateView.Listener, ISelectionView.Listener {
-    Player curPlayer = new Player("");
-
+        IJojosonView.Listener, ISatanView.Listener, IBonnyView.Listener, IRiddleGameView.Listener, IKissingGameView.Listener, ITriviaGameView.Listener, IDateView.Listener, ISelectionView.Listener,
+        ICharacterView.Listener {
+    Player curPlayer = new Player("", 0);
+    List<String> zeusd = new ArrayList<>();
+    Character zeus = new Character("Zeus", "Olympus", 0, zeusd);
+    List<String> shruckd = new ArrayList<>();
+    Character shruck = new Character("Shruck", "Swamp", 0, shruckd);
+    List<String> bonnyd = new ArrayList<>();
+    Character bonny = new Character("Bonny", "Freddy's Pizzeria", 0, bonnyd);
+    List<String> satand = new ArrayList<>();
+    Character satan = new Character("Satan", "Hell", 0, satand);
+    List<String> jojosond = new ArrayList<>();
+    Character jojoson = new Character("Scarlet Jojoson", "Japan", 0, jojosond);
+    List<String> emptyd= new ArrayList<>();
+    Character empty = new Character("", "", 100, emptyd);
     Minigame minigame = new Minigame();
     ActivityMainView activityMainView;
 
@@ -66,6 +83,8 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
         this.activityMainView.hideMenu();
         this.activityMainView.displayFragment(new TitleFragment(this), true, "title");
         this.menuHidden = true;
+
+
     }
 
     @Override
@@ -114,10 +133,10 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
     @Override
     public void onClickedDate() {
         String mg = this.minigame.getMinigame();
-        if ( mg ==  "Kissing Game"){
+        if ( mg.equals("Kissing Game")){
             this.activityMainView.displayFragment(new KissingGameFragment(this), true, "kissing game fragment");}
 
-        else if (mg == "Trivia Game"){
+        else if (mg.equals("Trivia Game")){
             this.activityMainView.displayFragment(new TriviaGameFragment(this), true, "trivia game fragment");
         }
         else {

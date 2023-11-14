@@ -49,12 +49,12 @@
             android:layout_marginTop="204dp"
             android:layout_marginEnd="52dp"
             android:layout_marginBottom="48dp"
-            android:src="@drawable/rko_seunghyeon3582_sexy_devil_woman_in_bikini_8k_detailed_picture_s_4032962c_0244_43d9_9b50_93c2f035806a"
+            android:src="@drawable/satanImage"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@drawable/rko_seunghyeon3582_sexy_devil_woman_in_bikini_8k_detailed_picture_s_4032962c_0244_43d9_9b50_93c2f035806a" />
+            tools:srcCompat="@drawable/satanImage" />
 
         <TextView
             android:id="@+id/satanDialogue"

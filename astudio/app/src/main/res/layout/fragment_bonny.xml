@@ -63,12 +63,12 @@
             android:layout_marginTop="21dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="48dp"
-            android:src="@drawable/five_nights_at_freddy_s_bonnie"
+            android:src="@drawable/bonnyImage"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/bonnyAffection"
-            tools:srcCompat="@drawable/five_nights_at_freddy_s_bonnie" />
+            tools:srcCompat="@drawable/bonnyImage" />
 
         <TextView
             android:id="@+id/bonny"
