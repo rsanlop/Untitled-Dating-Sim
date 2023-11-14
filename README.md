@@ -1,6 +1,6 @@
 # CMPU-203 F23 - Team 1G
 
-## Name (still thinking...)
+## Name: Untitled Dating Sim
 
 ## Functionality
 Our prototype centers around the main loop of the game. With this we are able to allow the user to input and save their
