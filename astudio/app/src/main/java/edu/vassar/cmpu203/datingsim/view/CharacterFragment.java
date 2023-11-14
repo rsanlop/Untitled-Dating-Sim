@@ -1,7 +1,6 @@
 package edu.vassar.cmpu203.datingsim.view;
 
 import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,10 +15,7 @@ import java.util.List;
 
 import edu.vassar.cmpu203.datingsim.R;
 import edu.vassar.cmpu203.datingsim.databinding.FragmentCharacterBinding;
-import edu.vassar.cmpu203.datingsim.databinding.FragmentShruckBinding;
-import edu.vassar.cmpu203.datingsim.databinding.FragmentZeusBinding;
 import edu.vassar.cmpu203.datingsim.model.Character;
-import edu.vassar.cmpu203.datingsim.model.Player;
 
 /**
  *
@@ -50,36 +46,17 @@ public class CharacterFragment extends Fragment implements ICharacterView{
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        Drawable charImage;
         super.onViewCreated(view, savedInstanceState);
         this.binding.characterName.setText(character.getName());
         this.binding.characterAffection.setText(character.getAffection());
         this.binding.characterDialogue.setText(getIntro(character.getDialogue()));
-        this.binding.characterImage.setImageDrawable(populateImage(character.getImageId()));
+        charImage = this.binding.getRoot().getContext().getDrawable(character.getImageId());
+        this.binding.characterImage.setImageDrawable(charImage);
 
     }
 
     public String getIntro(List<String> dialogue){
         return dialogue.get(0);
     }
-
-    public Drawable populateImage(int imageId){
-        switch (imageId) {
-            case 0 :
-                break;
-
-            case 1 :
-                break;;
-
-            case 2 :
-                break;;
-
-            case 3 :
-                break;;
-
-            case 4 :
-                break;;
-
-        }
-    }
-
 }

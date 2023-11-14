@@ -10,6 +10,7 @@ import java.util.Scanner;
  * @author Rubi Sanchez Lopez & Elizabeth Soe
  * @version 10/10/2023
  */
+/*
 public class Game {
     List<String> zeusd = new ArrayList<String>();
     Character zeus = new Character("Zeus", "Olympus", 0, zeusd);
@@ -158,3 +159,4 @@ public class Game {
 
 
 
+*/

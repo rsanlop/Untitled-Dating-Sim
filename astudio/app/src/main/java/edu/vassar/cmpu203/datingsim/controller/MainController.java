@@ -7,11 +7,12 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.vassar.cmpu203.datingsim.R;
 import edu.vassar.cmpu203.datingsim.model.Player;
 import edu.vassar.cmpu203.datingsim.model.Minigame;
 import edu.vassar.cmpu203.datingsim.model.Character;
 import edu.vassar.cmpu203.datingsim.model.Endings;
-import edu.vassar.cmpu203.datingsim.model.Game;
+/*import edu.vassar.cmpu203.datingsim.model.Game;*/
 import edu.vassar.cmpu203.datingsim.view.ActivityMainView;
 import edu.vassar.cmpu203.datingsim.view.AloneFragment;
 import edu.vassar.cmpu203.datingsim.view.BonnyFragment;
@@ -51,17 +52,19 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
         ICharacterView.Listener {
     Player curPlayer = new Player("", 0);
     List<String> zeusd = new ArrayList<>();
-    Character zeus = new Character("Zeus", "Olympus", 0, zeusd, 0);
+    Character zeus = new Character("Zeus", "Olympus", 0, zeusd, R.drawable.zeusimage);
     List<String> shruckd = new ArrayList<>();
-    Character shruck = new Character("Shruck", "Swamp", 0, shruckd, 1);
+    Character shruck = new Character("Shruck", "Swamp", 0, shruckd, R.drawable.shruckimage);
     List<String> bonnyd = new ArrayList<>();
-    Character bonny = new Character("Bonny", "Freddy's Pizzeria", 0, bonnyd, 2);
+    Character bonny = new Character("Bonny", "Freddy's Pizzeria", 0, bonnyd, R.drawable.bonnyimage);
     List<String> satand = new ArrayList<>();
-    Character satan = new Character("Satan", "Hell", 0, satand, 3);
+    Character satan = new Character("Satan", "Hell", 0, satand, R.drawable.satanimage);
     List<String> jojosond = new ArrayList<>();
-    Character jojoson = new Character("Scarlet Jojoson", "Japan", 0, jojosond, 4);
+    Character jojoson = new Character("Scarlet Jojoson", "Japan", 0, jojosond, R.drawable.jojosonimage);
     List<String> emptyd= new ArrayList<>();
     Character empty = new Character("", "", 100, emptyd, 100);
+
+
     Minigame minigame = new Minigame();
     ActivityMainView activityMainView;
 
@@ -83,6 +86,42 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
         this.activityMainView.hideMenu();
         this.activityMainView.displayFragment(new TitleFragment(this), true, "title");
         this.menuHidden = true;
+
+        zeusd.add("You see a swan. Not just any swan though. It's Zeus! He notices you walk up to the gates and greets you" + "\n" +
+                "'Why hello there. You look... rather ravishing.' He whistles as he looks you up and down. (He likes" + "\n" +
+                "what he sees.) 'Oh, please excuse my disheveled form!' He waddles in a circle at lightning speed" + "\n" +
+                "and poof. He's actually kind of ripped. (as a human) 'I hope you like what YOU see.' He gives a smug" + "\n" +
+                "look");
+
+
+
+        shruckd.add("You see a farty swamp the size of small house, right in front of a run-down tree house. You see the door slam open" + "\n" +
+                "and out walks a bumbling green figure. 'YOU!' he says as he points his stubby finger in your direction. He proceeds " + "\n" +
+                "to stomp towards you. 'WHAT ARE YOU DOING IN MY BLOODY SWAMP!' he bellows, as pieces of his stinky dinner fly out his" + "\n" +
+                "mouth and onto your face. 'DON'T TELL ME YOU WANT TO FART IN IT. BECAUSE LET ME TELL YOU. THE ONLY ONE WHO CAN FART IN" + "\n" +
+                "MY BLOODY SWAMP IS MY BLOODY ARSE!'" );
+
+
+        bonnyd.add("You appear at an abandoned Pizzeria, that eerily feels familiar. As you pass through the rickety doors you sense" + "\n" +
+                "that you are not alone. There's a stage, with one purple character, that seems to be where the old mascots would perform. " + "\n" +
+                "It's eyes light up as it stares at you. You approach it without knowing why. Then it starts to walk towards you. " + "\n" +
+                "As it holds out it's hands it says 'Pizza?' in a slow robotic voice. You look at the hands and there is no pizza :(. " + "\n" +
+                "Afraid of what will happen if you refuse, you take the fake pizza and pretend to eat it. After seeing you play along " + "\n" +
+                "the purple animatronic looks and you and slowly says 'Bonny'." );
+
+
+
+        satand.add("Immediately you feel the immense heat radiating all around you. There's no doubt you are in Hell. Satan stands before you in all her " + "\n" +
+                "sultry glory. She seductively catwalks over to you. 'Greetings, or should I say Hell-o.' She bats her eyes and tucks her hair behind her " + "\n" +
+                "ear proudly. She then says 'Pretty hot in here, right?' as she hold up a finger heart with flames coming out of it and then she can't help but " + "\n" +
+                "wink at you. 'Or maybe its just you' she says while pointing at you. You can only help but think Hell yea. ");
+
+
+        jojosond.add("You arrive in cosmopolitan Tokyo in the middle of the night. The neon lights surround you as you take a look around the alley. All of a sudden, someone " + "\n" +
+                "grapples you and tosses you to the ground. 'Who sent you?' the voice yells at you. You have no idea what's going on and just try to get out of their " + "\n" +
+                "hold. Much to your dismay you cannot escape. Luckily a car passes and lights up your face long enough for the black leather suit wearing assailant to realize you aren't a threat. " + "\n" +
+                "The red headed beauty releases you quickly and takes a step back. She apologizes as you dust yourself off. 'さようなら' she whispers as she leaps upwards" + "\n" +
+                "and disappears in the Tokyo skyline." );
 
 
     }
@@ -115,19 +154,19 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
 
     @Override
     public void onClickedSwamp() {
-        this.activityMainView.displayFragment(new ShruckFragment(this), true, "map fragment");}
+        this.activityMainView.displayFragment(new CharacterFragment(this, shruck), true, "map fragment");}
     @Override
     public void onClickedOlympus() {
-        this.activityMainView.displayFragment(new ZeusFragment(this), true, "map fragment");}
+        this.activityMainView.displayFragment(new CharacterFragment(this, zeus), true, "map fragment");}
     @Override
     public void onClickedFreds() {
-        this.activityMainView.displayFragment(new BonnyFragment(this), true, "map fragment");}
+        this.activityMainView.displayFragment(new CharacterFragment(this, bonny), true, "map fragment");}
     @Override
     public void onClickedHell() {
-        this.activityMainView.displayFragment(new SatanFragment(this), true, "map fragment");}
+        this.activityMainView.displayFragment(new CharacterFragment(this, satan), true, "map fragment");}
     @Override
     public void onClickedJapan() {
-        this.activityMainView.displayFragment(new JojosonFragment(this), true, "map fragment");}
+        this.activityMainView.displayFragment(new CharacterFragment(this, jojoson), true, "map fragment");}
 
 
     @Override
@@ -139,35 +178,7 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
         else if (mg.equals("Trivia Game")){
             this.activityMainView.displayFragment(new TriviaGameFragment(this), true, "trivia game fragment");
         }
-        else {/*
-    // TODO: Rename and change types of parameters
-    private String name;
-    private String dialogue;
-    private String affection;
-    FragmentCharacterBinding binding;
-    Listener listener;
-
-    public CharacterFragment(Listener listener, String name, String dialogue, String affection) {
-        this.listener = listener;
-        this.name = name;
-        this.dialogue = dialogue;
-        this.affection = affection;
-
-    }
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_character, container, false);
-    }*/
+        else {
             this.activityMainView.displayFragment(new RiddleGameFragment(this), true, "riddle game fragment");
         }
     }

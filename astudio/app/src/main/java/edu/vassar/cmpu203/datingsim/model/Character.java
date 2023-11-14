@@ -34,8 +34,8 @@ public class Character {
     public String getLocation(){
         return location;
     }
-    public int getAffection(){
-        return affection;
+    public String getAffection(){
+        return "" + affection;
     }
     public int setAffection(int affection){
         this.affection = affection;
