@@ -22,9 +22,9 @@
             android:layout_marginBottom="91dp"
             android:text="@string/DateButton"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/zeusImage"
+            app:layout_constraintEnd_toStartOf="@+id/satanImage"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/zeusDialogue" />
+            app:layout_constraintTop_toBottomOf="@+id/satanDialogue" />
 
         <TextView
             android:id="@+id/satanAffection"
@@ -36,9 +36,9 @@
             android:layout_marginBottom="16dp"
             android:text="TextView"
             android:textColor="#0C0C0C"
-            app:layout_constraintBottom_toTopOf="@+id/jojosonImage"
+            app:layout_constraintBottom_toTopOf="@+id/satanImage"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/jojosonDialogue"
+            app:layout_constraintStart_toEndOf="@+id/satanDialogue"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
@@ -49,12 +49,12 @@
             android:layout_marginTop="204dp"
             android:layout_marginEnd="52dp"
             android:layout_marginBottom="48dp"
-            android:src="@drawable/satanImage"
+            android:src="@drawable/satanimage"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@drawable/satanImage" />
+            tools:srcCompat="@drawable/satanimage" />
 
         <TextView
             android:id="@+id/satanDialogue"

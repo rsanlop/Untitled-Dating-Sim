@@ -52,13 +52,13 @@
             android:layout_marginEnd="31dp"
             android:layout_marginBottom="50dp"
             android:foregroundTint="#00FA0C0C"
-            android:src="@drawable/zeusImage"
+            android:src="@drawable/zeusimage"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/zeusImage"
-            tools:srcCompat="@drawable/zeusImage" />
+            app:srcCompat="@drawable/zeusimage"
+            tools:srcCompat="@drawable/zeusimage" />
 
         <TextView
             android:id="@+id/zeus"

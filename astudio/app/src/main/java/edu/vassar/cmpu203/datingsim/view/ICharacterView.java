@@ -4,6 +4,6 @@ public interface ICharacterView {
 
     interface Listener {
 
-        void onClickedDate();
+        void onClickedScreen();
     }
 }

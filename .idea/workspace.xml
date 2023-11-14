@@ -5,24 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12e95267-be6c-4cd2-be0d-b69a486467ae" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/astudio/app/src/main/java/edu/vassar/cmpu203/datingsim/view/CharacterFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/astudio/app/src/main/java/edu/vassar/cmpu203/datingsim/view/ICharacterView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/astudio/app/src/main/res/layout/fragment_character.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/astudio/app/src/main/java/edu/vassar/cmpu203/datingsim/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/java/edu/vassar/cmpu203/datingsim/controller/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/astudio/app/src/main/java/edu/vassar/cmpu203/datingsim/model/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/java/edu/vassar/cmpu203/datingsim/model/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/java/edu/vassar/cmpu203/datingsim/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/java/edu/vassar/cmpu203/datingsim/model/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/java/edu/vassar/cmpu203/datingsim/view/AddNameView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/eky46t9x0aap5pa.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/jojosonImage.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/five_nights_at_freddy_s_bonnie.webp" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/bonnyImage.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/rko_seunghyeon3582_sexy_devil_woman_in_bikini_8k_detailed_picture_s_4032962c_0244_43d9_9b50_93c2f035806a.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/satanImage.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/untitled_design.png" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/shruckImage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/zeus_by_bonehedtoons_dfo9ww5_fullview.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/zeusImage.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/java/edu/vassar/cmpu203/datingsim/view/CharacterFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/java/edu/vassar/cmpu203/datingsim/view/CharacterFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/bonnyImage.webp" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/bonnyimage.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/jojosonImage.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/jojosonimage.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/satanImage.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/satanimage.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/shruckImage.png" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/shruckimage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/zeusImage.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/zeusimage.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/astudio/app/src/main/res/layout/fragment_bonny.xml" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/res/layout/fragment_bonny.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/res/layout/fragment_character.xml" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/res/layout/fragment_character.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/astudio/app/src/main/res/layout/fragment_jojoson.xml" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/res/layout/fragment_jojoson.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/astudio/app/src/main/res/layout/fragment_satan.xml" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/res/layout/fragment_satan.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/astudio/app/src/main/res/layout/fragment_shruck.xml" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/res/layout/fragment_shruck.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/astudio/app/src/main/res/layout/fragment_zeus.xml" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/res/layout/fragment_zeus.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intellij/doc/design.md" beforeDir="false" afterPath="$PROJECT_DIR$/intellij/doc/design.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,22 +37,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cidr.known.project.marker": "true",
-    "last_opened_file_path": "/home/esoe/Desktop/team-1g",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/esoe/Desktop/team-1g&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -66,6 +63,7 @@
       <updated>1699114920199</updated>
       <workItem from="1699114921591" duration="2982000" />
       <workItem from="1699971450733" duration="1257000" />
+      <workItem from="1699983959363" duration="186000" />
     </task>
     <servers />
   </component>

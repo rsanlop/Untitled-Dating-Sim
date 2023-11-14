@@ -19,6 +19,7 @@ actor "User" as user
     affection points 
     map location
     dialogue
+    ImageID
     }
     
     class Minigame{
@@ -30,6 +31,14 @@ actor "User" as user
     class EndingScreens{
     game stats
     dialogue
+    }
+    
+    class ImageIds{
+    | 0 |  Zeus  |
+    | 1 |  Shruck  |
+    | 2 |  Bonny  |
+    | 3 |  Satan  |
+    | 4 |  Jojoson  |
     }
     
     Player -- Character : interacts with \t\t

@@ -51,17 +51,17 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
         ICharacterView.Listener {
     Player curPlayer = new Player("", 0);
     List<String> zeusd = new ArrayList<>();
-    Character zeus = new Character("Zeus", "Olympus", 0, zeusd);
+    Character zeus = new Character("Zeus", "Olympus", 0, zeusd, 0);
     List<String> shruckd = new ArrayList<>();
-    Character shruck = new Character("Shruck", "Swamp", 0, shruckd);
+    Character shruck = new Character("Shruck", "Swamp", 0, shruckd, 1);
     List<String> bonnyd = new ArrayList<>();
-    Character bonny = new Character("Bonny", "Freddy's Pizzeria", 0, bonnyd);
+    Character bonny = new Character("Bonny", "Freddy's Pizzeria", 0, bonnyd, 2);
     List<String> satand = new ArrayList<>();
-    Character satan = new Character("Satan", "Hell", 0, satand);
+    Character satan = new Character("Satan", "Hell", 0, satand, 3);
     List<String> jojosond = new ArrayList<>();
-    Character jojoson = new Character("Scarlet Jojoson", "Japan", 0, jojosond);
+    Character jojoson = new Character("Scarlet Jojoson", "Japan", 0, jojosond, 4);
     List<String> emptyd= new ArrayList<>();
-    Character empty = new Character("", "", 100, emptyd);
+    Character empty = new Character("", "", 100, emptyd, 100);
     Minigame minigame = new Minigame();
     ActivityMainView activityMainView;
 
@@ -139,7 +139,35 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
         else if (mg.equals("Trivia Game")){
             this.activityMainView.displayFragment(new TriviaGameFragment(this), true, "trivia game fragment");
         }
-        else {
+        else {/*
+    // TODO: Rename and change types of parameters
+    private String name;
+    private String dialogue;
+    private String affection;
+    FragmentCharacterBinding binding;
+    Listener listener;
+
+    public CharacterFragment(Listener listener, String name, String dialogue, String affection) {
+        this.listener = listener;
+        this.name = name;
+        this.dialogue = dialogue;
+        this.affection = affection;
+
+    }
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
+    }
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_character, container, false);
+    }*/
             this.activityMainView.displayFragment(new RiddleGameFragment(this), true, "riddle game fragment");
         }
     }
@@ -185,6 +213,11 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
     @Override
     public void onClickedAlone() {
         this.activityMainView.displayFragment(new AloneFragment(), true, "alone fragment");
+
+    }
+
+    @Override
+    public void onClickedScreen() {
 
     }
 }

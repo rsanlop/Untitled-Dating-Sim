@@ -22,9 +22,9 @@
             android:layout_marginBottom="91dp"
             android:text="@string/DateButton"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/zeusImage"
+            app:layout_constraintEnd_toStartOf="@+id/jojosonImage"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/zeusDialogue" />
+            app:layout_constraintTop_toBottomOf="@+id/jojosonDialogue" />
 
         <TextView
             android:id="@+id/jojoson"
@@ -52,13 +52,13 @@
             android:layout_marginTop="204dp"
             android:layout_marginEnd="52dp"
             android:layout_marginBottom="48dp"
-            android:src="@drawable/jojosonImage"
+            android:src="@drawable/jojosonimage"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
-            tools:srcCompat="@drawable/jojosonImage" />
+            tools:srcCompat="@drawable/jojosonimage" />
 
         <TextView
             android:id="@+id/jojosonDialogue"
