@@ -47,8 +47,7 @@ import edu.vassar.cmpu203.datingsim.view.RiddleGameFragment;
 import edu.vassar.cmpu203.datingsim.view.CharacterFragment;
 
 
-public class MainController extends AppCompatActivity implements IActivityMainView.Listener,  ITitleView.Listener, INameView.Listener, IMapView.Listener, IZeusView.Listener, IShruckView.Listener,
-        IJojosonView.Listener, ISatanView.Listener, IBonnyView.Listener, IRiddleGameView.Listener, IKissingGameView.Listener, ITriviaGameView.Listener, IDateView.Listener, ISelectionView.Listener,
+public class MainController extends AppCompatActivity implements IActivityMainView.Listener,  ITitleView.Listener, INameView.Listener, IMapView.Listener, IRiddleGameView.Listener, IKissingGameView.Listener, ITriviaGameView.Listener, IDateView.Listener, ISelectionView.Listener,
         ICharacterView.Listener {
     Player curPlayer = new Player("", 0);
     List<String> zeusd = new ArrayList<>();
@@ -170,7 +169,7 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
 
 
     @Override
-    public void onClickedDate() {
+    public void onClickedScreen() {
         String mg = this.minigame.getMinigame();
         if ( mg.equals("Kissing Game")){
             this.activityMainView.displayFragment(new KissingGameFragment(this), true, "kissing game fragment");}
@@ -200,26 +199,26 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
 
     @Override
     public void onClickedShruck() {
-        this.activityMainView.displayFragment(new ShruckFragment(this), true, "shruck fragment");}
+        this.activityMainView.displayFragment(new CharacterFragment(this, shruck), true, "shruck fragment");}
 
     @Override
     public void onClickedZeus() {
-        this.activityMainView.displayFragment(new ZeusFragment(this), true, "zeus fragment");}
+        this.activityMainView.displayFragment(new CharacterFragment(this, zeus), true, "zeus fragment");}
 
 
     @Override
     public void onClickedBonny() {
-        this.activityMainView.displayFragment(new BonnyFragment(this), true, "bonny fragment");}
+        this.activityMainView.displayFragment(new CharacterFragment(this, bonny), true, "bonny fragment");}
 
 
     @Override
     public void onClickedSatan() {
-        this.activityMainView.displayFragment(new SatanFragment(this), true, "satan fragment");}
+        this.activityMainView.displayFragment(new CharacterFragment(this, satan), true, "satan fragment");}
 
 
     @Override
     public void onClickedJojoson() {
-        this.activityMainView.displayFragment(new JojosonFragment(this), true, "jojoson fragment");}
+        this.activityMainView.displayFragment(new CharacterFragment(this, jojoson), true, "jojoson fragment");}
 
     @Override
     public void onClickedAlone() {
@@ -227,10 +226,6 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
 
     }
 
-    @Override
-    public void onClickedScreen() {
-
-    }
 }
 
 
