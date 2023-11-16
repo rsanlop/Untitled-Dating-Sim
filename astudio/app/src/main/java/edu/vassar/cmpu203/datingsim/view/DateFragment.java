@@ -22,6 +22,8 @@ public class DateFragment extends Fragment implements IDateView {
     FragmentDateBinding binding;
     Listener listener;
 
+    int minNumDates = 3;
+
 
     public DateFragment(Listener listener) {
         this.listener = listener;
@@ -39,8 +41,19 @@ public class DateFragment extends Fragment implements IDateView {
         // Inflate the layout for this fragment
         this.binding = FragmentDateBinding.inflate(inflater);
         this.binding.yesButton.setOnClickListener(v -> listener.onClickedYes());
+        this.binding.noButton.setVisibility(View.INVISIBLE);
+        // reference listener, check value of NUMDATES, if greater than or equal to X-number of dates
+        //    show no button
+
+        if (listener.numDates() > minNumDates){
+            showNoButton();
+        }
         this.binding.noButton.setOnClickListener(v -> listener.onClickedNo());
         return this.binding.getRoot();
 
+    }
+
+    public void showNoButton(){
+        this.binding.noButton.setVisibility(View.VISIBLE);
     }
 }

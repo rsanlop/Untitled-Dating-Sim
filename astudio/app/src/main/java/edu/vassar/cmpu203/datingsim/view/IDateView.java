@@ -6,5 +6,7 @@ public interface IDateView {
 
         void onClickedYes();
         void onClickedNo();
+
+        int numDates();
     }
 }

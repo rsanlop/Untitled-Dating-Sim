@@ -22,8 +22,6 @@ public class ActivityMainView implements IActivityMainView{
 
     Listener listener;
 
-    private boolean toggle;
-
     /**
      * Constructor method.
      * @param activity The android activity the screen is associated with.
@@ -72,4 +70,5 @@ public class ActivityMainView implements IActivityMainView{
         this.binding.glossaryButton.setVisibility(View.VISIBLE);
         this.binding.restartButton.setVisibility(View.VISIBLE);
     }
+
 }

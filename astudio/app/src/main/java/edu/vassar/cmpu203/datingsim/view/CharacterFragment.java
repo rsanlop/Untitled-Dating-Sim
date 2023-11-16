@@ -56,7 +56,6 @@ public class CharacterFragment extends Fragment implements ICharacterView{
 
     }
 
-    public String getIntro(List<String> dialogue){
-        return dialogue.get(0);
+    public String getIntro(List<String> dialogue){return dialogue.get(0);
     }
 }

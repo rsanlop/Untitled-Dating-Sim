@@ -37,7 +37,7 @@ import edu.vassar.cmpu203.datingsim.view.CharacterFragment;
 
 public class MainController extends AppCompatActivity implements IActivityMainView.Listener,  ITitleView.Listener, INameView.Listener, IMapView.Listener, IRiddleGameView.Listener, IKissingGameView.Listener, ITriviaGameView.Listener, IDateView.Listener, ISelectionView.Listener,
         ICharacterView.Listener {
-    Player curPlayer = new Player("", 0);
+    Player curPlayer = new Player("");
     List<String> zeusd = new ArrayList<>();
     Character zeus = new Character("Zeus", "Olympus", 0, zeusd, R.drawable.zeusimage);
     List<String> shruckd = new ArrayList<>();
@@ -51,19 +51,11 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
     List<String> emptyd= new ArrayList<>();
     Character empty = new Character("", "", 100, emptyd, 100);
 
-
     Minigame minigame = new Minigame();
     ActivityMainView activityMainView;
-
     boolean menuHidden;
 
-    /**
-     * This method is called by the Android framework whenever the activity is created or recreated.
-     *
-     * @param savedInstanceState If the activity is being re-initialized after
-     *     previously being shut down then this Bundle contains the data it most
-     *     recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
-     */
+    boolean minDates;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +65,7 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
         this.activityMainView.hideMenu();
         this.activityMainView.displayFragment(new TitleFragment(this), true, "title");
         this.menuHidden = true;
+        this.minDates = false;
 
         zeusd.add("You see a swan. Not just any swan though. It's Zeus! He notices you walk up to the gates and greets you" + "\n" +
                 "'Why hello there. You look... rather ravishing.' He whistles as he looks you up and down. (He likes" + "\n" +
@@ -80,14 +73,11 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
                 "and poof. He's actually kind of ripped. (as a human) 'I hope you like what YOU see.' He gives a smug" + "\n" +
                 "look");
 
-
-
         shruckd.add("You see a farty swamp the size of small house, right in front of a run-down tree house. You see the door slam open" + "\n" +
                 "and out walks a bumbling green figure. 'YOU!' he says as he points his stubby finger in your direction. He proceeds " + "\n" +
                 "to stomp towards you. 'WHAT ARE YOU DOING IN MY BLOODY SWAMP!' he bellows, as pieces of his stinky dinner fly out his" + "\n" +
                 "mouth and onto your face. 'DON'T TELL ME YOU WANT TO FART IN IT. BECAUSE LET ME TELL YOU. THE ONLY ONE WHO CAN FART IN" + "\n" +
                 "MY BLOODY SWAMP IS MY BLOODY ARSE!'" );
-
 
         bonnyd.add("You appear at an abandoned Pizzeria, that eerily feels familiar. As you pass through the rickety doors you sense" + "\n" +
                 "that you are not alone. There's a stage, with one purple character, that seems to be where the old mascots would perform. " + "\n" +
@@ -95,8 +85,6 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
                 "As it holds out it's hands it says 'Pizza?' in a slow robotic voice. You look at the hands and there is no pizza :(. " + "\n" +
                 "Afraid of what will happen if you refuse, you take the fake pizza and pretend to eat it. After seeing you play along " + "\n" +
                 "the purple animatronic looks and you and slowly says 'Bonny'." );
-
-
 
         satand.add("Immediately you feel the immense heat radiating all around you. There's no doubt you are in Hell. Satan stands before you in all her " + "\n" +
                 "sultry glory. She seductively catwalks over to you. 'Greetings, or should I say Hell-o.' She bats her eyes and tucks her hair behind her " + "\n" +
@@ -109,8 +97,6 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
                 "hold. Much to your dismay you cannot escape. Luckily a car passes and lights up your face long enough for the black leather suit wearing assailant to realize you aren't a threat. " + "\n" +
                 "The red headed beauty releases you quickly and takes a step back. She apologizes as you dust yourself off. 'さようなら' she whispers as she leaps upwards" + "\n" +
                 "and disappears in the Tokyo skyline." );
-
-
     }
 
     @Override
@@ -121,10 +107,8 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
         }
         else{
             this.activityMainView.showMenu();
-            menuHidden = false;
-        }
+            menuHidden = false;}}
 
-    }
 
     @Override
     public void onNewGameClicked() {
@@ -139,6 +123,7 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
         this.curPlayer.setName(name);
         this.activityMainView.displayFragment(new MapFragment(this), true, "map fragment");}
 
+    // ----------------------------------------------------------------------------------------------------------------
     @Override
     public void onClickedSwamp() {
         this.activityMainView.displayFragment(new CharacterFragment(this, shruck), true, "map fragment");}
@@ -155,26 +140,27 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
     public void onClickedJapan() {
         this.activityMainView.displayFragment(new CharacterFragment(this, jojoson), true, "map fragment");}
 
-
     @Override
     public void onClickedScreen() {
         String mg = this.minigame.getMinigame();
+        curPlayer.incNumDates();
         if ( mg.equals("Kissing Game")){
             this.activityMainView.displayFragment(new KissingGameFragment(this), true, "kissing game fragment");}
 
         else if (mg.equals("Trivia Game")){
-            this.activityMainView.displayFragment(new TriviaGameFragment(this), true, "trivia game fragment");
-        }
+            this.activityMainView.displayFragment(new TriviaGameFragment(this), true, "trivia game fragment");}
         else {
-            this.activityMainView.displayFragment(new RiddleGameFragment(this), true, "riddle game fragment");
-        }
+            this.activityMainView.displayFragment(new RiddleGameFragment(this), true, "riddle game fragment");}
     }
-
     @Override
     public void onClickedNext() {
-        this.activityMainView.displayFragment(new DateFragment(this), true, "date fragment");
-    }
+        this.activityMainView.displayFragment(new DateFragment(this), true, "date fragment");}
 
+    // ----------------------------------------------------------------------------------------------------------------
+
+    public int numDates(){
+        return curPlayer.getNumDates();
+    }
     @Override
     public void onClickedYes() {
         this.activityMainView.displayFragment(new MapFragment(this), true, "map fragment");
@@ -183,36 +169,30 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
     @Override
     public void onClickedNo() {
         this.activityMainView.displayFragment(new SelectionFragment(this), true, "map fragment");
+
     }
+
+    // ----------------------------------------------------------------------------------------------------------------
+
 
     @Override
     public void onClickedShruck() {
         this.activityMainView.displayFragment(new CharacterFragment(this, shruck), true, "shruck fragment");}
-
     @Override
     public void onClickedZeus() {
         this.activityMainView.displayFragment(new CharacterFragment(this, zeus), true, "zeus fragment");}
-
-
     @Override
     public void onClickedBonny() {
         this.activityMainView.displayFragment(new CharacterFragment(this, bonny), true, "bonny fragment");}
-
-
     @Override
     public void onClickedSatan() {
         this.activityMainView.displayFragment(new CharacterFragment(this, satan), true, "satan fragment");}
-
-
     @Override
     public void onClickedJojoson() {
         this.activityMainView.displayFragment(new CharacterFragment(this, jojoson), true, "jojoson fragment");}
-
     @Override
     public void onClickedAlone() {
-        this.activityMainView.displayFragment(new AloneFragment(), true, "alone fragment");
-
-    }
+        this.activityMainView.displayFragment(new AloneFragment(), true, "alone fragment");}
 
 }
 

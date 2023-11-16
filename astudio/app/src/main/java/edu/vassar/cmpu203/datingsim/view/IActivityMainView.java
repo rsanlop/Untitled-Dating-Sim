@@ -13,7 +13,6 @@ public interface IActivityMainView {
 
         void onSettingsClick();
 
-
     }
 
     View getRootView();

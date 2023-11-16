@@ -9,16 +9,25 @@ package edu.vassar.cmpu203.datingsim.model;
 
 public class Player{
 
-    String name;
+    private String name;
 
-    int numDates;
-    public Player(String name, int numDates){
+    private int numDates = 0;
+    public Player(String name){
         this.name = name;
-        this.numDates = numDates;
     }
 
     public void setName(String name){
         this.name = name;
     }
 
-        }
+    public String getName() {
+        return name;
+    }
+
+    public int getNumDates(){
+        return numDates;
+    }
+
+    public void incNumDates(){numDates++;}
+
+}
