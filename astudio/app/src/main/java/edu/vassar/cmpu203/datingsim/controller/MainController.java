@@ -39,17 +39,17 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
         ICharacterView.Listener, IEndingView.Listener {
     Player curPlayer = new Player("");
     List<String> zeusd = new ArrayList<>();
-    Character zeus = new Character("Zeus", "Olympus", 0, zeusd, R.drawable.zeusimage, 0);
+    Character zeus = new Character("Zeus", 0, zeusd, R.drawable.zeusimage, 0);
     List<String> shruckd = new ArrayList<>();
-    Character shruck = new Character("Shruck", "Swamp", 0, shruckd, R.drawable.shruckimage, 0);
+    Character shruck = new Character("Shruck", 0, shruckd, R.drawable.shruckimage, 0);
     List<String> bonnyd = new ArrayList<>();
-    Character bonny = new Character("Bonny", "Freddy's Pizzeria", 0, bonnyd, R.drawable.bonnyimage, 0);
+    Character bonny = new Character("Bonny", 0, bonnyd, R.drawable.bonnyimage, 0);
     List<String> satand = new ArrayList<>();
-    Character satan = new Character("Satan", "Hell", 0, satand, R.drawable.satanimage, 0);
+    Character satan = new Character("Satan", 0, satand, R.drawable.satanimage, 0);
     List<String> jojosond = new ArrayList<>();
-    Character jojoson = new Character("Scarlet Jojoson", "Japan", 0, jojosond, R.drawable.jojosonimage, 0);
+    Character jojoson = new Character("Scarlet Jojoson", 0, jojosond, R.drawable.jojosonimage, 0);
     List<String> aloned= new ArrayList<>();
-    Character alone = new Character("No one", "", 100, aloned, R.drawable.aloneimage, 0);
+    Character alone = new Character("No one", 100, aloned, R.drawable.aloneimage, 0);
 
     Minigame minigame = new Minigame();
     ActivityMainView activityMainView;
@@ -173,10 +173,6 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
         this.activityMainView.displayFragment(new SelectionFragment(this), true, "map fragment");
 
     }
-
-    // ----------------------------------------------------------------------------------------------------------------
-
-
 
     // --------------------------------------------------------------------------------------------------------
 

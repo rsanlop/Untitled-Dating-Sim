@@ -5,21 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12e95267-be6c-4cd2-be0d-b69a486467ae" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/astudio/app/src/main/java/edu/vassar/cmpu203/datingsim/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/java/edu/vassar/cmpu203/datingsim/controller/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/astudio/app/src/main/java/edu/vassar/cmpu203/datingsim/model/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/java/edu/vassar/cmpu203/datingsim/model/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/java/edu/vassar/cmpu203/datingsim/view/CharacterFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/java/edu/vassar/cmpu203/datingsim/view/CharacterFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/bonnyImage.webp" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/bonnyimage.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/jojosonImage.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/jojosonimage.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/satanImage.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/satanimage.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/shruckImage.png" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/shruckimage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/zeusImage.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/res/drawable/zeusimage.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/res/layout/fragment_bonny.xml" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/res/layout/fragment_bonny.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/res/layout/fragment_character.xml" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/res/layout/fragment_character.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/res/layout/fragment_jojoson.xml" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/res/layout/fragment_jojoson.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/res/layout/fragment_satan.xml" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/res/layout/fragment_satan.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/res/layout/fragment_shruck.xml" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/res/layout/fragment_shruck.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/res/layout/fragment_zeus.xml" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/res/layout/fragment_zeus.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/java/edu/vassar/cmpu203/datingsim/view/IAddNameView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/java/edu/vassar/cmpu203/datingsim/view/ITitleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/java/edu/vassar/cmpu203/datingsim/view/ITitleView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/astudio/app/src/test/java/edu/vassar/cmpu203/datingsim/CharacterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/test/java/edu/vassar/cmpu203/datingsim/CharacterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/intellij/doc/design.md" beforeDir="false" afterPath="$PROJECT_DIR$/intellij/doc/design.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intellij/doc/iteration-plan.md" beforeDir="false" afterPath="$PROJECT_DIR$/intellij/doc/iteration-plan.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +59,7 @@
       <workItem from="1699971450733" duration="1257000" />
       <workItem from="1699983959363" duration="186000" />
       <workItem from="1700249872441" duration="486000" />
+      <workItem from="1700254141828" duration="4041000" />
     </task>
     <servers />
   </component>

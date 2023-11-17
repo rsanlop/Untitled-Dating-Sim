@@ -11,15 +11,15 @@ actor "User" as user
     }
     class Map{
     Locations
-    Character List
+    Character Buttons
     }
     
     class Character{
     name
     affection points 
-    map location
     dialogue
     ImageID
+    NumDates
     }
     
     class Minigame{
@@ -32,14 +32,7 @@ actor "User" as user
     game stats
     dialogue
     }
-    
-    class ImageIds{
-    | 0 |  Zeus  |
-    | 1 |  Shruck  |
-    | 2 |  Bonny  |
-    | 3 |  Satan  |
-    | 4 |  Jojoson  |
-    }
+   
     
     Player -- Character : interacts with \t\t
     Player -- Minigame : plays the game
@@ -59,8 +52,8 @@ actor "Player" as player
 participant ": UI" as ui
 participant ": Game System" as game
 participant ": Map" as map
-participant ": CharacterList" as character
-participant ": MinigameList" as minigame
+participant ": Character" as character
+participant ": Minigame" as minigame
 participant ": Ending screens" as ending
 
 
@@ -88,31 +81,20 @@ game -> ui : displayDialogue()
 
 class Character{
     name : String
-    location : String
     affection : int 
     dialogue : List<String>
-   
+    imageId : int
+    numDates : int
+    
+    public String getName()
+    public String getAffection()
+    public int setAffection(int affection)
+    public int getImageId()
+    public List<String> getDialogue()
+    public int getNumDates()
 }
-
-class CharacterMap{
-    maplist : List<String>
-    --
-    public void addToMap(String location)
-    public void getMap()
-} 
 
 class Controller {
-    public void controllerGetCharacterMap()
-    public void controllerGetCharacter(String location)
-    public void controllerGetMinigame()
-    public void controllerGetFinalCharacter(String decision)
-}
-
-class Endings {
-    public void getEnding(int affection)
-}
-
-class Game{
     zeusd : List<String>
     shruckd : List<String>
     bonnyd : List<String>
@@ -125,12 +107,32 @@ class Game{
     satan : Character
     jojoson : Character
     
-    --
-    public void makeCharacterMap()
-    public void getCharacter(String location)
-    public void makeMinigame()
-    public void getFinalCharacter(String name)
+    public void onSettingsClick() 
+    public void onNewGameClicked() 
+    public void onContinueClicked()
+    public void onAddedName(String name, INameView view)
+    public void onClickedSwamp()
+    public void onClickedOlympus()
+    public void onClickedFreds()
+    public void onClickedHell()
+    public void onClickedJapan()
+    public void onClickedScreen()
+    public void onClickedNext()
+    public int numDates()
+    public void onClickedYes()
+    public void onClickedNo()
+    public void onFinalClickedShruck()
+    public void onFinalClickedZeus()
+    public void onFinalClickedBonny()
+    public void onFinalClickedSatan()
+    public void onFinalClickedJojoson()
+    public void onClickedAlone()
+    public void onClickedDone()
     
+}
+
+class Endings {
+    public void getEnding(int affection)
 }
 
 class Minigame{
@@ -142,21 +144,110 @@ class Minigame{
 
 class Player{
     name : String 
+    numDates : int
     --
-    public String getName(String name)
+    public String getName()
+    public void setName(String name)
+    public int getNumDates()
+    public void setNumDates()
 }
 
-class UserInterface{
-    public static void main(String [] args)
-
+class IActivityMainView{
+    interface Listener 
+    void onSettingsClick()
+    View getRootView()
+    void displayFragment()
+    void hideMenu()
+    void showMenu()
 }
 
-UserInterface .> Controller
+
+
+class ICharacterView{
+     interface Listener: 
+    void onClickedScreen()
+}
+
+class IDateView{
+      interface Listener :
+        void onClickedYes()
+        void onClickedNo()
+        int numDates()
+    
+}
+
+class IEndingView {
+    interface Listener :
+        void onClickedDone()
+    
+}
+
+class IKissingGameView {
+    interface Listener:
+        void onClickedNext()
+}
+
+class IMapView {
+    interface Listener:
+        void onClickedSwamp()
+        void onClickedOlympus()
+        void onClickedFreds()
+        void onClickedHell()
+        void onClickedJapan()
+}    
+
+class INameView {
+    interface Listener:
+        void onAddedName(String name, INameView view)
+    
+}    
+
+class IRiddleGameView {
+    interface Listener:
+        void onClickedNext()
+    
+}
+
+class ISelectionView {
+    interface Listener:
+        void onFinalClickedShruck()
+        void onFinalClickedZeus()
+        void onFinalClickedBonny()
+        void onFinalClickedSatan()
+        void onFinalClickedJojoson()
+        void  onClickedAlone()
+    
+}
+
+class ITitleView {
+    interface Listener:
+        void onNewGameClicked()
+        void onContinueClicked()
+    
+}
+
+class ITriviaGameView {
+    interface Listener:
+        void onClickedNext()
+}
+ 
+
 Controller .> Player
-Controller .> Game
-Game .> Character
-Game .> CharacterMap
-Game .> Endings 
-Game .> Minigame
+Controller .> Character
+Controller .> Minigame
+Controller .> Endings
+Controller .> IActivityMainView
+Controller .> ICharacterView
+Controller .> IDateView
+Controller .> IEndingView
+Controller .> IKissingGameView
+Controller .> IMapView
+Controller .> INameView
+Controller .> IRiddleView
+Controller .> ISelectionView
+Controller .> ITitleView
+Controller .> ITriviaGameView
+
+
 
 @enduml

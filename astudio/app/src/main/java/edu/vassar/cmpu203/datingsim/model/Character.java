@@ -22,9 +22,8 @@ public class Character {
 
     public Character(){}
 
-    public Character(String name, String location, int affection, List<String> dialogue, int imageId, int numDates){
+    public Character(String name, int affection, List<String> dialogue, int imageId, int numDates){
         this.name = name;
-        this.location = location;
         this.affection = affection;
         this.dialogue = dialogue;
         this.imageId = imageId;
@@ -32,10 +31,6 @@ public class Character {
     }
     public String getName(){
         return name;
-    }
-
-    public String getLocation(){
-        return location;
     }
     public String getAffection(){
         return "" + affection;

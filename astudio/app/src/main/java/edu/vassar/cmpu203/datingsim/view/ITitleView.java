@@ -6,12 +6,5 @@ public interface ITitleView {
     interface Listener{
         void onNewGameClicked();
         void onContinueClicked();
-
     }
-
-
-
-
-
-
 }
