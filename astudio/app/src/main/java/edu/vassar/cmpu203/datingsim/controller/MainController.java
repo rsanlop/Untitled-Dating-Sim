@@ -11,13 +11,13 @@ import edu.vassar.cmpu203.datingsim.R;
 import edu.vassar.cmpu203.datingsim.model.Player;
 import edu.vassar.cmpu203.datingsim.model.Minigame;
 import edu.vassar.cmpu203.datingsim.model.Character;
-/*import edu.vassar.cmpu203.datingsim.model.Game;*/
 import edu.vassar.cmpu203.datingsim.view.ActivityMainView;
-import edu.vassar.cmpu203.datingsim.view.AloneFragment;
 import edu.vassar.cmpu203.datingsim.view.DateFragment;
+import edu.vassar.cmpu203.datingsim.view.EndingFragment;
 import edu.vassar.cmpu203.datingsim.view.IActivityMainView;
 import edu.vassar.cmpu203.datingsim.view.ICharacterView;
 import edu.vassar.cmpu203.datingsim.view.IDateView;
+import edu.vassar.cmpu203.datingsim.view.IEndingView;
 import edu.vassar.cmpu203.datingsim.view.IKissingGameView;
 import edu.vassar.cmpu203.datingsim.view.IMapView;
 import edu.vassar.cmpu203.datingsim.view.INameView;
@@ -36,26 +36,26 @@ import edu.vassar.cmpu203.datingsim.view.CharacterFragment;
 
 
 public class MainController extends AppCompatActivity implements IActivityMainView.Listener,  ITitleView.Listener, INameView.Listener, IMapView.Listener, IRiddleGameView.Listener, IKissingGameView.Listener, ITriviaGameView.Listener, IDateView.Listener, ISelectionView.Listener,
-        ICharacterView.Listener {
+        ICharacterView.Listener, IEndingView.Listener {
     Player curPlayer = new Player("");
     List<String> zeusd = new ArrayList<>();
-    Character zeus = new Character("Zeus", "Olympus", 0, zeusd, R.drawable.zeusimage);
+    Character zeus = new Character("Zeus", "Olympus", 0, zeusd, R.drawable.zeusimage, 0);
     List<String> shruckd = new ArrayList<>();
-    Character shruck = new Character("Shruck", "Swamp", 0, shruckd, R.drawable.shruckimage);
+    Character shruck = new Character("Shruck", "Swamp", 0, shruckd, R.drawable.shruckimage, 0);
     List<String> bonnyd = new ArrayList<>();
-    Character bonny = new Character("Bonny", "Freddy's Pizzeria", 0, bonnyd, R.drawable.bonnyimage);
+    Character bonny = new Character("Bonny", "Freddy's Pizzeria", 0, bonnyd, R.drawable.bonnyimage, 0);
     List<String> satand = new ArrayList<>();
-    Character satan = new Character("Satan", "Hell", 0, satand, R.drawable.satanimage);
+    Character satan = new Character("Satan", "Hell", 0, satand, R.drawable.satanimage, 0);
     List<String> jojosond = new ArrayList<>();
-    Character jojoson = new Character("Scarlet Jojoson", "Japan", 0, jojosond, R.drawable.jojosonimage);
-    List<String> emptyd= new ArrayList<>();
-    Character empty = new Character("", "", 100, emptyd, 100);
+    Character jojoson = new Character("Scarlet Jojoson", "Japan", 0, jojosond, R.drawable.jojosonimage, 0);
+    List<String> aloned= new ArrayList<>();
+    Character alone = new Character("No one", "", 100, aloned, R.drawable.aloneimage, 0);
 
     Minigame minigame = new Minigame();
     ActivityMainView activityMainView;
     boolean menuHidden;
 
-    boolean minDates;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,7 +65,7 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
         this.activityMainView.hideMenu();
         this.activityMainView.displayFragment(new TitleFragment(this), true, "title");
         this.menuHidden = true;
-        this.minDates = false;
+
 
         zeusd.add("You see a swan. Not just any swan though. It's Zeus! He notices you walk up to the gates and greets you" + "\n" +
                 "'Why hello there. You look... rather ravishing.' He whistles as he looks you up and down. (He likes" + "\n" +
@@ -97,6 +97,8 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
                 "hold. Much to your dismay you cannot escape. Luckily a car passes and lights up your face long enough for the black leather suit wearing assailant to realize you aren't a threat. " + "\n" +
                 "The red headed beauty releases you quickly and takes a step back. She apologizes as you dust yourself off. 'さようなら' she whispers as she leaps upwards" + "\n" +
                 "and disappears in the Tokyo skyline." );
+        aloned.add("Phew, glad this is the case. Who even needs people? " +
+                "Am I right?");
     }
 
     @Override
@@ -143,7 +145,7 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
     @Override
     public void onClickedScreen() {
         String mg = this.minigame.getMinigame();
-        curPlayer.incNumDates();
+        curPlayer.setNumDates();
         if ( mg.equals("Kissing Game")){
             this.activityMainView.displayFragment(new KissingGameFragment(this), true, "kissing game fragment");}
 
@@ -175,26 +177,33 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
     // ----------------------------------------------------------------------------------------------------------------
 
 
+
+    // --------------------------------------------------------------------------------------------------------
+
     @Override
-    public void onClickedShruck() {
-        this.activityMainView.displayFragment(new CharacterFragment(this, shruck), true, "shruck fragment");}
+    public void onFinalClickedShruck() {
+        this.activityMainView.displayFragment(new EndingFragment(this, shruck), true, "shruck fragment");}
     @Override
-    public void onClickedZeus() {
-        this.activityMainView.displayFragment(new CharacterFragment(this, zeus), true, "zeus fragment");}
+    public void onFinalClickedZeus() {
+        this.activityMainView.displayFragment(new EndingFragment(this, zeus), true, "zeus fragment");}
     @Override
-    public void onClickedBonny() {
-        this.activityMainView.displayFragment(new CharacterFragment(this, bonny), true, "bonny fragment");}
+    public void onFinalClickedBonny() {
+        this.activityMainView.displayFragment(new EndingFragment(this, bonny), true, "bonny fragment");}
     @Override
-    public void onClickedSatan() {
-        this.activityMainView.displayFragment(new CharacterFragment(this, satan), true, "satan fragment");}
+    public void onFinalClickedSatan() {
+        this.activityMainView.displayFragment(new EndingFragment(this, satan), true, "satan fragment");}
     @Override
-    public void onClickedJojoson() {
-        this.activityMainView.displayFragment(new CharacterFragment(this, jojoson), true, "jojoson fragment");}
+    public void onFinalClickedJojoson() {
+        this.activityMainView.displayFragment(new EndingFragment(this, jojoson), true, "jojoson fragment");}
     @Override
     public void onClickedAlone() {
-        this.activityMainView.displayFragment(new AloneFragment(), true, "alone fragment");}
+        this.activityMainView.displayFragment(new EndingFragment(this, alone), true, "alone fragment");}
+    @Override
+    public void onClickedDone() {
+        this.activityMainView.displayFragment(new TitleFragment(this), true, "title fragment");}
 
-}
+    }
+
 
 
 

@@ -10,12 +10,8 @@ import android.view.ViewGroup;
 
 import edu.vassar.cmpu203.datingsim.R;
 import edu.vassar.cmpu203.datingsim.databinding.FragmentTriviaGameBinding;
-import edu.vassar.cmpu203.datingsim.databinding.FragmentZeusBinding;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link TriviaGameFragment#newInstance} factory method to
- * create an instance of this fragment.
  */
 public class TriviaGameFragment extends Fragment implements ITriviaGameView {
 

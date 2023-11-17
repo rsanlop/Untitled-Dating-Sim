@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 
 import edu.vassar.cmpu203.datingsim.R;
 import edu.vassar.cmpu203.datingsim.databinding.FragmentRiddleGameBinding;
-import edu.vassar.cmpu203.datingsim.databinding.FragmentTriviaGameBinding;
 
 /**
  * A simple {@link Fragment} subclass.

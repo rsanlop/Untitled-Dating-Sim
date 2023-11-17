@@ -4,15 +4,15 @@ public interface ISelectionView {
 
     interface Listener {
 
-        void onClickedShruck();
+        void onFinalClickedShruck();
 
-        void onClickedZeus();
+        void onFinalClickedZeus();
 
-        void onClickedBonny();
+        void onFinalClickedBonny();
 
-        void onClickedSatan();
+        void onFinalClickedSatan();
 
-        void onClickedJojoson();
+        void onFinalClickedJojoson();
 
         void  onClickedAlone();
 

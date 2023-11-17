@@ -13,16 +13,13 @@ import edu.vassar.cmpu203.datingsim.databinding.FragmentDateBinding;
 import edu.vassar.cmpu203.datingsim.databinding.FragmentKissingGameBinding;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link DateFragment#newInstance} factory method to
- * create an instance of this fragment.
  */
 public class DateFragment extends Fragment implements IDateView {
 
     FragmentDateBinding binding;
     Listener listener;
 
-    int minNumDates = 3;
+    int minNumDates = 2;
 
 
     public DateFragment(Listener listener) {
