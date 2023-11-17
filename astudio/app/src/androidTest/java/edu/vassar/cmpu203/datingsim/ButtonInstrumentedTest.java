@@ -15,6 +15,7 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
+import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -53,22 +54,151 @@ public class ButtonInstrumentedTest {
 
     }
 
-   /* @org.junit.Test
+    @org.junit.Test
     public void testPlayButton() {
-        // pressed new game button. boom.
+        // pressed play button. boom.
+        Espresso.onView(ViewMatchers.withId(R.id.startButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.playButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.swampButton)).check(ViewAssertions.matches(isDisplayed()));
 
-    }*/
+    }
 
     @org.junit.Test
     public void testSwampButton() {
-        // pressed new game button. boom.
+        // pressed swamp button. boom.
+        // same logic is applied in the other buttons on this screen so if this one works the rest work too
         Espresso.onView(ViewMatchers.withId(R.id.continueButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).check(ViewAssertions.matches(isDisplayed()));
+    }
+
+    @org.junit.Test
+    public void testCharacterScreen() {
+        // pressed character screen. boom.
+        Espresso.onView(ViewMatchers.withId(R.id.continueButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
+        Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
+                ViewMatchers.withId(R.id.kissingNextButton));
+    }
+
+    @org.junit.Test
+    public void testMiniGameNextButton() {
+        // pressed nextButton. boom.
+        // same logic is applied in the other minigames' screen buttons so if this one works the rest work too
+        Espresso.onView(ViewMatchers.withId(R.id.continueButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
+                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.yesButton)).check(ViewAssertions.matches(isDisplayed()));
+    }
+
+
+    @org.junit.Test
+    public void testYesButton() {
+        // pressed yes button. boom.
+        Espresso.onView(ViewMatchers.withId(R.id.continueButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
+                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.yesButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.swampButton)).check(ViewAssertions.matches(isDisplayed()));
 
     }
 
+
+    @org.junit.Test
+    public void testYesButton2() {
+        // pressed yes button x2. boom.
+        // This one is to test if after clicking yes twice (and going on the third date)
+        // the no button appears
+        Espresso.onView(ViewMatchers.withId(R.id.continueButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
+                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.yesButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
+                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.yesButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
+                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.noButton)).check(ViewAssertions.matches(isDisplayed()));
+    }
+
+    @org.junit.Test
+    public void testNoButton() {
+        // pressed no button. boom.
+        Espresso.onView(ViewMatchers.withId(R.id.continueButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
+                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.yesButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
+                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.yesButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
+                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.noButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.jojosonButton)).check(ViewAssertions.matches(isDisplayed()));
+    }
+    @org.junit.Test
+    public void testjojosonButton() {
+        // pressed jojoson button. boom.
+        // same logic is applied in the other buttons on this screen so if this one works the rest work too
+        Espresso.onView(ViewMatchers.withId(R.id.continueButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
+                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.yesButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
+                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.yesButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
+                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.noButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.jojosonButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.doneButton)).check(ViewAssertions.matches(isDisplayed()));
+    }
+
+    @org.junit.Test
+    public void testdoneButton() {
+        // pressed done button. boom.
+        Espresso.onView(ViewMatchers.withId(R.id.continueButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
+                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.yesButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
+                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.yesButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
+                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.noButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.jojosonButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.doneButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.startButton)).check(ViewAssertions.matches(isDisplayed()));
+    }
 
 }
