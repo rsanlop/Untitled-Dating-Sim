@@ -53,12 +53,22 @@ public class ButtonInstrumentedTest {
 
     }
 
-    @org.junit.Test
+   /* @org.junit.Test
     public void testPlayButton() {
         // pressed new game button. boom.
         Espresso.onView(ViewMatchers.withId(R.id.playButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.swampButton)).check(ViewAssertions.matches(isDisplayed()));
 
+    }*/
+
+    @org.junit.Test
+    public void testSwampButton() {
+        // pressed new game button. boom.
+        Espresso.onView(ViewMatchers.withId(R.id.continueButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).check(ViewAssertions.matches(isDisplayed()));
+
     }
+
 
 }
