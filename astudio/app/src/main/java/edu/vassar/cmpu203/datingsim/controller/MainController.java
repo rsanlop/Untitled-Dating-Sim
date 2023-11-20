@@ -1,6 +1,7 @@
 package edu.vassar.cmpu203.datingsim.controller;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 
@@ -54,6 +55,8 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
     Minigame minigame = new Minigame();
     ActivityMainView activityMainView;
     boolean menuHidden;
+    Character prevCharacter;
+;
 
 
     @Override
@@ -111,6 +114,10 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
             this.activityMainView.showMenu();
             menuHidden = false;}}
 
+    @Override
+    public void onRestartClick() {
+        this.activityMainView.displayFragment(new TitleFragment(this), false, "title fragment");}
+
 
     @Override
     public void onNewGameClicked() {
@@ -128,25 +135,36 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
     // ----------------------------------------------------------------------------------------------------------------
     @Override
     public void onClickedSwamp() {
-        this.activityMainView.displayFragment(new CharacterFragment(this, shruck), true, "map fragment");}
+
+        this.activityMainView.displayFragment(new CharacterFragment(this, shruck), true, "map fragment");
+        prevCharacter = shruck;
+    }
     @Override
     public void onClickedOlympus() {
-        this.activityMainView.displayFragment(new CharacterFragment(this, zeus), true, "map fragment");}
+        this.activityMainView.displayFragment(new CharacterFragment(this, zeus), true, "map fragment");
+    prevCharacter = zeus;
+    }
     @Override
     public void onClickedFreds() {
-        this.activityMainView.displayFragment(new CharacterFragment(this, bonny), true, "map fragment");}
+        this.activityMainView.displayFragment(new CharacterFragment(this, bonny), true, "map fragment");
+        prevCharacter = bonny;
+    }
     @Override
     public void onClickedHell() {
-        this.activityMainView.displayFragment(new CharacterFragment(this, satan), true, "map fragment");}
+        this.activityMainView.displayFragment(new CharacterFragment(this, satan), true, "map fragment");
+        prevCharacter = satan;
+    }
     @Override
     public void onClickedJapan() {
-        this.activityMainView.displayFragment(new CharacterFragment(this, jojoson), true, "map fragment");}
+        this.activityMainView.displayFragment(new CharacterFragment(this, jojoson), true, "map fragment");
+        prevCharacter = jojoson;
+    }
 
     @Override
     public void onClickedScreen() {
         String mg = this.minigame.getMinigame();
         curPlayer.setNumDates();
-        if ( mg.equals("Kissing Game")){
+        if (mg.equals("Kissing Game")){
             this.activityMainView.displayFragment(new KissingGameFragment(this), true, "kissing game fragment");}
 
         else if (mg.equals("Trivia Game")){
@@ -156,8 +174,9 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
     }
     @Override
     public void onClickedNext() {
-        this.activityMainView.displayFragment(new DateFragment(this), true, "date fragment");}
-
+        this.activityMainView.displayFragment(new DateFragment(this), true, "date fragment");
+        this.prevCharacter.incAffection();
+    }
     // ----------------------------------------------------------------------------------------------------------------
 
     public int numDates(){
@@ -195,7 +214,7 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
     public void onClickedAlone() {
         this.activityMainView.displayFragment(new EndingFragment(this, alone), true, "alone fragment");}
     @Override
-    public void onClickedDone() {
+                    public void onClickedDone() {
         this.activityMainView.displayFragment(new TitleFragment(this), true, "title fragment");}
 
     }

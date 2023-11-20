@@ -12,6 +12,7 @@ public interface IActivityMainView {
     interface Listener {
 
         void onSettingsClick();
+        void onRestartClick();
 
     }
 

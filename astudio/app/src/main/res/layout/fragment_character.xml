@@ -17,7 +17,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="596dp"
             android:layout_marginTop="202dp"
-            android:layout_marginEnd="77dp"
             android:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -66,5 +65,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/characterAffection" />
+
+        <TextView
+            android:id="@+id/affection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="202dp"
+            android:layout_marginBottom="7dp"
+            android:text="@string/affection"
+            app:layout_constraintBottom_toTopOf="@+id/characterImage"
+            app:layout_constraintStart_toEndOf="@+id/characterDialogue"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

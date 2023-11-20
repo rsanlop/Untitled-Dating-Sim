@@ -13,9 +13,7 @@ import edu.vassar.cmpu203.datingsim.databinding.FragmentMapBinding;
 import edu.vassar.cmpu203.datingsim.databinding.FragmentTitleBinding;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link MapFragment#newInstance} factory method to
- * create an instance of this fragment.
+ *
  */
 public class MapFragment extends Fragment implements IMapView {
 

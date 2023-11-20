@@ -31,6 +31,7 @@ public class ActivityMainView implements IActivityMainView{
         this.binding = ActivityMainBinding.inflate(activity.getLayoutInflater());
         this.listener = listener;
         this.binding.settingsButton.setOnClickListener(v -> listener.onSettingsClick());
+        this.binding.restartButton.setOnClickListener(v ->  listener.onRestartClick());
     }
 
     /**

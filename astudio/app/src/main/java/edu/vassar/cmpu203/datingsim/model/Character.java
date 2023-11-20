@@ -35,8 +35,8 @@ public class Character {
     public String getAffection(){
         return "" + affection;
     }
-    public int setAffection(int affection){
-        this.affection = affection;
+    public int incAffection(){
+        this.affection += 2;
         return affection;
     }
     public int getImageId(){
