@@ -12,10 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.List;
+import java.util.Random;
 
 import edu.vassar.cmpu203.datingsim.R;
 import edu.vassar.cmpu203.datingsim.databinding.FragmentCharacterBinding;
 import edu.vassar.cmpu203.datingsim.model.Character;
+import edu.vassar.cmpu203.datingsim.model.Player;
 
 /**
  *
@@ -56,6 +58,11 @@ public class CharacterFragment extends Fragment implements ICharacterView{
 
     }
 
-    public String getIntro(List<String> dialogue){return dialogue.get(0);
+    public String getIntro(List<String> dialogue) {
+        if (character.getNumDates() == 0) {
+            return dialogue.get(0);
+        }
+        Random rand = new Random();
+      return dialogue.get(rand.nextInt(dialogue.size() - 1) + 1);
     }
 }

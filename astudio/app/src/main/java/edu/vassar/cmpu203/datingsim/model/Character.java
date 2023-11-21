@@ -13,7 +13,6 @@ import java.util.List;
 
 public class Character {
     private String name;
-    private String location;
     private int affection;
     private List<String> dialogue;
     private int imageId;
@@ -48,4 +47,8 @@ public class Character {
     }
 
     public int getNumDates(){return numDates;}
+    public int incNumDates(){
+        numDates++;
+        return numDates;
+    }
 }

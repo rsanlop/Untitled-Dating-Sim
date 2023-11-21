@@ -1,15 +1,10 @@
 package edu.vassar.cmpu203.datingsim.controller;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import edu.vassar.cmpu203.datingsim.R;
-import edu.vassar.cmpu203.datingsim.model.CharacterMap;
+import edu.vassar.cmpu203.datingsim.model.Characters;
 import edu.vassar.cmpu203.datingsim.model.Player;
 import edu.vassar.cmpu203.datingsim.model.Minigame;
 import edu.vassar.cmpu203.datingsim.model.Character;
@@ -43,9 +38,9 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
     Minigame minigame = new Minigame();
     ActivityMainView activityMainView;
     boolean menuHidden;
-    CharacterMap listoCharacters;
+    Characters characters = new Characters();
     Character prevCharacter;
-;
+
 
 
     @Override
@@ -91,34 +86,40 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
     // ----------------------------------------------------------------------------------------------------------------
     @Override
     public void onClickedSwamp() {
-        this.activityMainView.displayFragment(new CharacterFragment(this, listoCharacters.shruck), true, "map fragment");
-        prevCharacter = listoCharacters.shruck;
+        prevCharacter = characters.shruck;
+        this.activityMainView.displayFragment(new CharacterFragment(this, characters.shruck), true, "map fragment");
+
     }
     @Override
     public void onClickedOlympus() {
-        this.activityMainView.displayFragment(new CharacterFragment(this, listoCharacters.zeus), true, "map fragment");
-    prevCharacter = listoCharacters.zeus;
+        prevCharacter = characters.getZeus();
+        this.activityMainView.displayFragment(new CharacterFragment(this, characters.getZeus()), true, "map fragment");
+
     }
     @Override
     public void onClickedFreds() {
-        this.activityMainView.displayFragment(new CharacterFragment(this, listoCharacters.bonny), true, "map fragment");
-        prevCharacter = listoCharacters.bonny;
+        prevCharacter = characters.bonny;
+        this.activityMainView.displayFragment(new CharacterFragment(this, characters.bonny), true, "map fragment");
+
     }
     @Override
     public void onClickedHell() {
-        this.activityMainView.displayFragment(new CharacterFragment(this, listoCharacters.satan), true, "map fragment");
-        prevCharacter = listoCharacters.satan;
+        prevCharacter = characters.satan;
+        this.activityMainView.displayFragment(new CharacterFragment(this, characters.satan), true, "map fragment");
+
     }
     @Override
     public void onClickedJapan() {
-        this.activityMainView.displayFragment(new CharacterFragment(this, listoCharacters.jojoson), true, "map fragment");
-        prevCharacter = listoCharacters.jojoson;
+        prevCharacter = characters.jojoson;
+        this.activityMainView.displayFragment(new CharacterFragment(this, characters.jojoson), true, "map fragment");
+
     }
 
     @Override
     public void onClickedScreen() {
         String mg = this.minigame.getMinigame();
         curPlayer.incNumDates();
+        prevCharacter.incNumDates();
         if (mg.equals("Kissing Game")){
             this.activityMainView.displayFragment(new KissingGameFragment(this), true, "kissing game fragment");}
 
@@ -152,22 +153,22 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
 
     @Override
     public void onFinalClickedShruck() {
-        this.activityMainView.displayFragment(new EndingFragment(this, listoCharacters.shruck), true, "shruck fragment");}
+        this.activityMainView.displayFragment(new EndingFragment(this, characters.shruck), true, "shruck fragment");}
     @Override
     public void onFinalClickedZeus() {
-        this.activityMainView.displayFragment(new EndingFragment(this, listoCharacters.zeus), true, "zeus fragment");}
+        this.activityMainView.displayFragment(new EndingFragment(this, characters.zeus), true, "zeus fragment");}
     @Override
     public void onFinalClickedBonny() {
-        this.activityMainView.displayFragment(new EndingFragment(this, listoCharacters.bonny), true, "bonny fragment");}
+        this.activityMainView.displayFragment(new EndingFragment(this, characters.bonny), true, "bonny fragment");}
     @Override
     public void onFinalClickedSatan() {
-        this.activityMainView.displayFragment(new EndingFragment(this, listoCharacters.satan), true, "satan fragment");}
+        this.activityMainView.displayFragment(new EndingFragment(this, characters.satan), true, "satan fragment");}
     @Override
     public void onFinalClickedJojoson() {
-        this.activityMainView.displayFragment(new EndingFragment(this, listoCharacters.jojoson), true, "jojoson fragment");}
+        this.activityMainView.displayFragment(new EndingFragment(this, characters.jojoson), true, "jojoson fragment");}
     @Override
     public void onClickedAlone() {
-        this.activityMainView.displayFragment(new EndingFragment(this, listoCharacters.alone), true, "alone fragment");}
+        this.activityMainView.displayFragment(new EndingFragment(this, characters.alone), true, "alone fragment");}
     @Override
                     public void onClickedDone() {
         this.activityMainView.displayFragment(new TitleFragment(this), true, "title fragment");}
