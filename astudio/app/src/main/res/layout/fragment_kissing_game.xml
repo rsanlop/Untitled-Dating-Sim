@@ -8,9 +8,76 @@
     tools:context=".view.KissingGameFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/kissmescreen"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:backgroundTint="#F39FBB">
+
+        <ImageView
+            android:id="@+id/bigSideImage"
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            android:layout_marginTop="54dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="77dp"
+            android:src="@tools:sample/avatars"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/littleSideImage"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/littleSideImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="249dp"
+            android:layout_marginBottom="62dp"
+            android:src="@tools:sample/avatars"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/bigSideImage"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/mainKissImage"
+            android:layout_width="230dp"
+            android:layout_height="230dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="52dp"
+            android:layout_marginEnd="56dp"
+            android:layout_marginBottom="43dp"
+            android:src="@tools:sample/avatars"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/kissingNextButton"
+            app:layout_constraintStart_toEndOf="@+id/littleSideImage"
+            app:layout_constraintTop_toBottomOf="@+id/kissCounter" />
+
+        <TextView
+            android:id="@+id/kissCounter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="336dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="337dp"
+            android:layout_marginBottom="326dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/kissingGame" />
+
+        <TextView
+            android:id="@+id/kissScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="566dp"
+            android:layout_marginTop="47dp"
+            android:layout_marginEnd="107dp"
+            android:layout_marginBottom="345dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/kissingNextButton"

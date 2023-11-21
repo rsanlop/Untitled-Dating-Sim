@@ -28,6 +28,6 @@ public class Player{
         return numDates;
     }
 
-    public void setNumDates(){numDates++;}
+    public void incNumDates(){numDates++;}
 
 }
