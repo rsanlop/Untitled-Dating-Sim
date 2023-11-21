@@ -50,31 +50,31 @@ actor "User" as user
 
 actor "Player" as player 
 participant ": UI" as ui
-participant ": Game System" as game
+participant ": Controller" as controller
 participant ": Map" as map
 participant ": Character" as character
 participant ": Minigame" as minigame
 participant ": Ending screens" as ending
 
-
+ui -> player : displays new game button 
+player -> ui : presses new game button
 ui -> player : asks for a name
 player -> ui : inputs name
-ui -> game : stores n = name
-game -> map : getMap()
-game -> ui : displayMap()
+ui -> controller : stores n = name
+ui -> player : display MapFragment
 player -> ui : selects location
-ui -> game : getDialogue(id)
-game -> character : getDialogue(id)
+ui -> controller : getCharacter
+controller -> ui : 
 game -> ui : displayDialogue(str)
 game -> ui : displayStartbutton
 player -> ui : presses start 
-game -> minigame : getRandomMinigame()
-game -> ui : displayGame()
+controller -> minigame : getRandomMinigame()
+controller -> ui : displayGame()
 player -> ui : plays game
-game -> character : updateAffection(result)
-game -> ending : getEnding(result)
-game -> ui : displayEnding()
-game -> ui : displayDialogue()
+controller -> character : updateAffection(result)
+controller -> ending : getEnding(result)
+controller -> ui : displayEnding()
+controller -> ui : displayDialogue()
 ```
 
 ```plantuml
