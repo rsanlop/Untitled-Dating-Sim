@@ -1,6 +1,9 @@
 package edu.vassar.cmpu203.datingsim.model;
 
 public class KissingGame implements IMiniGame{
+
+    public KissingGame(){}
+    public int score;
     @Override
     public String getInstructions() {
         String instructions = "Kissing Game Instructions: " +
@@ -9,19 +12,14 @@ public class KissingGame implements IMiniGame{
                 "To kiss simply press the screen! Good luck :)    *mwah* ;)";
         return instructions;
     }
-
-    @Override
-    public boolean getResult() {
-        return false;
+    public String getName(){
+        return "Kissing Game";
     }
 
-    @Override
-    public int getSuccess() {
-        return 0;
+    @Override //returns the points
+    public int getResult() {
+        score++;
+            return score;
     }
 
-    @Override
-    public int getFailure() {
-        return 0;
-    }
 }

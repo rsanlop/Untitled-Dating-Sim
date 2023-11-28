@@ -30,7 +30,6 @@ public class CharacterFragment extends Fragment implements ICharacterView{
     public CharacterFragment(Listener listener,Character character) {
         this.listener = listener;
         this.character = character;
-
     }
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,7 +41,7 @@ public class CharacterFragment extends Fragment implements ICharacterView{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         this.binding = FragmentCharacterBinding.inflate(inflater);
-        this.binding.characterScreen.setOnClickListener(v -> listener.onClickedScreen());
+        this.binding.characterScreen.setOnClickListener(v -> listener.onClickedCharacterScreen());
         return this.binding.getRoot();
     }
 

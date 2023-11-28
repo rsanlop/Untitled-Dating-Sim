@@ -1,8 +1,10 @@
 package edu.vassar.cmpu203.datingsim.view;
 
-public interface ICharacterView {
+public interface IInstructionsView {
 
     interface Listener {
-        void onClickedCharacterScreen();
+
+        void onClickedScreen();
     }
 }
+

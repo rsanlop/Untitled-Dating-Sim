@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import edu.vassar.cmpu203.datingsim.model.Characters;
+import edu.vassar.cmpu203.datingsim.model.KissingGame;
 import edu.vassar.cmpu203.datingsim.model.Player;
 import edu.vassar.cmpu203.datingsim.model.Minigame;
 import edu.vassar.cmpu203.datingsim.model.Character;
+import edu.vassar.cmpu203.datingsim.model.RiddleGame;
+import edu.vassar.cmpu203.datingsim.model.TriviaGame;
 import edu.vassar.cmpu203.datingsim.view.ActivityMainView;
 import edu.vassar.cmpu203.datingsim.view.DateFragment;
 import edu.vassar.cmpu203.datingsim.view.EndingFragment;
@@ -15,6 +18,7 @@ import edu.vassar.cmpu203.datingsim.view.IActivityMainView;
 import edu.vassar.cmpu203.datingsim.view.ICharacterView;
 import edu.vassar.cmpu203.datingsim.view.IDateView;
 import edu.vassar.cmpu203.datingsim.view.IEndingView;
+import edu.vassar.cmpu203.datingsim.view.IInstructionsView;
 import edu.vassar.cmpu203.datingsim.view.IKissingGameView;
 import edu.vassar.cmpu203.datingsim.view.IMapView;
 import edu.vassar.cmpu203.datingsim.view.INameView;
@@ -22,6 +26,7 @@ import edu.vassar.cmpu203.datingsim.view.IRiddleGameView;
 import edu.vassar.cmpu203.datingsim.view.ISelectionView;
 import edu.vassar.cmpu203.datingsim.view.ITitleView;
 import edu.vassar.cmpu203.datingsim.view.ITriviaGameView;
+import edu.vassar.cmpu203.datingsim.view.InstructionsFragment;
 import edu.vassar.cmpu203.datingsim.view.KissingGameFragment;
 import edu.vassar.cmpu203.datingsim.view.MapFragment;
 import edu.vassar.cmpu203.datingsim.view.NameFragment;
@@ -33,13 +38,17 @@ import edu.vassar.cmpu203.datingsim.view.CharacterFragment;
 
 
 public class MainController extends AppCompatActivity implements IActivityMainView.Listener,  ITitleView.Listener, INameView.Listener, IMapView.Listener, IRiddleGameView.Listener, IKissingGameView.Listener, ITriviaGameView.Listener, IDateView.Listener, ISelectionView.Listener,
-        ICharacterView.Listener, IEndingView.Listener {
+        ICharacterView.Listener, IEndingView.Listener, IInstructionsView.Listener {
     Player curPlayer = new Player("");
     Minigame minigame = new Minigame();
     ActivityMainView activityMainView;
     boolean menuHidden;
     Characters characters = new Characters();
     Character prevCharacter;
+    String mg;
+    KissingGame kissingGame = new KissingGame();
+    RiddleGame riddleGame = new RiddleGame();
+    TriviaGame triviaGame = new TriviaGame();
 
 
 
@@ -114,10 +123,21 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
         this.activityMainView.displayFragment(new CharacterFragment(this, characters.jojoson), true, "map fragment");
 
     }
+    @Override
+    public void onClickedCharacterScreen() {
+        String mg = this.minigame.getMinigame();
+        if (mg.equals("Kissing Game")){
+            this.activityMainView.displayFragment(new InstructionsFragment(this, kissingGame), true, "kissing game fragment");}
 
+        else if (mg.equals("Trivia Game")){
+            this.activityMainView.displayFragment(new InstructionsFragment(this, triviaGame), true, "trivia game fragment");}
+        else {
+            this.activityMainView.displayFragment(new InstructionsFragment(this, riddleGame), true, "riddle game fragment");}
+
+    }
     @Override
     public void onClickedScreen() {
-        String mg = this.minigame.getMinigame();
+
         curPlayer.incNumDates();
         prevCharacter.incNumDates();
         if (mg.equals("Kissing Game")){
@@ -173,7 +193,8 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
                     public void onClickedDone() {
         this.activityMainView.displayFragment(new TitleFragment(this), true, "title fragment");}
 
-    }
+
+}
 
 
 
