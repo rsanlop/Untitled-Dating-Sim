@@ -29,10 +29,6 @@ public class InstructionsFragment extends Fragment implements IInstructionsView 
     Listener listener;
     IMiniGame minigame;
 
-    //KissingGame kissingGame;
-    //TriviaGame triviaGame;
-    //RiddleGame riddleGame;
-
 
     public InstructionsFragment(Listener listener, IMiniGame minigame) {
         this.listener = listener;

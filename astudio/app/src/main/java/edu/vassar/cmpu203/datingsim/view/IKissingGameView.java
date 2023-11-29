@@ -5,7 +5,7 @@ public interface IKissingGameView {
     interface Listener{
 
         void onClickedNext();
-        void onClickedScreen();
+        void onClickedKissingScreen();
 
     }
 }

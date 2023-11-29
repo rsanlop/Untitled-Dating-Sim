@@ -125,7 +125,7 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
     }
     @Override
     public void onClickedCharacterScreen() {
-        String mg = this.minigame.getMinigame();
+        mg = this.minigame.getMinigame();
         if (mg.equals("Kissing Game")){
             this.activityMainView.displayFragment(new InstructionsFragment(this, kissingGame), true, "kissing game fragment");}
 
@@ -141,7 +141,7 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
         curPlayer.incNumDates();
         prevCharacter.incNumDates();
         if (mg.equals("Kissing Game")){
-            this.activityMainView.displayFragment(new KissingGameFragment(this), true, "kissing game fragment");}
+            this.activityMainView.displayFragment(new KissingGameFragment(this, prevCharacter), true, "kissing game fragment");}
 
         else if (mg.equals("Trivia Game")){
             this.activityMainView.displayFragment(new TriviaGameFragment(this), true, "trivia game fragment");}
@@ -152,6 +152,11 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
     public void onClickedNext() {
         this.activityMainView.displayFragment(new DateFragment(this), true, "date fragment");
         this.prevCharacter.incAffection();
+    }
+
+    @Override
+    public void onClickedKissingScreen() {
+
     }
     // ----------------------------------------------------------------------------------------------------------------
 

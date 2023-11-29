@@ -47,6 +47,8 @@ public class Characters {
                 "to stomp towards you. 'WHAT ARE YOU DOING IN MY BLOODY SWAMP!' he bellows, as pieces of his stinky dinner fly out his" + "\n" +
                 "mouth and onto your face. 'DON'T TELL ME YOU WANT TO FART IN IT. BECAUSE LET ME TELL YOU. THE ONLY ONE WHO CAN FART IN" + "\n" +
                 "MY BLOODY SWAMP IS MY BLOODY ARSE!'");
+        shruckd.add("ARGG, ARGG you glad you came?");
+        shruckd.add("Roses are red, violets are blue, I just farted, phew.");
         this.shruck = new Character("Shruck", 0, shruckd, R.drawable.shruckimage, 0,  R.drawable.shreknotkiss, R.drawable.shrekkiss, R.drawable.donkey, R.drawable.dragon);
 
 

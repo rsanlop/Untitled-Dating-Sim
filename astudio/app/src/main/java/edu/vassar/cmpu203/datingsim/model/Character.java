@@ -55,7 +55,7 @@ public class Character {
         return mainImageKissId;
     }
     public int getSmallImageId(){
-        return getSmallImageId();
+        return smallImageId;
     }
     public int getBigImageId(){
         return bigImageId;
