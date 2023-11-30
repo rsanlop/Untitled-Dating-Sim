@@ -195,7 +195,7 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
     public void onClickedAlone() {
         this.activityMainView.displayFragment(new EndingFragment(this, characters.alone), true, "alone fragment");}
     @Override
-                    public void onClickedDone() {
+    public void onClickedDone() {
         this.activityMainView.displayFragment(new TitleFragment(this), true, "title fragment");}
 
 
