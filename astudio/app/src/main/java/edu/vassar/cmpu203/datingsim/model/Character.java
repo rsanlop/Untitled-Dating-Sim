@@ -49,7 +49,7 @@ public class Character {
         return "" + affection;
     }
     public int incAffection(){
-        this.affection += 2;
+        this.affection += 10;
         return affection;
     }
     public int getImageId(){

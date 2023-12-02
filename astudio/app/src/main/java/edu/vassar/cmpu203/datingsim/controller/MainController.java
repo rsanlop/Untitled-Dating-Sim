@@ -24,6 +24,7 @@ import edu.vassar.cmpu203.datingsim.view.IMapView;
 import edu.vassar.cmpu203.datingsim.view.INameView;
 import edu.vassar.cmpu203.datingsim.view.IRiddleGameView;
 import edu.vassar.cmpu203.datingsim.view.ISelectionView;
+import edu.vassar.cmpu203.datingsim.view.IStatsView;
 import edu.vassar.cmpu203.datingsim.view.ITitleView;
 import edu.vassar.cmpu203.datingsim.view.ITriviaGameView;
 import edu.vassar.cmpu203.datingsim.view.InstructionsFragment;
@@ -39,7 +40,7 @@ import edu.vassar.cmpu203.datingsim.view.CharacterFragment;
 
 
 public class MainController extends AppCompatActivity implements IActivityMainView.Listener,  ITitleView.Listener, INameView.Listener, IMapView.Listener, IRiddleGameView.Listener, IKissingGameView.Listener, ITriviaGameView.Listener, IDateView.Listener, ISelectionView.Listener,
-        ICharacterView.Listener, IEndingView.Listener, IInstructionsView.Listener {
+        ICharacterView.Listener, IEndingView.Listener, IInstructionsView.Listener, IStatsView.Listener {
     Player curPlayer = new Player("");
     Minigame minigame = new Minigame();
     ActivityMainView activityMainView;
@@ -156,8 +157,16 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
     }
 
     @Override
-    public void onGameDone() {
-        this.activityMainView.displayFragment(new StatsFragment(), true, "stats fragment");
+    public void onGameDone(boolean result) {
+
+        if (mg.equals("Kissing Game")){
+            this.activityMainView.displayFragment(new StatsFragment(this, prevCharacter, result, kissingGame), true, "stats fragment");
+        }
+        else if (mg.equals("Trivia Game")){
+            this.activityMainView.displayFragment(new TriviaGameFragment(this), true, "trivia game fragment");}
+        else {
+            this.activityMainView.displayFragment(new RiddleGameFragment(this), true, "riddle game fragment");}
+
 
     }
 

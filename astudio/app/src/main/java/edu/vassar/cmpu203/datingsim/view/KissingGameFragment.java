@@ -24,6 +24,7 @@ import edu.vassar.cmpu203.datingsim.R;
 import edu.vassar.cmpu203.datingsim.databinding.FragmentKissingGameBinding;
 import edu.vassar.cmpu203.datingsim.databinding.FragmentTriviaGameBinding;
 import edu.vassar.cmpu203.datingsim.model.Character;
+import edu.vassar.cmpu203.datingsim.model.KissingGame;
 
 /**
  */
@@ -61,7 +62,6 @@ public class KissingGameFragment extends Fragment implements IKissingGameView {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         this.binding = FragmentKissingGameBinding.inflate(inflater);
-        this.binding.kissingNextButton.setOnClickListener(v -> listener.onClickedNext());
         return this.binding.getRoot();
     }
 
@@ -96,7 +96,7 @@ public class KissingGameFragment extends Fragment implements IKissingGameView {
                                         updateTimesCaught();
                                     }
                                     if(timesCaught == 3){
-                                        KissingGameFragment.this.listener.onGameDone();
+                                        KissingGameFragment.this.listener.onGameDone(false);
                                     }
                                     isNoKissImage = !isNoKissImage;
                                     updateMainImageDrawable();
@@ -119,7 +119,7 @@ public class KissingGameFragment extends Fragment implements IKissingGameView {
                         }
                         updateKissScore();
                         if(kissScore >= 500){
-                            KissingGameFragment.this.listener.onGameDone();
+                            KissingGameFragment.this.listener.onGameDone(true);
                         }
                         resetMainImageDrawable();
                         break;

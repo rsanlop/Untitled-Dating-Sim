@@ -8,56 +8,96 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#BBE1F3">
 
         <TextView
             android:id="@+id/affection2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="232dp"
+            android:layout_marginBottom="165dp"
             android:text="@string/affection"
-            tools:layout_editor_absoluteX="232dp"
-            tools:layout_editor_absoluteY="226dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/affectionPoints"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/points"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="232dp"
+            android:layout_marginTop="196dp"
+            android:layout_marginBottom="11dp"
             android:text="@string/points"
-            tools:layout_editor_absoluteX="232dp"
-            tools:layout_editor_absoluteY="196dp" />
+            app:layout_constraintBottom_toTopOf="@+id/affection2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/affectionPoints"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="337dp"
+            android:layout_marginBottom="165dp"
             android:text="TextView"
-            tools:layout_editor_absoluteX="336dp"
-            tools:layout_editor_absoluteY="226dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/affection2" />
 
         <TextView
             android:id="@+id/GamePoints"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="337dp"
+            android:layout_marginBottom="11dp"
             android:text="TextView"
-            tools:layout_editor_absoluteX="336dp"
-            tools:layout_editor_absoluteY="196dp" />
+            app:layout_constraintBottom_toTopOf="@+id/affectionPoints"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/points"
+            app:layout_constraintTop_toBottomOf="@+id/resultText" />
 
         <TextView
             android:id="@+id/resultText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="336dp"
+            android:layout_marginTop="76dp"
+            android:layout_marginEnd="337dp"
             android:text="TextView"
-            tools:layout_editor_absoluteX="336dp"
-            tools:layout_editor_absoluteY="131dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/StatsText" />
 
         <TextView
             android:id="@+id/StatsText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="336dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="322dp"
             android:scaleX="3"
             android:scaleY="3"
             android:text="@string/Statstext"
-            tools:layout_editor_absoluteX="336dp"
-            tools:layout_editor_absoluteY="36dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/statsNextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="586dp"
+            android:layout_marginTop="319dp"
+            android:layout_marginEnd="54dp"
+            android:layout_marginBottom="44dp"
+            android:backgroundTint="#13A9F3"
+            android:text="@string/NextButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

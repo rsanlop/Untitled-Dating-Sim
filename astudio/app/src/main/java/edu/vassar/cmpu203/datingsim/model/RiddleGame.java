@@ -14,8 +14,13 @@ public class RiddleGame implements  IMiniGame{
     }
 
     @Override
-    public int  getResult() {
-        return score;
+    public int getPoints(boolean result) {
+        return 0;
+    }
+
+    @Override
+    public String  getResult(boolean result) {
+        return "score";
     }
 
 }

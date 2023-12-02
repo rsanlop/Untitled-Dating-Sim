@@ -16,10 +16,24 @@ public class KissingGame implements IMiniGame{
         return "Kissing Game";
     }
 
+    public String getResult(boolean result){
+        String outcome = "";
+        if(result){
+            outcome = "Congrats! You won! Hope you're having fun, lets play some more! :)";
+        }
+        else{
+            outcome = "Oh no! :( You got caught three times. Better luck next time around :,(";
+        }
+        return outcome;
+    }
     @Override //returns the points
-    public int getResult() {
-        score++;
-            return score;
+    public int getPoints(boolean result) {
+        if(result){
+            return 500;
+        }
+            else{
+                return 0;
+        }
     }
 
 }
