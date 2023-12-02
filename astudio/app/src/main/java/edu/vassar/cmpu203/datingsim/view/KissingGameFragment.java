@@ -18,6 +18,8 @@ import android.widget.Toast;
 import android.view.GestureDetector.SimpleOnGestureListener;
 import android.os.CountDownTimer;
 
+import java.util.Random;
+
 import edu.vassar.cmpu203.datingsim.R;
 import edu.vassar.cmpu203.datingsim.databinding.FragmentKissingGameBinding;
 import edu.vassar.cmpu203.datingsim.databinding.FragmentTriviaGameBinding;
@@ -33,8 +35,15 @@ public class KissingGameFragment extends Fragment implements IKissingGameView {
     private Character character;
 
     CountDownTimer cTimer = null;
+    CountDownTimer donkeyTimer = null;
 
     private boolean isNoKissImage = true;
+    private boolean isMiddleImage = false;
+    private boolean isRightImage = false;
+    private int kissCounter = 0;
+    private int kissScore = 0;
+    private int timesCaught = 0;
+    private int cycles = 0;
 
 
     public KissingGameFragment(Listener listener, Character character) {
@@ -68,30 +77,49 @@ public class KissingGameFragment extends Fragment implements IKissingGameView {
         this.binding.smallImage.setImageDrawable(smallImage);
         bigImage = this.binding.getRoot().getContext().getDrawable(character.getBigImageId());
         this.binding.bigImage.setImageDrawable(bigImage);
+        this.binding.kissCounter.setText("" + kissCounter);
+        this.binding.kissScore.setText("" + kissScore);
+        this.binding.timesCaught.setText("" + timesCaught);
 
         this.binding.kissmescreen.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()){
                     case MotionEvent.ACTION_DOWN:
-                        cTimer = new CountDownTimer(30000, 250){
-                            @Override
-                            public void onTick(long millisUntilFinished) {
-                                isNoKissImage = !isNoKissImage;
-                                updateMainImageDrawable();
-                            }
 
-                            @Override
-                            public void onFinish() {
-                                // Handle onFinish if needed
-                            }
-                        };
+                            cTimer = new CountDownTimer(30000, 100) {
+                                @Override
+                                public void onTick(long millisUntilFinished) {
+                                    if(isRightImage){
+                                        resetKissScore();
+                                        timesCaught += 1;
+                                        updateTimesCaught();
+                                    }
+                                    if(timesCaught == 3){
+                                        KissingGameFragment.this.listener.onGameDone();
+                                    }
+                                    isNoKissImage = !isNoKissImage;
+                                    updateMainImageDrawable();
+                                    kissCounter += 1;
+                                    updateKissCounter();
+                                }
+
+                                @Override
+                                public void onFinish() {
+
+                                }
+                            };
                         cTimer.start();
+
                         break;
                     case MotionEvent.ACTION_UP:
                         // when user lifts finger
                         if (cTimer != null) {
                             cTimer.cancel();
+                        }
+                        updateKissScore();
+                        if(kissScore >= 500){
+                            KissingGameFragment.this.listener.onGameDone();
                         }
                         resetMainImageDrawable();
                         break;
@@ -100,6 +128,26 @@ public class KissingGameFragment extends Fragment implements IKissingGameView {
             }
         });
 
+
+        donkeyTimer = new CountDownTimer(300000, 500){
+            @Override
+            public void onTick(long millisUntilFinished) {
+                cycles += 1;
+                if (cycles % 10 == 0 && !isMiddleImage){
+                    updateSmallImageDrawable();
+                    isMiddleImage = !isMiddleImage;
+                } else if (cycles % 10 == 1 && isMiddleImage) {
+                    updateSmallImageDrawable();
+                    isMiddleImage = !isMiddleImage;
+                }
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+        };
+        donkeyTimer.start();
     }
     private void resetMainImageDrawable(){
         Drawable newDrawable;
@@ -114,6 +162,43 @@ public class KissingGameFragment extends Fragment implements IKissingGameView {
             newDrawable = this.binding.getRoot().getContext().getDrawable(character.getMainImageId());
         }
         this.binding.mainImage.setImageDrawable(newDrawable);
+    }
+    private void updateSmallImageDrawable(){
+        Drawable newDrawable;
+        if (isMiddleImage) {
+            double rand = Math.random();
+            if(rand > 0.5){
+                newDrawable = this.binding.getRoot().getContext().getDrawable(character.getSmallImageId());
+            }
+            else{
+                newDrawable = this.binding.getRoot().getContext().getDrawable(character.getSmallRightImageId());
+                isRightImage = true;
+            }
+
+        } else {
+            isRightImage = false;
+            newDrawable = this.binding.getRoot().getContext().getDrawable(character.getSmallFrontImageId());
+        }
+        this.binding.smallImage.setImageDrawable(newDrawable);
+    }
+
+    private void updateKissScore(){
+        kissScore = kissCounter + kissScore;
+        this.binding.kissScore.setText("" + kissScore);
+        kissCounter = 0;
+        this.binding.kissCounter.setText("" + kissCounter);
+    }
+    private void updateKissCounter(){
+        this.binding.kissCounter.setText("" + kissCounter);
+    }
+    private void resetKissScore(){
+        kissCounter = 0;
+        this.binding.kissCounter.setText("" + kissCounter);
+        kissScore = 0;
+        this.binding.kissScore.setText("" + kissScore);
+    }
+    private void updateTimesCaught(){
+        this.binding.timesCaught.setText("" + timesCaught);
     }
 
 

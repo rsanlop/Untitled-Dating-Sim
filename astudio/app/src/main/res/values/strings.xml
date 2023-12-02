@@ -48,6 +48,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="Statstext">Game Stats</string>
     <string name="points">Game Points:</string>
+    <string name="timescaught">Times Caught:</string>
 
 
 </resources>

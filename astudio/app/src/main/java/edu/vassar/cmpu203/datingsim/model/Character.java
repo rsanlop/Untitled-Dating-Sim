@@ -22,9 +22,13 @@ public class Character {
     private int smallImageId;
     private int bigImageId;
 
+    private int smallFrontImageId;
+    private int smallRightImageId;
+
     public Character(){}
 
-    public Character(String name, int affection, List<String> dialogue, int imageId, int numDates, int mainImageId, int mainImageKissId, int smallImageId, int bigImageId){
+    public Character(String name, int affection, List<String> dialogue, int imageId, int numDates,
+                     int mainImageId, int mainImageKissId, int smallImageId, int smallFrontImageId, int smallRightImageId, int bigImageId){
         this.name = name;
         this.affection = affection;
         this.dialogue = dialogue;
@@ -34,6 +38,9 @@ public class Character {
         this.mainImageKissId = mainImageKissId;
         this.smallImageId = smallImageId;
         this.bigImageId = bigImageId;
+        this.smallFrontImageId = smallFrontImageId;
+        this.smallRightImageId = smallRightImageId;
+
     }
     public String getName(){
         return name;
@@ -56,6 +63,12 @@ public class Character {
     }
     public int getSmallImageId(){
         return smallImageId;
+    }
+    public int getSmallFrontImageId(){
+        return smallFrontImageId;
+    }
+    public int getSmallRightImageId(){
+        return smallRightImageId;
     }
     public int getBigImageId(){
         return bigImageId;

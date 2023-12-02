@@ -31,6 +31,7 @@ import edu.vassar.cmpu203.datingsim.view.KissingGameFragment;
 import edu.vassar.cmpu203.datingsim.view.MapFragment;
 import edu.vassar.cmpu203.datingsim.view.NameFragment;
 import edu.vassar.cmpu203.datingsim.view.SelectionFragment;
+import edu.vassar.cmpu203.datingsim.view.StatsFragment;
 import edu.vassar.cmpu203.datingsim.view.TitleFragment;
 import edu.vassar.cmpu203.datingsim.view.TriviaGameFragment;
 import edu.vassar.cmpu203.datingsim.view.RiddleGameFragment;
@@ -101,8 +102,8 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
     }
     @Override
     public void onClickedOlympus() {
-        prevCharacter = characters.getZeus();
-        this.activityMainView.displayFragment(new CharacterFragment(this, characters.getZeus()), true, "map fragment");
+        prevCharacter = characters.zeus;
+        this.activityMainView.displayFragment(new CharacterFragment(this, characters.zeus), true, "map fragment");
 
     }
     @Override
@@ -155,9 +156,11 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
     }
 
     @Override
-    public void onClickedKissingScreen() {
+    public void onGameDone() {
+        this.activityMainView.displayFragment(new StatsFragment(), true, "stats fragment");
 
     }
+
     // ----------------------------------------------------------------------------------------------------------------
 
     public int numDates(){
