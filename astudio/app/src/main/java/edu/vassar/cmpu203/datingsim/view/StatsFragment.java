@@ -55,7 +55,10 @@ public class StatsFragment extends Fragment implements IStatsView{
         Drawable charImage;
         super.onViewCreated(view, savedInstanceState);
         this.binding.resultText.setText(minigame.getResult(result));
-        character.incNumDates();
+        if (minigame.getPoints(result) == 500){
+            character.incAffection(5);
+        }
+        else {character.incAffection(1);}
         this.binding.affectionPoints.setText(character.getAffection());
         this.binding.GamePoints.setText("" + minigame.getPoints(result));
 

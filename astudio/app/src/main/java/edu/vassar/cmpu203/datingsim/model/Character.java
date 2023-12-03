@@ -48,8 +48,8 @@ public class Character {
     public String getAffection(){
         return "" + affection;
     }
-    public int incAffection(){
-        this.affection += 10;
+    public int incAffection(int points){
+        this.affection += points;
         return affection;
     }
     public int getImageId(){

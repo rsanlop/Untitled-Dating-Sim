@@ -38,7 +38,8 @@ public class Characters {
         zeusd.add("Oh, welcome back %s.");
         zeusd.add("You just looove coming back~~ ;)");
 
-        this.zeus = new Character("Zeus", 0, zeusd, R.drawable.zeusimage, 0, 0, 0, 0, 0, 0, 0);
+        this.zeus = new Character("Zeus", 0, zeusd, R.drawable.zeusimage, 0,
+                R.drawable.heraandzeusnotkiss, R.drawable.zeuskiss, R.drawable.persleft, R.drawable.perswarn, R.drawable.perseright, R.drawable.hades);
 
         List<String> shruckd = new ArrayList<>();
         shruckd.add("You see a farty swamp the size of small house, right in front of a run-down tree house. You see the door slam open" + "\n" +
@@ -60,14 +61,20 @@ public class Characters {
                 "As it holds out it's hands it says 'Pizza?' in a slow robotic voice. You look at the hands and there is no pizza :(. " + "\n" +
                 "Afraid of what will happen if you refuse, you take the fake pizza and pretend to eat it. After seeing you play along " + "\n" +
                 "the purple animatronic looks and you and slowly says 'Bonny'.");
-        this.bonny = new Character("Bonny", 0, bonnyd, R.drawable.bonnyimage, 0, 0, 0, 0, 0, 0, 0);
+        bonnyd.add("har har har har" );
+        bonnyd.add("DUYGI^GD*@(@EHxUHJNJOI");
+        this.bonny = new Character("Bonny", 0, bonnyd, R.drawable.bonnyimage, 0,
+                R.drawable.bonnynotkiss, R.drawable.bonnykiss, R.drawable.boyleft, R.drawable.boywarning, R.drawable.boyright, R.drawable.collapsedfreddy);
 
         List<String> satand = new ArrayList<>();
         satand.add("Immediately you feel the immense heat radiating all around you. There's no doubt you are in Hell. Satan stands before you in all her " + "\n" +
                 "sultry glory. She seductively catwalks over to you. 'Greetings, or should I say Hell-o.' She bats her eyes and tucks her hair behind her " + "\n" +
                 "ear proudly. She then says 'Pretty hot in here, right?' as she hold up a finger heart with flames coming out of it and then she can't help but " + "\n" +
                 "wink at you. 'Or maybe its just you' she says while pointing at you. You can only help but think Hell yea.");
-        this.satan = new Character("Satan", 0, satand, R.drawable.satanimage, 0, 0, 0, 0, 0, 0, 0);
+        satand.add("hell of a surprise to see you again :)");
+        satand.add("try not to get hot and bothered :)))");
+        this.satan = new Character("Satan", 0, satand, R.drawable.satanimage, 0,
+                R.drawable.yunonotkiss, R.drawable.yunokiss, R.drawable.akiseleft, R.drawable.akisewarning, R.drawable.akiseright, R.drawable.murumuru);
 
 
         List<String> jojosond = new ArrayList<>();
