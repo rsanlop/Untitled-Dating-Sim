@@ -64,7 +64,8 @@ public class Characters {
         bonnyd.add("har har har har" );
         bonnyd.add("DUYGI^GD*@(@EHxUHJNJOI");
         this.bonny = new Character("Bonny", 0, bonnyd, R.drawable.bonnyimage, 0,
-                R.drawable.bonnynotkiss, R.drawable.bonnykiss, R.drawable.boyleft, R.drawable.boywarning, R.drawable.boyright, R.drawable.collapsedfreddy);
+                R.drawable.bonnynotkiss, R.drawable.bonnykiss, R.drawable.boyleft, R.drawable.boywarning,
+                R.drawable.boyright, R.drawable.collapsedfreddy);
 
         List<String> satand = new ArrayList<>();
         satand.add("Immediately you feel the immense heat radiating all around you. There's no doubt you are in Hell. Satan stands before you in all her " + "\n" +
@@ -74,7 +75,8 @@ public class Characters {
         satand.add("hell of a surprise to see you again :)");
         satand.add("try not to get hot and bothered :)))");
         this.satan = new Character("Satan", 0, satand, R.drawable.satanimage, 0,
-                R.drawable.yunonotkiss, R.drawable.yunokiss, R.drawable.akiseleft, R.drawable.akisewarning, R.drawable.akiseright, R.drawable.murumuru);
+                R.drawable.yunonotkiss, R.drawable.yunokiss, R.drawable.akiseleft, R.drawable.akisewarning,
+                R.drawable.akiseright, R.drawable.murumuru);
 
 
         List<String> jojosond = new ArrayList<>();
@@ -83,7 +85,11 @@ public class Characters {
                 "hold. Much to your dismay you cannot escape. Luckily a car passes and lights up your face long enough for the black leather suit wearing assailant to realize you aren't a threat. " + "\n" +
                 "The red headed beauty releases you quickly and takes a step back. She apologizes as you dust yourself off. 'さようなら' she whispers as she leaps upwards" + "\n" +
                 "and disappears in the Tokyo skyline.");
-        this.jojoson = new Character("Scarlet Jojoson", 0, jojosond, R.drawable.jojosonimage, 0, 0, 0, 0, 0, 0, 0);
+        jojosond.add("What are you doing back here? ");
+        jojosond.add("*kicks you*");
+        this.jojoson = new Character("Scarlet Jojoson", 0, jojosond, R.drawable.jojosonimage, 0,
+                R.drawable.jojosonnotkiss, R.drawable.jojosonkiss, R.drawable.polarexpressgirlleft, R.drawable.polarexpressgirlwarning,
+                R.drawable.polarexpressgirlright, R.drawable.holk);
 
         List<String> aloned = new ArrayList<>();
         aloned.add("Phew, glad this is the case. Who even needs people? " +
