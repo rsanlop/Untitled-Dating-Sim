@@ -153,7 +153,6 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
     @Override
     public void onClickedNext() {
         this.activityMainView.displayFragment(new DateFragment(this), true, "date fragment");
-        this.prevCharacter.incAffection();
     }
 
     @Override
