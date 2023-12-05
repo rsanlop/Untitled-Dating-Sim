@@ -12,14 +12,70 @@
         android:background="#9A5757"
         android:backgroundTint="#6DBD70">
 
+        <Button
+            android:id="@+id/rbutton1"
+            android:layout_width="200dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="73dp"
+            android:layout_marginEnd="388dp"
+            android:layout_marginBottom="200dp"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/riddle" />
+
+        <Button
+            android:id="@+id/rbutton4"
+            android:layout_width="200dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="210dp"
+            android:layout_marginEnd="148dp"
+            android:layout_marginBottom="24dp"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/rbutton3"
+            app:layout_constraintTop_toBottomOf="@+id/riddle" />
+
+        <Button
+            android:id="@+id/rbutton3"
+            android:layout_width="200dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="388dp"
+            android:layout_marginBottom="24dp"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rbutton1" />
+
+        <Button
+            android:id="@+id/rbutton2"
+            android:layout_width="200dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="160dp"
+            android:layout_marginEnd="148dp"
+            android:layout_marginBottom="21dp"
+            android:text="Button"
+            app:layout_constraintBottom_toTopOf="@+id/rbutton4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/rbutton1"
+            app:layout_constraintTop_toBottomOf="@+id/riddle" />
+
         <TextView
             android:id="@+id/riddleGame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="338dp"
-            android:layout_marginTop="26dp"
-            android:layout_marginEnd="321dp"
-            android:layout_marginBottom="364dp"
+            android:layout_marginStart="319dp"
+            android:layout_marginTop="39dp"
+            android:layout_marginEnd="320dp"
+            android:layout_marginBottom="350dp"
             android:background="#897AA3"
             android:backgroundTint="#00FFFFFF"
             android:fontFamily="@font/fira_mono"
@@ -32,19 +88,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/riddleNextButton"
+        <TextView
+            android:id="@+id/riddle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="624dp"
-            android:layout_marginTop="330dp"
-            android:layout_marginEnd="19dp"
-            android:layout_marginBottom="33dp"
-            android:backgroundTint="#115514"
-            android:text="@string/NextButton"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="336dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="337dp"
+            android:layout_marginBottom="72dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toTopOf="@+id/rbutton1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/riddleGame" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

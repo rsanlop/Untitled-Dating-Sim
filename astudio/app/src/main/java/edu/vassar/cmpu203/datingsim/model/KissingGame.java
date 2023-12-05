@@ -26,13 +26,13 @@ public class KissingGame implements IMiniGame{
         }
         return outcome;
     }
-    @Override //returns the points
+    @Override //returns the affection points
     public int getPoints(boolean result) {
         if(result){
-            return 500;
+            return 5;
         }
             else{
-                return 0;
+                return 1;
         }
     }
 

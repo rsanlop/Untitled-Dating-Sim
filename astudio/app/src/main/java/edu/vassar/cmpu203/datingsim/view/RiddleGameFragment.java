@@ -37,7 +37,6 @@ public class RiddleGameFragment extends Fragment implements IRiddleGameView {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         this.binding = FragmentRiddleGameBinding.inflate(inflater);
-        this.binding.riddleNextButton.setOnClickListener(v -> listener.onClickedNext());
         return this.binding.getRoot();
     }
 }
