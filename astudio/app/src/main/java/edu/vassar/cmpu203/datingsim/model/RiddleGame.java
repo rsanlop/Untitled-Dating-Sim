@@ -2,10 +2,13 @@ package edu.vassar.cmpu203.datingsim.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.HashMap;
 
 public class RiddleGame implements  IMiniGame{
     public int score = 0;
-    List<List> riddles = new ArrayList<>();
+
+    HashMap<String, HashMap<String, String>> allRiddles;
+    
 
     @Override
     public String getInstructions() {

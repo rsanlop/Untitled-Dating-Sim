@@ -11,7 +11,7 @@ import java.util.List;
  * @version 10/10/2023
  */
 
-public class Character {
+public class Character implements java.io.Serializable {
     private String name;
     private int affection;
     private List<String> dialogue;

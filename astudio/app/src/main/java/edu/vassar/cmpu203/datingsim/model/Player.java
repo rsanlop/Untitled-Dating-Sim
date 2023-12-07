@@ -7,7 +7,7 @@ package edu.vassar.cmpu203.datingsim.model;
  * @version 10/12/2023
  */
 
-public class Player{
+public class Player implements java.io.Serializable{
 
     private String name;
 

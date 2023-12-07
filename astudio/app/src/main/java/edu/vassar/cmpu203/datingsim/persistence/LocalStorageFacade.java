@@ -10,36 +10,38 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.lang.reflect.Field;
 
-import edu.vassar.cmpu203.datingsim.model.Character;
-import edu.vassar.cmpu203.datingsim.model.Characters;
+import edu.vassar.cmpu203.datingsim.model.AllCharacters;
 import edu.vassar.cmpu203.datingsim.model.Player;
 
 public class LocalStorageFacade implements IPersistenceFacade {
 
-    private final File file;
-    private static final String FILENAME = "TheSaveFile";
-    private Characters characters;
+    private final File fileChars;
+    private final File filePlayer;
+    private static final String CHARS_FNAME = "CharactersTheSaveFile";
+    private static final String PLAYER_FNAME = "PlayerTheSaveFile";
+    private AllCharacters characters;
     private Player player;
 
 
     public LocalStorageFacade(@NonNull File storageDir){
-        this.file = new File(storageDir, FILENAME);
+        this.fileChars = new File(storageDir, CHARS_FNAME);
+        this.filePlayer = new File(storageDir, PLAYER_FNAME);
         this.player = new Player();
-        this.characters = new Characters();
+        this.characters = new AllCharacters();
     }
 
     @Override
-    public void saveCharacters(Characters characters) {
+    public void saveCharacters(AllCharacters characters) {
+        this.characters = characters;
         try {
-            FileOutputStream fos = new FileOutputStream(this.file);
+            FileOutputStream fos = new FileOutputStream(this.fileChars);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
             oos.writeObject(this.characters);
 
         } catch (IOException e) {
-            final String emsg = String.format("I/O error writing to %s", this.file);
+            final String emsg = String.format("I/O error writing to %s", this.fileChars);
             Log.e("DatinSim", emsg);
             e.printStackTrace();
         }
@@ -47,20 +49,20 @@ public class LocalStorageFacade implements IPersistenceFacade {
 
     @Override
     public void retrieveCharacters(@NonNull Listener listener) {
-        if (this.file.isFile()) {
+        if (this.fileChars.isFile()) {
             try {
-                FileInputStream fis = new FileInputStream(this.file);
+                FileInputStream fis = new FileInputStream(this.fileChars);
                 ObjectInputStream ois = new ObjectInputStream(fis);
 
-                this.characters = (Characters) ois.readObject(); // extract ledger from file
+                this.characters = (AllCharacters) ois.readObject(); // extract ledger from file
                 listener.onCharactersReceived(this.characters); // tell the listener about it
 
             } catch (IOException e) {
-                final String emsg = String.format("I/O error writing to %s", this.file);
+                final String emsg = String.format("I/O error writing to %s", this.fileChars);
                 Log.e("DatingSim", emsg);
                 e.printStackTrace();
             } catch (ClassNotFoundException e) {
-                final String emsg = String.format("Can't find class of object from %s", this.file);
+                final String emsg = String.format("Can't find class of object from %s", this.fileChars);
                 Log.e("DatingSim", emsg);
                 e.printStackTrace();
             }
@@ -69,14 +71,15 @@ public class LocalStorageFacade implements IPersistenceFacade {
 
     @Override
     public void savePlayer(Player player) {
+        this.player = player;
         try {
-            FileOutputStream fos = new FileOutputStream(this.file);
+            FileOutputStream fos = new FileOutputStream(this.filePlayer);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
             oos.writeObject(this.player);
 
         } catch (IOException e) {
-            final String emsg = String.format("I/O error writing to %s", this.file);
+            final String emsg = String.format("I/O error writing to %s", this.filePlayer);
             Log.e("DatingSim", emsg);
             e.printStackTrace();
         }
@@ -85,20 +88,20 @@ public class LocalStorageFacade implements IPersistenceFacade {
 
     @Override
     public void retrievePlayer(@NonNull Listener listener) {
-        if (this.file.isFile()) {
+        if (this.filePlayer.isFile()) {
             try {
-                FileInputStream fis = new FileInputStream(this.file);
+                FileInputStream fis = new FileInputStream(this.filePlayer);
                 ObjectInputStream ois = new ObjectInputStream(fis);
 
-                this.characters = (Characters) ois.readObject(); // extract ledger from file
-                listener.onCharactersReceived(this.characters); // tell the listener about it
+                this.player = (Player) ois.readObject(); // extract ledger from file
+                listener.onPlayerReceived(this.player); // tell the listener about it
 
             } catch (IOException e) {
-                final String emsg = String.format("I/O error writing to %s", this.file);
+                final String emsg = String.format("I/O error writing to %s", this.filePlayer);
                 Log.e("DatingSim", emsg);
                 e.printStackTrace();
             } catch (ClassNotFoundException e) {
-                final String emsg = String.format("Can't find class of object from %s", this.file);
+                final String emsg = String.format("Can't find class of object from %s", this.filePlayer);
                 Log.e("DatingSim", emsg);
                 e.printStackTrace();
             }

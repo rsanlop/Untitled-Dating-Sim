@@ -12,7 +12,7 @@ import edu.vassar.cmpu203.datingsim.R;
  * @version 10/10/2023
  */
 
-public class Characters {
+public class AllCharacters implements java.io.Serializable {
 
     public Character zeus;
 
@@ -27,7 +27,7 @@ public class Characters {
     public Character alone;
 
 
-    public Characters() {
+    public AllCharacters() {
 
         List<String> zeusd = new ArrayList<>();
         zeusd.add("You see a swan. Not just any swan though. It's Zeus! He notices you walk up to the gates and greets you" + "\n" +

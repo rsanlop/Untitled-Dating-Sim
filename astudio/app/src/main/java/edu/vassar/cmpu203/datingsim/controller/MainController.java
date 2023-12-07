@@ -1,16 +1,21 @@
 package edu.vassar.cmpu203.datingsim.controller;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import edu.vassar.cmpu203.datingsim.model.Characters;
+import java.io.File;
+
+import edu.vassar.cmpu203.datingsim.model.AllCharacters;
 import edu.vassar.cmpu203.datingsim.model.KissingGame;
 import edu.vassar.cmpu203.datingsim.model.Player;
 import edu.vassar.cmpu203.datingsim.model.Minigame;
 import edu.vassar.cmpu203.datingsim.model.Character;
 import edu.vassar.cmpu203.datingsim.model.RiddleGame;
 import edu.vassar.cmpu203.datingsim.model.TriviaGame;
+import edu.vassar.cmpu203.datingsim.persistence.IPersistenceFacade;
+import edu.vassar.cmpu203.datingsim.persistence.LocalStorageFacade;
 import edu.vassar.cmpu203.datingsim.view.ActivityMainView;
 import edu.vassar.cmpu203.datingsim.view.DateFragment;
 import edu.vassar.cmpu203.datingsim.view.EndingFragment;
@@ -41,16 +46,20 @@ import edu.vassar.cmpu203.datingsim.view.CharacterFragment;
 
 public class MainController extends AppCompatActivity implements IActivityMainView.Listener,  ITitleView.Listener, INameView.Listener, IMapView.Listener, IRiddleGameView.Listener, IKissingGameView.Listener, ITriviaGameView.Listener, IDateView.Listener, ISelectionView.Listener,
         ICharacterView.Listener, IEndingView.Listener, IInstructionsView.Listener, IStatsView.Listener {
-    Player curPlayer = new Player("");
+    Player curPlayer;
     Minigame minigame = new Minigame();
     ActivityMainView activityMainView;
     boolean menuHidden;
-    Characters characters = new Characters();
-    Character prevCharacter;
+    AllCharacters characters;
+    Character curCharacter;
     String mg;
     KissingGame kissingGame = new KissingGame();
     RiddleGame riddleGame = new RiddleGame();
     TriviaGame triviaGame = new TriviaGame();
+
+    IPersistenceFacade persFacade;
+
+    File storage;
 
 
 
@@ -63,6 +72,33 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
         this.activityMainView.hideMenu();
         this.activityMainView.displayFragment(new TitleFragment(this), true, "title");
         this.menuHidden = true;
+        this.storage = getFilesDir();
+        this.characters = new AllCharacters();
+        this.persFacade = new LocalStorageFacade(storage);
+        this.curPlayer = new Player("");
+        this.persFacade.retrieveCharacters(new IPersistenceFacade.Listener() {
+            @Override
+            public void onCharactersReceived(@NonNull AllCharacters characters) {
+                MainController.this.characters = characters;
+            }
+            @Override
+            public void onPlayerReceived(@NonNull Player player) {
+
+            }
+
+
+        });
+        this.persFacade.retrievePlayer(new IPersistenceFacade.Listener() {
+            @Override
+            public void onCharactersReceived(@NonNull AllCharacters characters) {
+
+            }
+
+            @Override
+            public void onPlayerReceived(@NonNull Player curPlayer) {
+                MainController.this.curPlayer = curPlayer;
+            }
+        });
 
     }
 
@@ -78,11 +114,15 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
 
     @Override
     public void onRestartClick() {
+        this.characters = new AllCharacters();
+        this.curPlayer = new Player("");
         this.activityMainView.displayFragment(new TitleFragment(this), false, "title fragment");}
 
 
     @Override
     public void onNewGameClicked() {
+        this.characters = new AllCharacters();
+        this.curPlayer = new Player("");
         this.activityMainView.displayFragment(new NameFragment(this), false, "name fragment");}
 
     @Override
@@ -92,36 +132,37 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
     @Override
     public void onAddedName(String name, INameView view) {
         this.curPlayer.setName(name);
+        this.persFacade.savePlayer(curPlayer);
         this.activityMainView.displayFragment(new MapFragment(this), true, "map fragment");}
 
     // ----------------------------------------------------------------------------------------------------------------
     @Override
     public void onClickedSwamp() {
-        prevCharacter = characters.shruck;
+        curCharacter = characters.shruck;
         this.activityMainView.displayFragment(new CharacterFragment(this, characters.shruck), true, "map fragment");
 
     }
     @Override
     public void onClickedOlympus() {
-        prevCharacter = characters.zeus;
+        curCharacter = characters.zeus;
         this.activityMainView.displayFragment(new CharacterFragment(this, characters.zeus), true, "map fragment");
 
     }
     @Override
     public void onClickedFreds() {
-        prevCharacter = characters.bonny;
+        curCharacter = characters.bonny;
         this.activityMainView.displayFragment(new CharacterFragment(this, characters.bonny), true, "map fragment");
 
     }
     @Override
     public void onClickedHell() {
-        prevCharacter = characters.satan;
+        curCharacter = characters.satan;
         this.activityMainView.displayFragment(new CharacterFragment(this, characters.satan), true, "map fragment");
 
     }
     @Override
     public void onClickedJapan() {
-        prevCharacter = characters.jojoson;
+        curCharacter = characters.jojoson;
         this.activityMainView.displayFragment(new CharacterFragment(this, characters.jojoson), true, "map fragment");
 
     }
@@ -141,9 +182,11 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
     public void onClickedScreen() {
 
         curPlayer.incNumDates();
-        prevCharacter.incNumDates();
+        this.persFacade.savePlayer(curPlayer);
+        curCharacter.incNumDates();
+        this.persFacade.saveCharacters(characters);
         if (mg.equals("Kissing Game")){
-            this.activityMainView.displayFragment(new KissingGameFragment(this, prevCharacter), true, "kissing game fragment");}
+            this.activityMainView.displayFragment(new KissingGameFragment(this, curCharacter), true, "kissing game fragment");}
 
         else if (mg.equals("Trivia Game")){
             this.activityMainView.displayFragment(new TriviaGameFragment(this), true, "trivia game fragment");}
@@ -152,14 +195,15 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
     }
     @Override
     public void onClickedNext() {
+        this.persFacade.saveCharacters(characters);
         this.activityMainView.displayFragment(new DateFragment(this), true, "date fragment");
     }
 
     @Override
     public void onGameDone(boolean result) {
-
+        this.persFacade.saveCharacters(characters);
         if (mg.equals("Kissing Game")){
-            this.activityMainView.displayFragment(new StatsFragment(this, prevCharacter, result, kissingGame), true, "stats fragment");
+            this.activityMainView.displayFragment(new StatsFragment(this, curCharacter, result, kissingGame), true, "stats fragment");
         }
         else if (mg.equals("Trivia Game")){
             this.activityMainView.displayFragment(new TriviaGameFragment(this), true, "trivia game fragment");}
@@ -207,6 +251,8 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
         this.activityMainView.displayFragment(new EndingFragment(this, characters.alone), true, "alone fragment");}
     @Override
     public void onClickedDone() {
+        this.characters = new AllCharacters();
+        this.curPlayer = new Player("");
         this.activityMainView.displayFragment(new TitleFragment(this), true, "title fragment");}
 
 
