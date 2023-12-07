@@ -10,34 +10,33 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.lang.reflect.Field;
 
 import edu.vassar.cmpu203.datingsim.model.Character;
+import edu.vassar.cmpu203.datingsim.model.Characters;
 import edu.vassar.cmpu203.datingsim.model.Player;
 
 public class LocalStorageFacade implements IPersistenceFacade {
 
     private final File file;
-    private static final String FILENAME = "The File";
-    private Character character;
+    private static final String FILENAME = "TheSaveFile";
+    private Characters characters;
     private Player player;
 
 
     public LocalStorageFacade(@NonNull File storageDir){
         this.file = new File(storageDir, FILENAME);
         this.player = new Player();
-        this.character = new Character();
+        this.characters = new Characters();
     }
 
     @Override
-    public void saveCharacter(Character character, int affection) {
-        this.character.incNumDates();
-        this.character.incAffection(affection);
-
+    public void saveCharacters(Characters characters) {
         try {
             FileOutputStream fos = new FileOutputStream(this.file);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
-            oos.writeObject(this.character);
+            oos.writeObject(this.characters);
 
         } catch (IOException e) {
             final String emsg = String.format("I/O error writing to %s", this.file);
@@ -47,14 +46,14 @@ public class LocalStorageFacade implements IPersistenceFacade {
     }
 
     @Override
-    public void retrieveCharacter(@NonNull Listener listener) {
+    public void retrieveCharacters(@NonNull Listener listener) {
         if (this.file.isFile()) {
             try {
                 FileInputStream fis = new FileInputStream(this.file);
                 ObjectInputStream ois = new ObjectInputStream(fis);
 
-                this.character = (Character) ois.readObject(); // extract ledger from file
-                listener.onCharacterReceived(this.character); // tell the listener about it
+                this.characters = (Characters) ois.readObject(); // extract ledger from file
+                listener.onCharactersReceived(this.characters); // tell the listener about it
 
             } catch (IOException e) {
                 final String emsg = String.format("I/O error writing to %s", this.file);
@@ -70,23 +69,39 @@ public class LocalStorageFacade implements IPersistenceFacade {
 
     @Override
     public void savePlayer(Player player) {
-        this.player.incNumDates();
         try {
             FileOutputStream fos = new FileOutputStream(this.file);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
-            oos.writeObject(this.character);
+            oos.writeObject(this.player);
 
         } catch (IOException e) {
             final String emsg = String.format("I/O error writing to %s", this.file);
-            Log.e("DatinSim", emsg);
+            Log.e("DatingSim", emsg);
             e.printStackTrace();
         }
 
     }
 
     @Override
-    public Player retrievePlayer() {
-        return null;
+    public void retrievePlayer(@NonNull Listener listener) {
+        if (this.file.isFile()) {
+            try {
+                FileInputStream fis = new FileInputStream(this.file);
+                ObjectInputStream ois = new ObjectInputStream(fis);
+
+                this.characters = (Characters) ois.readObject(); // extract ledger from file
+                listener.onCharactersReceived(this.characters); // tell the listener about it
+
+            } catch (IOException e) {
+                final String emsg = String.format("I/O error writing to %s", this.file);
+                Log.e("DatingSim", emsg);
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                final String emsg = String.format("Can't find class of object from %s", this.file);
+                Log.e("DatingSim", emsg);
+                e.printStackTrace();
+            }
+        }
     }
 }

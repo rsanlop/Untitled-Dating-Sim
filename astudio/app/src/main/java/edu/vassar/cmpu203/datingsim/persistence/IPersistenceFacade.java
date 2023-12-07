@@ -3,26 +3,27 @@ package edu.vassar.cmpu203.datingsim.persistence;
 import androidx.annotation.NonNull;
 
 import edu.vassar.cmpu203.datingsim.model.Character;
+import edu.vassar.cmpu203.datingsim.model.Characters;
 import edu.vassar.cmpu203.datingsim.model.Player;
 
 public interface IPersistenceFacade {
 
     interface Listener {
-        void onCharacterReceived(@NonNull Character character);
+        void onCharactersReceived(@NonNull Characters characters);
     }
 
 
     /**
-     * Issues a character save operation.
-     * @param character the character to be saved.
+     * Issues a characters save operation.
+     * @param characters the character to be saved.
      */
-    void saveCharacter(Character character, int affection);
+    void saveCharacters(Characters characters);
 
     /**
      * Issues a character retrieval operation.
      * @return the retrieved character.
      */
-    void retrieveCharacter(@NonNull Listener listener);
+    void retrieveCharacters(@NonNull Listener listener);
 
     /**
      * Issues a player save operation.
@@ -33,7 +34,7 @@ public interface IPersistenceFacade {
      * Issues a character retrieval operation.
      * @return the retrieved character.
      */
-    Player retrievePlayer();
+    void retrievePlayer(@NonNull Listener listener);
 
 
 
