@@ -44,7 +44,9 @@ public class ActivityMainView implements IActivityMainView{
                         "- Bonny: an animatronic who might get a little dangerous (think of five nights at freddys) \n" +
                         "- Satan: a really ravishing devil lady (some may say she's hot as hell) \n" +
                         "- Scarlet Jojoson: a fiery red-headed vigilante (not to be confused with the avenger)";
-                Snackbar.make(v, glossaryMessage, Snackbar.LENGTH_LONG).show();
+                Snackbar glossSnack = Snackbar.make(v, glossaryMessage, Snackbar.LENGTH_LONG);
+                glossSnack.setTextMaxLines(10);
+                glossSnack.show();
             }
         });
     }
