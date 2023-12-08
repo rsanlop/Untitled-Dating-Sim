@@ -13,28 +13,79 @@
         android:backgroundTint="#E8C898">
 
         <Button
-            android:id="@+id/triviaNextButton"
-            android:layout_width="wrap_content"
+            android:id="@+id/tbutton1"
+            android:layout_width="200dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="137dp"
+            android:layout_marginTop="79dp"
+            android:layout_marginEnd="52dp"
+            android:layout_marginBottom="11dp"
+            android:backgroundTint="#804D02"
+            android:text="Button"
+            app:layout_constraintBottom_toTopOf="@+id/tbutton3"
+            app:layout_constraintEnd_toStartOf="@+id/tbutton2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/trivia" />
+
+        <Button
+            android:id="@+id/tbutton4"
+            android:layout_width="200dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="142dp"
+            android:layout_marginBottom="36dp"
+            android:backgroundTint="#7E4B02"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tbutton2" />
+
+        <Button
+            android:id="@+id/tbutton3"
+            android:layout_width="200dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="137dp"
+            android:layout_marginEnd="52dp"
+            android:layout_marginBottom="36dp"
+            android:backgroundTint="#7E4C02"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tbutton4"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/tbutton2"
+            android:layout_width="200dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="79dp"
+            android:layout_marginEnd="142dp"
+            android:backgroundTint="#7F4C02"
+            android:text="Button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/trivia" />
+
+        <TextView
+            android:id="@+id/trivia"
+            android:layout_width="500dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="624dp"
-            android:layout_marginTop="330dp"
-            android:layout_marginEnd="19dp"
-            android:layout_marginBottom="33dp"
-            android:backgroundTint="#7E2C13"
-            android:text="@string/NextButton"
+            android:layout_marginStart="115dp"
+            android:layout_marginTop="47dp"
+            android:layout_marginEnd="116dp"
+            android:layout_marginBottom="277dp"
+            android:text="TextView"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/triviaGame" />
 
         <TextView
             android:id="@+id/triviaGame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="338dp"
-            android:layout_marginTop="26dp"
-            android:layout_marginEnd="321dp"
-            android:layout_marginBottom="364dp"
+            android:layout_marginStart="328dp"
+            android:layout_marginTop="49dp"
+            android:layout_marginEnd="328dp"
+            android:layout_marginBottom="343dp"
             android:background="#897AA3"
             android:backgroundTint="#00FFFFFF"
             android:fontFamily="@font/fira_mono"

@@ -3,12 +3,40 @@ package edu.vassar.cmpu203.datingsim.model;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.HashMap;
+import java.util.Random;
 
 public class RiddleGame implements  IMiniGame{
-    public int score = 0;
+    List<List<String>> allRiddles = new ArrayList<>();
 
-    HashMap<String, HashMap<String, String>> allRiddles;
-    
+    public RiddleGame(){
+        List<String> riddleAnswers1 = new ArrayList<>();
+        riddleAnswers1.add("Where does Friday come before Thursday?");
+        riddleAnswers1.add("In the dictionary");
+        riddleAnswers1.add("In the week");
+        riddleAnswers1.add("In Space");
+        riddleAnswers1.add("It just doesn't");
+        allRiddles.add(riddleAnswers1);
+        List<String> riddleAnswers2 = new ArrayList<>();
+        riddleAnswers2.add("What two things can you never eat for breakfast?");
+        riddleAnswers2.add("Lunch and dinner");
+        riddleAnswers2.add("Steak and cheese");
+        riddleAnswers2.add("Hands and knees");
+        riddleAnswers2.add("You can eat anything");
+        allRiddles.add(riddleAnswers2);
+        List<String> riddleAnswers3 = new ArrayList<>();
+        riddleAnswers3.add("What building has the most stories?");
+        riddleAnswers3.add("The library");
+        riddleAnswers3.add("Empire State Building");
+        riddleAnswers3.add("Burj Khalifa");
+        riddleAnswers3.add("Heaven");
+        allRiddles.add(riddleAnswers3);
+    }
+
+    public List<String> getRiddle(){
+        Random rand = new Random();
+        return allRiddles.get(rand.nextInt(allRiddles.size()));
+    }
+
 
     @Override
     public String getInstructions() {

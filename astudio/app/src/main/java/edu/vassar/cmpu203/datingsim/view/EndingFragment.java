@@ -51,12 +51,19 @@ public class EndingFragment extends Fragment implements IEndingView {
         super.onViewCreated(view, savedInstanceState);
         this.binding.characterName2.setText(character.getName());
         this.binding.characterAffection2.setText(character.getAffection());
-        this.binding.characterDialogue2.setText(getIntro(character.getDialogue()));
+        this.binding.characterDialogue2.setText(getEnding());
         charImage = this.binding.getRoot().getContext().getDrawable(character.getImageId());
         this.binding.characterImage2.setImageDrawable(charImage);
 
     }
 
-    public String getIntro(List<String> dialogue){return dialogue.get(0);
+    public String getEnding(){
+        if(character.getIntAffection() >= 50){
+            return character.getDialogue().get(3);
+        }
+        else{
+            return character.getDialogue().get(4);
+        }
+
     }
 }

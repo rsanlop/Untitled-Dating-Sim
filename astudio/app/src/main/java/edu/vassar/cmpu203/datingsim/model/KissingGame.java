@@ -29,7 +29,7 @@ public class KissingGame implements IMiniGame{
     @Override //returns the affection points
     public int getPoints(boolean result) {
         if(result){
-            return 5;
+            return 10;
         }
             else{
                 return 1;

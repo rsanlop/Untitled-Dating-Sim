@@ -1,26 +1,73 @@
 package edu.vassar.cmpu203.datingsim.model;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class TriviaGame implements IMiniGame {
-    public int score = 0;
+    List<List<String>> allTrivia = new ArrayList<>();
+
+    public TriviaGame(){
+        List<String> triviaAnswers1 = new ArrayList<>();
+        triviaAnswers1.add("What species of bird can fly backwards?");
+        triviaAnswers1.add("Hummingbird");
+        triviaAnswers1.add("Red Robin");
+        triviaAnswers1.add("Canary");
+        triviaAnswers1.add("Penguin");
+        allTrivia.add(triviaAnswers1);
+        List<String> triviaAnswers2 = new ArrayList<>();
+        triviaAnswers2.add("How many times does Santa check his list?");
+        triviaAnswers2.add("Twice");
+        triviaAnswers2.add("Once");
+        triviaAnswers2.add("Never");
+        triviaAnswers2.add("Thrice");
+        allTrivia.add(triviaAnswers2);
+        List<String> triviaAnswers3 = new ArrayList<>();
+        triviaAnswers3.add("What is the 5th decimal digit of pi?");
+        triviaAnswers3.add("9");
+        triviaAnswers3.add("4");
+        triviaAnswers3.add("6");
+        triviaAnswers3.add("5");
+        allTrivia.add(triviaAnswers3);
+    }
+
+    public List<String> getTrivia(){
+        Random rand = new Random();
+        return allTrivia.get(rand.nextInt(allTrivia.size()));
+    }
+
 
     @Override
     public String getInstructions() {
-        return "null";
+        String instructions = "Trivia Game Instructions: " +
+                "The goal of this game is to pick the right Trivia answer! You'll have four" +
+                " options and only one of them is right. Good luck, hope you know your stuff! :)";
+        return instructions;
     }
 
     @Override
     public String getName() {
-        return "Trivia";
+        return "Trivia Game";
     }
 
-    @Override
+    public String getResult(boolean result){
+        String outcome = "";
+        if(result){
+            outcome = "Congrats! You won! Dense brain alert :P Hope you're having fun, lets play some more! :)";
+        }
+        else{
+            outcome = "Oh no! :( Brain fart, huh? Better luck next time around :,(";
+        }
+        return outcome;
+    }
+    @Override //returns the points
     public int getPoints(boolean result) {
-        return 0;
-    }
-
-    @Override
-    public String getResult(boolean result) {
-        return "";
+        if(result){
+            return 5;
+        }
+        else{
+            return 1;
+        }
     }
 
 }

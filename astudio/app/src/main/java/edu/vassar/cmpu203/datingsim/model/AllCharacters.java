@@ -37,6 +37,8 @@ public class AllCharacters implements java.io.Serializable {
                 "look");
         zeusd.add("Oh, welcome back %s.");
         zeusd.add("You just looove coming back~~ ;)");
+        zeusd.add("I knew you always wanted me. I cant believe you tried to resist all of ~this~. What a silly goose, come here. ;)");
+        zeusd.add("Zeus takes a quick glance at you, turns his head swiftly and flies off in his swan form while honking 'As if!'");
 
         this.zeus = new Character("Zeus", 0, zeusd, R.drawable.zeusimage, 0,
                 R.drawable.heraandzeusnotkiss, R.drawable.zeuskiss, R.drawable.persleft, R.drawable.perswarn, R.drawable.perseright, R.drawable.hades);

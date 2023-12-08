@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.io.File;
 
 import edu.vassar.cmpu203.datingsim.model.AllCharacters;
@@ -118,7 +120,6 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
         this.curPlayer = new Player("");
         this.activityMainView.displayFragment(new TitleFragment(this), false, "title fragment");}
 
-
     @Override
     public void onNewGameClicked() {
         this.characters = new AllCharacters();
@@ -189,9 +190,9 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
             this.activityMainView.displayFragment(new KissingGameFragment(this, curCharacter), true, "kissing game fragment");}
 
         else if (mg.equals("Trivia Game")){
-            this.activityMainView.displayFragment(new TriviaGameFragment(this), true, "trivia game fragment");}
+            this.activityMainView.displayFragment(new TriviaGameFragment(this, triviaGame), true, "trivia game fragment");}
         else {
-            this.activityMainView.displayFragment(new RiddleGameFragment(this), true, "riddle game fragment");}
+            this.activityMainView.displayFragment(new RiddleGameFragment(this, riddleGame), true, "riddle game fragment");}
     }
     @Override
     public void onClickedNext() {
@@ -206,9 +207,9 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
             this.activityMainView.displayFragment(new StatsFragment(this, curCharacter, result, kissingGame), true, "stats fragment");
         }
         else if (mg.equals("Trivia Game")){
-            this.activityMainView.displayFragment(new TriviaGameFragment(this), true, "trivia game fragment");}
+            this.activityMainView.displayFragment(new StatsFragment(this, curCharacter, result, triviaGame), true, "trivia game fragment");}
         else {
-            this.activityMainView.displayFragment(new RiddleGameFragment(this), true, "riddle game fragment");}
+            this.activityMainView.displayFragment(new StatsFragment(this, curCharacter, result, riddleGame), true, "riddle game fragment");}
 
 
     }

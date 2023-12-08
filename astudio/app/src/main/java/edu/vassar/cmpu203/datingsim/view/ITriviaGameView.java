@@ -4,7 +4,7 @@ public interface ITriviaGameView {
 
     interface Listener{
 
-        void onClickedNext();
+        void onGameDone(boolean result);
 
     }
 }

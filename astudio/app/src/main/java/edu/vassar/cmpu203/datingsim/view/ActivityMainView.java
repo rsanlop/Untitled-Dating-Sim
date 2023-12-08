@@ -13,6 +13,8 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import edu.vassar.cmpu203.datingsim.databinding.ActivityMainBinding;
 
 public class ActivityMainView implements IActivityMainView{
@@ -32,6 +34,19 @@ public class ActivityMainView implements IActivityMainView{
         this.listener = listener;
         this.binding.settingsButton.setOnClickListener(v -> listener.onSettingsClick());
         this.binding.restartButton.setOnClickListener(v ->  listener.onRestartClick());
+        this.binding.glossaryButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                String glossaryMessage = "- Date: an interaction between two people interested in each other.  \n" +
+                        "- Dating Simulator: virtual experience that exposes a player to an unconventional style of dating. \n" +
+                        "- Zeus: a god of lightning and thunder. He gets around alot (in stories) \n" +
+                        "- Shruck: a big green ogre with small ears (super similar to another green ogre *wink) \n" +
+                        "- Bonny: an animatronic who might get a little dangerous (think of five nights at freddys) \n" +
+                        "- Satan: a really ravishing devil lady (some may say she's hot as hell) \n" +
+                        "- Scarlet Jojoson: a fiery red-headed vigilante (not to be confused with the avenger)";
+                Snackbar.make(v, glossaryMessage, Snackbar.LENGTH_LONG).show();
+            }
+        });
     }
 
     /**

@@ -48,6 +48,7 @@ public class Character implements java.io.Serializable {
     public String getAffection(){
         return "" + affection;
     }
+    public int getIntAffection(){return affection;}
     public int incAffection(int points){
         this.affection += points;
         return affection;
