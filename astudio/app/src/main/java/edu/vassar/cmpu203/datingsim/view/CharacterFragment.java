@@ -62,6 +62,6 @@ public class CharacterFragment extends Fragment implements ICharacterView{
             return dialogue.get(0);
         }
         Random rand = new Random();
-      return dialogue.get(rand.nextInt(dialogue.size() - 1) + 1);
+      return dialogue.get(rand.nextInt(dialogue.size() - 3) + 1);
     }
 }

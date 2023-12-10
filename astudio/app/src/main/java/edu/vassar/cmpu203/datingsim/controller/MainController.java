@@ -234,22 +234,22 @@ public class MainController extends AppCompatActivity implements IActivityMainVi
 
     @Override
     public void onFinalClickedShruck() {
-        this.activityMainView.displayFragment(new EndingFragment(this, characters.shruck), true, "shruck fragment");}
+        this.activityMainView.displayFragment(new EndingFragment(this, characters.shruck, curPlayer), true, "shruck fragment");}
     @Override
     public void onFinalClickedZeus() {
-        this.activityMainView.displayFragment(new EndingFragment(this, characters.zeus), true, "zeus fragment");}
+        this.activityMainView.displayFragment(new EndingFragment(this, characters.zeus, curPlayer), true, "zeus fragment");}
     @Override
     public void onFinalClickedBonny() {
-        this.activityMainView.displayFragment(new EndingFragment(this, characters.bonny), true, "bonny fragment");}
+        this.activityMainView.displayFragment(new EndingFragment(this, characters.bonny, curPlayer), true, "bonny fragment");}
     @Override
     public void onFinalClickedSatan() {
-        this.activityMainView.displayFragment(new EndingFragment(this, characters.satan), true, "satan fragment");}
+        this.activityMainView.displayFragment(new EndingFragment(this, characters.satan, curPlayer), true, "satan fragment");}
     @Override
     public void onFinalClickedJojoson() {
-        this.activityMainView.displayFragment(new EndingFragment(this, characters.jojoson), true, "jojoson fragment");}
+        this.activityMainView.displayFragment(new EndingFragment(this, characters.jojoson, curPlayer), true, "jojoson fragment");}
     @Override
     public void onClickedAlone() {
-        this.activityMainView.displayFragment(new EndingFragment(this, characters.alone), true, "alone fragment");}
+        this.activityMainView.displayFragment(new EndingFragment(this, characters.alone, curPlayer), true, "alone fragment");}
     @Override
     public void onClickedDone() {
         this.characters = new AllCharacters();

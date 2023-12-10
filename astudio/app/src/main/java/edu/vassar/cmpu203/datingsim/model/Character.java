@@ -1,7 +1,5 @@
 package edu.vassar.cmpu203.datingsim.model;
 
-import android.media.Image;
-
 import java.util.List;
 
 /**
@@ -24,11 +22,14 @@ public class Character implements java.io.Serializable {
 
     private int smallFrontImageId;
     private int smallRightImageId;
+    private int goodEndingImageId;
+    private int badEndingImageId;
 
     public Character(){}
 
     public Character(String name, int affection, List<String> dialogue, int imageId, int numDates,
-                     int mainImageId, int mainImageKissId, int smallImageId, int smallFrontImageId, int smallRightImageId, int bigImageId){
+                     int mainImageId, int mainImageKissId, int smallImageId, int smallFrontImageId,
+                     int smallRightImageId, int bigImageId, int goodEndingImage, int badEndingImage){
         this.name = name;
         this.affection = affection;
         this.dialogue = dialogue;
@@ -40,6 +41,8 @@ public class Character implements java.io.Serializable {
         this.bigImageId = bigImageId;
         this.smallFrontImageId = smallFrontImageId;
         this.smallRightImageId = smallRightImageId;
+        this.goodEndingImageId = goodEndingImage;
+        this.badEndingImageId = badEndingImage;
 
     }
     public String getName(){
@@ -74,6 +77,8 @@ public class Character implements java.io.Serializable {
     public int getBigImageId(){
         return bigImageId;
     }
+    public int getGoodEndingImageId(){return goodEndingImageId;}
+    public int getBadEndingImageId(){return badEndingImageId;}
     public List<String> getDialogue() {
         return dialogue;
     }

@@ -40,8 +40,9 @@ public class AllCharacters implements java.io.Serializable {
         zeusd.add("I knew you always wanted me. I cant believe you tried to resist all of ~this~. What a silly goose, come here. ;)");
         zeusd.add("Zeus takes a quick glance at you, turns his head swiftly and flies off in his swan form while honking 'As if!'");
 
-        this.zeus = new Character("Zeus", 0, zeusd, R.drawable.zeusimage, 0,
-                R.drawable.heraandzeusnotkiss, R.drawable.zeuskiss, R.drawable.persleft, R.drawable.perswarn, R.drawable.perseright, R.drawable.hades);
+        this.zeus = new Character("Zeus", 0, zeusd, R.drawable.zeus, 0,
+                R.drawable.heraandzeusnotkiss, R.drawable.zeuskiss, R.drawable.persleft,
+                R.drawable.perswarn, R.drawable.perseright, R.drawable.hades,R.drawable.zeus, R.drawable.zeus );
 
         List<String> shruckd = new ArrayList<>();
         shruckd.add("You see a farty swamp the size of small house, right in front of a run-down tree house. You see the door slam open" + "\n" +
@@ -51,9 +52,11 @@ public class AllCharacters implements java.io.Serializable {
                 "MY BLOODY SWAMP IS MY BLOODY ARSE!'");
         shruckd.add("ARGG, ARGG you glad you came?");
         shruckd.add("Roses are red, violets are blue, I just farted, phew.");
-        this.shruck = new Character("Shruck", 0, shruckd, R.drawable.shruckimage, 0,
+        shruckd.add("Shruck poofs and before you is not the original shruck that you've seen so often.");
+        shruckd.add("bad ending");
+        this.shruck = new Character("Shruck", 0, shruckd, R.drawable.shruck, 0,
                 R.drawable.shreknotkiss, R.drawable.shrekkiss, R.drawable.donkeyleft, R.drawable.donkeywarning,
-                R.drawable.donkeyright, R.drawable.dragon);
+                R.drawable.donkeyright, R.drawable.dragon, R.drawable.shruck_goodending, R.drawable.shruck);
 
 
         List<String> bonnyd = new ArrayList<>();
@@ -65,9 +68,11 @@ public class AllCharacters implements java.io.Serializable {
                 "the purple animatronic looks and you and slowly says 'Bonny'.");
         bonnyd.add("har har har har" );
         bonnyd.add("DUYGI^GD*@(@EHxUHJNJOI");
-        this.bonny = new Character("Bonny", 0, bonnyd, R.drawable.bonnyimage, 0,
+        bonnyd.add("good ending");
+        bonnyd.add("bad ending");
+        this.bonny = new Character("Bonny", 0, bonnyd, R.drawable.bonny, 0,
                 R.drawable.bonnynotkiss, R.drawable.bonnykiss, R.drawable.boyleft, R.drawable.boywarning,
-                R.drawable.boyright, R.drawable.collapsedfreddy);
+                R.drawable.boyright, R.drawable.collapsedfreddy, R.drawable.bonny, R.drawable.bonny);
 
         List<String> satand = new ArrayList<>();
         satand.add("Immediately you feel the immense heat radiating all around you. There's no doubt you are in Hell. Satan stands before you in all her " + "\n" +
@@ -76,9 +81,11 @@ public class AllCharacters implements java.io.Serializable {
                 "wink at you. 'Or maybe its just you' she says while pointing at you. You can only help but think Hell yea.");
         satand.add("hell of a surprise to see you again :)");
         satand.add("try not to get hot and bothered :)))");
-        this.satan = new Character("Satan", 0, satand, R.drawable.satanimage, 0,
+        satand.add("good ending");
+        satand.add("bad ending");
+        this.satan = new Character("Satan", 0, satand, R.drawable.satan, 0,
                 R.drawable.yunonotkiss, R.drawable.yunokiss, R.drawable.akiseleft, R.drawable.akisewarning,
-                R.drawable.akiseright, R.drawable.murumuru);
+                R.drawable.akiseright, R.drawable.murumuru, R.drawable.satan, R.drawable.satan);
 
 
         List<String> jojosond = new ArrayList<>();
@@ -89,13 +96,23 @@ public class AllCharacters implements java.io.Serializable {
                 "and disappears in the Tokyo skyline.");
         jojosond.add("What are you doing back here? ");
         jojosond.add("*kicks you*");
-        this.jojoson = new Character("Scarlet Jojoson", 0, jojosond, R.drawable.jojosonimage, 0,
+        jojosond.add("good ending");
+        jojosond.add("bad ending");
+        this.jojoson = new Character("Scarlet Jojoson", 0, jojosond, R.drawable.jojoson, 0,
                 R.drawable.jojosonnotkiss, R.drawable.jojosonkiss, R.drawable.polarexpressgirlleft, R.drawable.polarexpressgirlwarning,
-                R.drawable.polarexpressgirlright, R.drawable.holk);
+                R.drawable.polarexpressgirlright, R.drawable.holk,R.drawable.jojoson, R.drawable.jojoson );
 
         List<String> aloned = new ArrayList<>();
         aloned.add("Phew, glad this is the case. Who even needs people? " +
                 "Am I right?");
-        this.alone = new Character("No one", 100, aloned, R.drawable.aloneimage, 0, 0, 0, 0, 0, 0, 0);
+        aloned.add("");
+        aloned.add("");
+        aloned.add("You inhale deeply. The dates were nice but ultimately " +
+                "you aren't ready to settle down and choose anyone right now. You walk down " +
+                "the beach and smile while remembering the people you've met. ");
+        aloned.add("");
+        this.alone = new Character("No one", 100, aloned, R.drawable.aloneimage, 0,
+                0, 0, 0, 0, 0, 0,
+                R.drawable.aloneimage, R.drawable.aloneimage );
     }
 }

@@ -12,15 +12,15 @@ public class Endings {
     public Endings(){
 
     }
-    public void getEnding(int affection){
+    public String getEnding(int affection){
         if (affection == 100){
-            System.out.println("Phew, glad this is the case. Who even needs people? " +
+            return (", phew. Glad this is the case. Who even needs people? " +
                     "Am I right?");
         } else if (affection > 50) {
-            System.out.println("Woohooo! Good ending! They like you too :)");
+            return (" , congrats! Woohooo! Good ending! They like you too :)");
         }
         else{
-            System.out.println("They don't like you... Damn, that sucks. Better luck next time ;)");
+            return (" , oh no. They don't like you... Damn, that sucks. Better luck next time ;)");
         }
     }
 }
