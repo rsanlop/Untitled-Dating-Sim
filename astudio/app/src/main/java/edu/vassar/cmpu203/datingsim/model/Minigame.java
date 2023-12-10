@@ -25,6 +25,5 @@ public class Minigame {
     public String getMinigame(){
         Random rand = new Random();
         return minigames.get(rand.nextInt(minigames.size()));
-
     }
 }

@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12e95267-be6c-4cd2-be0d-b69a486467ae" name="Changes" comment="" />
+    <list default="true" id="12e95267-be6c-4cd2-be0d-b69a486467ae" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/java/edu/vassar/cmpu203/datingsim/model/Endings.java" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/java/edu/vassar/cmpu203/datingsim/model/Endings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/astudio/app/src/main/java/edu/vassar/cmpu203/datingsim/model/Minigame.java" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/main/java/edu/vassar/cmpu203/datingsim/model/Minigame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/astudio/app/src/test/java/edu/vassar/cmpu203/datingsim/CharacterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/astudio/app/src/test/java/edu/vassar/cmpu203/datingsim/CharacterTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,6 +55,7 @@
       <workItem from="1700249872441" duration="486000" />
       <workItem from="1700254141828" duration="4041000" />
       <workItem from="1700576395577" duration="667000" />
+      <workItem from="1702239756896" duration="215000" />
     </task>
     <servers />
   </component>

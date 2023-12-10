@@ -8,9 +8,7 @@ package edu.vassar.cmpu203.datingsim.model;
  */
 
 public class Endings {
-
     public Endings(){
-
     }
     public String getEnding(int affection){
         if (affection == 100){

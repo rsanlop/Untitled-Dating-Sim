@@ -35,8 +35,15 @@ public class AllCharacters implements java.io.Serializable {
                 "what he sees.) 'Oh, please excuse my disheveled form!' He waddles in a circle at lightning speed" + "\n" +
                 "and poof. He's actually kind of ripped. (as a human) 'I hope you like what YOU see.' He gives a smug" + "\n" +
                 "look");
-        zeusd.add("Oh, welcome back %s.");
-        zeusd.add("You just looove coming back~~ ;)");
+        zeusd.add("\"Well, well, well! What do we have here?\" Zeus booms with laughter as he notices your presence. He flexes \n" +
+                "his mighty arms, causing sparks of divine energy to illuminate the air. \"Ah, mortal, you've caught me in the \n" +
+                "middle of my celestial workout routine. Quite the sight, isn't it?\" Zeus grins mischievously, flexing his \n" +
+                "celestial muscles. Thunder rumbles in the background, emphasizing the godly display.\"I must say, you've got a good \n" +
+                "eye for timing. Not everyone gets to witness the king of the gods in his divine workout attire,\" Zeus remarks, a \n" +
+                "twinkle of amusement in his sky-blue eyes.");
+        zeusd.add("With a twinkle in his sky-blue eyes, Zeus greets you with a sly smile.\"Well, well, look who's back for another \n" +
+                "round,\" he chuckles, leaning casually against his golden throne. The air crackles with a playful energy.\n" +
+                "\"You must have missed the divine charm of Olympus,\" Zeus teases, his voice carrying a hint of mischief.");
         zeusd.add("I knew you always wanted me. I cant believe you tried to resist all of ~this~. What a silly goose, come here. ;)");
         zeusd.add("Zeus takes a quick glance at you, turns his head swiftly and flies off in his swan form while honking 'As if!'");
 
@@ -50,8 +57,16 @@ public class AllCharacters implements java.io.Serializable {
                 "to stomp towards you. 'WHAT ARE YOU DOING IN MY BLOODY SWAMP!' he bellows, as pieces of his stinky dinner fly out his" + "\n" +
                 "mouth and onto your face. 'DON'T TELL ME YOU WANT TO FART IN IT. BECAUSE LET ME TELL YOU. THE ONLY ONE WHO CAN FART IN" + "\n" +
                 "MY BLOODY SWAMP IS MY BLOODY ARSE!'");
-        shruckd.add("ARGG, ARGG you glad you came?");
-        shruckd.add("Roses are red, violets are blue, I just farted, phew.");
+        shruckd.add("\"Hmm, what's this then? Another intruder in my beloved swamp?\" The voice, laced with a hint of posh British sarcasm, rings out.\n" +
+                "\"Well, aren't you a brave little adventurer?\" They scoff, shooting you a sidelong glance. \"Don't go thinking this swamp welcomes just \n" +
+                "anyone. It's my domain, and I don't need any meddling outsiders. Despite the rudeness, there's a peculiar charm to their British accent \n" +
+                "and the way they scowl with a mix of annoyance and intrigue.");
+        shruckd.add("As you entered the room, you immediately spotted the surly British ogre you had crossed paths with before. He scowled at you from \n" +
+                "across the room, a pint in hand, looking as ornery as ever. \"Oi, what's this, then? If it ain't the cheeky so-and-so,\" he grumbled, \n" +
+                "taking a swig of his drink. You couldn't resist a smirk. He shot you a glare that could curdle milk. \" What're you after now, eh?\"\n" +
+                "You leaned in, undeterred by his abrasive demeanor. \"Just thought I'd grace you with my charming presence. You know, spread a bit of \n" +
+                "sunshine your way.\" He just grunted in response, but you couldn't help but detect a hint of a smirk. It seemed like, beneath the \n" +
+                "rugged exterior, there might be a begrudging tolerance for your antics after all.");
         shruckd.add("Shruck poofs and before you is not the original shruck that you've seen so often.");
         shruckd.add("Shruck takes one good look at you, pauses to silently open his mouth, and all of a sudden you see chunks of his breakfast, lunch, and dinner all" +
                 "spill out over you.");
@@ -67,8 +82,14 @@ public class AllCharacters implements java.io.Serializable {
                 "As it holds out it's hands it says 'Pizza?' in a slow robotic voice. You look at the hands and there is no pizza :(. " + "\n" +
                 "Afraid of what will happen if you refuse, you take the fake pizza and pretend to eat it. After seeing you play along " + "\n" +
                 "the purple animatronic looks and you and slowly says 'Bonny'.");
-        bonnyd.add("har har har har" );
-        bonnyd.add("DUYGI^GD*@(@EHxUHJNJOI CANNOLI??? *Y(HYD#(8");
+        bonnyd.add("In the dimly lit entertainment venue, you find Bonny, the purple animatronic, once again. Standing silently with \n" +
+                "expressive eyes, she acknowledges your presence. You greet her, and in return, she subtly nods—a familiar exchange \n" +
+                "between old friends. Despite her limited speech, Bonny communicates volumes through deliberate gestures and a quiet \n" +
+                "charm. In these moments of shared warmth, you feel understood and appreciated in the whimsical world of neon and \n" +
+                "nostalgia" );
+        bonnyd.add("The air is charged with a quiet energy as Bonny extends her robotic hand, a gesture that feels both intentional and\n" +
+                " tender. Intrigued, you reach out, and your fingers delicately intertwine with hers. The touch, though mechanical, \n" +
+                "carries a sense of connection that transcends the boundaries of artificiality.");
         bonnyd.add("Bonny jumps up and down in all her rusty and clangy glory. HAA AH AK is all she can make out due to pure excitement");
         bonnyd.add("Bonny emerges from the darkness ever so slowly, takes one long look at you, then slwoly backs away in dissapointment. HARR HAR   HAR....");
         this.bonny = new Character("Bonny", 0, bonnyd, R.drawable.bonny, 0,
@@ -80,8 +101,10 @@ public class AllCharacters implements java.io.Serializable {
                 "sultry glory. She seductively catwalks over to you. 'Greetings, or should I say Hell-o.' She bats her eyes and tucks her hair behind her " + "\n" +
                 "ear proudly. She then says 'Pretty hot in here, right?' as she hold up a finger heart with flames coming out of it and then she can't help but " + "\n" +
                 "wink at you. 'Or maybe its just you' she says while pointing at you. You can only help but think Hell yea.");
-        satand.add("hell of a surprise to see you again :)");
-        satand.add("try not to get hot and bothered :)))");
+        satand.add("Satan leans in, her voice a sultry whisper, \"You must be addicted to the sizzling company and the eternal warmth. I don't blame you; I've got a \n" +
+                "hell of a charm, haven't I? Now, what's the sin that brings you back to my fiery embrace?\"");
+        satand.add("She raises an eyebrow, her lips curling into a mischievous smile. \"Oh, you're positively devilish in your return. Perhaps you're just here to \n" +
+                "indulge in the forbidden fruits, or maybe you're hoping for a taste of something even spicier?\"");
         satand.add("Why of course you'd choose me. Temptation? I invented her ;)");
         satand.add("Satan looks at you in total disgust. She lifts a finger to your face and all of a sudden you are engulfed in flames so hot your body immediately melts away." +
                 "Tsk tsk tsk good riddance.");

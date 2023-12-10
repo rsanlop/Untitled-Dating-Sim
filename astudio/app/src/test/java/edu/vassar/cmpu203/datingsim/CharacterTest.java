@@ -19,17 +19,19 @@ public class CharacterTest {
     @Test
     public void testGetName() {
         List<String> tested = new ArrayList<>();
-        Character teste = new Character("Teste", 0, tested, 10, 0, 0, 0, 0, 0);
+        Character teste = new Character("Teste", 0, tested, 10, 0,
+                0, 0, 0, 0, 0,
+                0, 0, 0);
         assertTrue(teste.getName().equals("Teste"));
 
     }
-
     @Test
     public void testSetAffection() {
         List<String> tested = new ArrayList<>();
-        Character teste = new Character("Teste", 0, tested, 10, 0, 0, 0, 0, 0);
+        Character teste = new Character("Teste", 0, tested, 10, 0,
+                0, 0, 0, 0, 0,
+                0, 0, 0);
         assertEquals(teste.incAffection(14), 14);
-
     }
 
 }
