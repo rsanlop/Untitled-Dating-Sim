@@ -29,6 +29,21 @@ public class TriviaGame implements IMiniGame {
         triviaAnswers3.add("6");
         triviaAnswers3.add("5");
         allTrivia.add(triviaAnswers3);
+        List<String> triviaAnswers4 = new ArrayList<>();
+        triviaAnswers4.add("What is the world's most expensive spice");
+        triviaAnswers4.add("Saffron");
+        triviaAnswers4.add("Cumin");
+        triviaAnswers4.add("Paprika");
+        triviaAnswers4.add("All spice");
+        allTrivia.add(triviaAnswers4);
+        List<String> triviaAnswers5 = new ArrayList<>();
+        triviaAnswers5.add("Scurvy is caused by a lack of this vitamin?");
+        triviaAnswers5.add("Vitamin C");
+        triviaAnswers5.add("Vitamin D");
+        triviaAnswers5.add("Vitamin A");
+        triviaAnswers5.add("Gummy Vitamins");
+        allTrivia.add(triviaAnswers5);
+
     }
 
     public List<String> getTrivia(){

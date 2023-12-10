@@ -78,34 +78,45 @@ public class ButtonInstrumentedTest {
         Espresso.onView(ViewMatchers.withId(R.id.continueButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
-        Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
-                ViewMatchers.withId(R.id.kissingNextButton));
+        Espresso.onView(ViewMatchers.withId(R.id.instructionScreen)).check(ViewAssertions.matches(isDisplayed()));
+
+    }
+    @org.junit.Test
+    public void testInstructionsScreen() {
+        // pressed character screen. boom.
+        Espresso.onView(ViewMatchers.withId(R.id.continueButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.instructionScreen)).perform(ViewActions.click());
+        Matchers.anyOf(ViewMatchers.withId(R.id.riddleGame), ViewMatchers.withId(R.id.triviaGame),
+                ViewMatchers.withId(R.id.kissingGame));
     }
 
     @org.junit.Test
-    public void testMiniGameNextButton() {
+    public void testMiniGameNext() {
         // pressed nextButton. boom.
         // same logic is applied in the other minigames' screen buttons so if this one works the rest work too
         Espresso.onView(ViewMatchers.withId(R.id.continueButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
-        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
-                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
-        Espresso.onView(ViewMatchers.withId(R.id.yesButton)).check(ViewAssertions.matches(isDisplayed()));
+        Espresso.onView(ViewMatchers.withId(R.id.instructionScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.rbutton1), ViewMatchers.withId(R.id.tbutton1),
+                ViewMatchers.withId(R.id.kissmescreen))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.statsNextButton)).check(ViewAssertions.matches(isDisplayed()));
     }
 
 
     @org.junit.Test
-    public void testYesButton() {
+    public void testStatsNextButton() {
         // pressed yes button. boom.
         Espresso.onView(ViewMatchers.withId(R.id.continueButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
-        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
-                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
-        Espresso.onView(ViewMatchers.withId(R.id.yesButton)).perform(ViewActions.click());
-        Espresso.onView(ViewMatchers.withId(R.id.swampButton)).check(ViewAssertions.matches(isDisplayed()));
-
+        Espresso.onView(ViewMatchers.withId(R.id.instructionScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.rbutton1), ViewMatchers.withId(R.id.tbutton1),
+                ViewMatchers.withId(R.id.kissmescreen))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.statsNextButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.yesButton)).check(ViewAssertions.matches(isDisplayed()));
     }
 
 
@@ -117,18 +128,24 @@ public class ButtonInstrumentedTest {
         Espresso.onView(ViewMatchers.withId(R.id.continueButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
-        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
-                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.instructionScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.rbutton1), ViewMatchers.withId(R.id.tbutton1),
+                ViewMatchers.withId(R.id.kissmescreen))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.statsNextButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.yesButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
-        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
-                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.instructionScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.rbutton1), ViewMatchers.withId(R.id.tbutton1),
+                ViewMatchers.withId(R.id.kissmescreen))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.statsNextButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.yesButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
-        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
-                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.instructionScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.rbutton1), ViewMatchers.withId(R.id.tbutton1),
+                ViewMatchers.withId(R.id.kissmescreen))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.statsNextButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.noButton)).check(ViewAssertions.matches(isDisplayed()));
     }
 
@@ -138,18 +155,24 @@ public class ButtonInstrumentedTest {
         Espresso.onView(ViewMatchers.withId(R.id.continueButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
-        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
-                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.instructionScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.rbutton1), ViewMatchers.withId(R.id.tbutton1),
+                ViewMatchers.withId(R.id.kissmescreen))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.statsNextButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.yesButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
-        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
-                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.instructionScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.rbutton1), ViewMatchers.withId(R.id.tbutton1),
+                ViewMatchers.withId(R.id.kissmescreen))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.statsNextButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.yesButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
-        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
-                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.instructionScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.rbutton1), ViewMatchers.withId(R.id.tbutton1),
+                ViewMatchers.withId(R.id.kissmescreen))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.statsNextButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.noButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.jojosonButton)).check(ViewAssertions.matches(isDisplayed()));
     }
@@ -160,19 +183,25 @@ public class ButtonInstrumentedTest {
         Espresso.onView(ViewMatchers.withId(R.id.continueButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
-        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
-                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.instructionScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.rbutton1), ViewMatchers.withId(R.id.tbutton1),
+                ViewMatchers.withId(R.id.kissmescreen))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.statsNextButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.yesButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
-        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
-                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.instructionScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.rbutton1), ViewMatchers.withId(R.id.tbutton1),
+                ViewMatchers.withId(R.id.kissmescreen))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.statsNextButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.yesButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
-        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
-                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
-        Espresso.onView(ViewMatchers.withId(R.id.noButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.instructionScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.rbutton1), ViewMatchers.withId(R.id.tbutton1),
+                ViewMatchers.withId(R.id.kissmescreen))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.statsNextButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.noButton)).check(ViewAssertions.matches(isDisplayed()));
         Espresso.onView(ViewMatchers.withId(R.id.jojosonButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.doneButton)).check(ViewAssertions.matches(isDisplayed()));
     }
@@ -183,19 +212,25 @@ public class ButtonInstrumentedTest {
         Espresso.onView(ViewMatchers.withId(R.id.continueButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
-        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
-                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.instructionScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.rbutton1), ViewMatchers.withId(R.id.tbutton1),
+                ViewMatchers.withId(R.id.kissmescreen))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.statsNextButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.yesButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
-        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
-                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.instructionScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.rbutton1), ViewMatchers.withId(R.id.tbutton1),
+                ViewMatchers.withId(R.id.kissmescreen))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.statsNextButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.yesButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.swampButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.characterScreen)).perform(ViewActions.click());
-        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.riddleNextButton), ViewMatchers.withId(R.id.triviaNextButton),
-                ViewMatchers.withId(R.id.kissingNextButton))).perform(ViewActions.click());
-        Espresso.onView(ViewMatchers.withId(R.id.noButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.instructionScreen)).perform(ViewActions.click());
+        Espresso.onView(Matchers.anyOf(ViewMatchers.withId(R.id.rbutton1), ViewMatchers.withId(R.id.tbutton1),
+                ViewMatchers.withId(R.id.kissmescreen))).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.statsNextButton)).perform(ViewActions.click());
+        Espresso.onView(ViewMatchers.withId(R.id.noButton)).check(ViewAssertions.matches(isDisplayed()));
         Espresso.onView(ViewMatchers.withId(R.id.jojosonButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.doneButton)).perform(ViewActions.click());
         Espresso.onView(ViewMatchers.withId(R.id.startButton)).check(ViewAssertions.matches(isDisplayed()));

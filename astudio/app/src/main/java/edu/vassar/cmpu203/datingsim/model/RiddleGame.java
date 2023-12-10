@@ -30,6 +30,21 @@ public class RiddleGame implements  IMiniGame{
         riddleAnswers3.add("Burj Khalifa");
         riddleAnswers3.add("Heaven");
         allRiddles.add(riddleAnswers3);
+        List<String> riddleAnswers4 = new ArrayList<>();
+        riddleAnswers4.add("What gets shorter as it grows older?");
+        riddleAnswers4.add("A candle");
+        riddleAnswers4.add("A flower");
+        riddleAnswers4.add("A fruit");
+        riddleAnswers4.add("Thoughts");
+        allRiddles.add(riddleAnswers4);
+        List<String> riddleAnswers5 = new ArrayList<>();
+        riddleAnswers5.add("What has many keys but cannot open a single lock?");
+        riddleAnswers5.add("A piano");
+        riddleAnswers5.add("A bad janitor");
+        riddleAnswers5.add("A keychain");
+        riddleAnswers5.add("I don't know");
+        allRiddles.add(riddleAnswers5);
+
     }
 
     public List<String> getRiddle(){
