@@ -20,12 +20,13 @@ actor "User" as user
     dialogue
     ImageID
     NumDates
+ 
     }
     
     class Minigame{
     type
     instructions
-    duration
+    score
     }
     
     class EndingScreens{
@@ -66,15 +67,20 @@ player -> ui : selects location
 ui -> controller : getCharacter
 controller -> ui : 
 game -> ui : displayDialogue(str)
-game -> ui : displayStartbutton
-player -> ui : presses start 
+player -> ui : presses screen to start 
 controller -> minigame : getRandomMinigame()
 controller -> ui : displayGame()
 player -> ui : plays game
 controller -> character : updateAffection(result)
+game -> ui : displayMoreDates()
+player -> ui : presses yes button (at least 3x)
+player -> ui : presses no button
+game -> ui : displaySelectionScreen
+player -> ui : chooses character 
 controller -> ending : getEnding(result)
 controller -> ui : displayEnding()
 controller -> ui : displayDialogue()
+player -> ui : press done button
 ```
 
 ```plantuml
@@ -152,6 +158,37 @@ class Player{
     public void setNumDates()
 }
 
+class Views{
+}
+
+
+
+ 
+
+Controller - Player
+Controller - Character
+Controller - Minigame
+Controller - Endings
+Controller - Views
+```
+
+
+```plantuml
+
+skinparam titleBorderRoundCorner 15
+skinparam titleBorderThickness 2
+skinparam titleBorderColor red
+skinparam titleBackgroundColor Aqua-CadetBlue
+
+title View Package Diagram
+
+
+class ActivityMainView{
+    FragmentManager fmanager
+    ActivityMainBinding binding
+    Listener listener
+}
+
 class IActivityMainView{
     interface Listener 
     void onSettingsClick()
@@ -161,12 +198,35 @@ class IActivityMainView{
     void showMenu()
 }
 
-
+class CharacterFragment{
+    FragmentCharacterBinding binding;
+    Listener listener;
+    private Character character;
+    
+    --
+    public void onCreate()
+    public View onCreateView()
+    public void onViewCreated()
+    public String getIntro()
+    
+}
 
 class ICharacterView{
      interface Listener: 
-    void onClickedScreen()
+     void onClickedCharacterScreen()
 }
+
+class DateFragment{
+
+    FragmentDateBinding binding;
+    Listener listener;
+    int minNumDates;
+    
+    --
+    public onCreateView()
+    public void showNoButton()
+}
+
 
 class IDateView{
       interface Listener :
@@ -176,15 +236,64 @@ class IDateView{
     
 }
 
+class EndingFragment{
+    FragmentEndingBinding binding;
+    Listener listener;
+    private Character character;
+    private Endings endings;
+    private Player player;
+    --
+    public void onCreate()
+    public View onCreateView()
+    public void onViewCreated()
+    public String getResultEnding()
+    public int getResultImage()
+}
+
+
 class IEndingView {
     interface Listener :
         void onClickedDone()
     
 }
 
+class KissingGameFragment{
+    FragmentKissingGameBinding binding;
+    Listener listener;
+    private Character character;
+    CountDownTimer cTimer;
+    CountDownTimer donkeyTimer;
+    private boolean isNoKissImage;
+    private boolean isMiddleImage;
+    private boolean isRightImage;
+    private int kissCounter;
+    private int kissScore;
+    private int timesCaught;
+    private int cycles;
+    --
+    public void onCreate()
+    public View onCreateView()
+    public onViewCreated()
+    private void resetMainImageDrawable()
+    private void updateMainImageDrawable()
+    private void updtaeSmallImageDrawable()
+    private void updateKissCounter()
+    private void resetKissScore()
+    updateTimesCaught()
+}
+
 class IKissingGameView {
     interface Listener:
-        void onClickedNext()
+        void onGameDone()
+}
+
+class MapFragment{
+    FragmentMapBinding binding;
+    Listener listener;
+    
+    --
+    public void onCreate()
+    public View onCreateView()
 }
 
 class IMapView {
@@ -196,16 +305,45 @@ class IMapView {
         void onClickedJapan()
 }    
 
+class NameFragment{
+    FragmentNameBinding binding;
+    Listener listener;
+    --
+    public void onCreate()
+    public View onCreateView()
+    public void onViewCreated()
+}
+
 class INameView {
     interface Listener:
         void onAddedName(String name, INameView view)
     
 }    
 
+class RiddleGameFragment{
+    FragmentRiddleGameBinding binding;
+    Listener listener;
+    List<String> riddle = new ArrayList<>();
+    List<String> riddleAnswers = new ArrayList<>();
+    IMiniGame minigame;
+    --
+    public void onCreate()
+    public View onCreateView()
+    public void onViewCreated()
+}
+
 class IRiddleGameView {
     interface Listener:
-        void onClickedNext()
+        void onGameDone()
     
+}
+
+class SelectionFragment{
+    FragmentSelectionBinding binding;
+    Listener listener;
+    --
+    public void onCreate()
+    public View onCreateView()
 }
 
 class ISelectionView {
@@ -219,6 +357,13 @@ class ISelectionView {
     
 }
 
+class TitleFragment{
+    FragmentTitleBinding binding;
+    Listener listener;
+    --
+    public View onCreateView()
+}
+
 class ITitleView {
     interface Listener:
         void onNewGameClicked()
@@ -226,28 +371,32 @@ class ITitleView {
     
 }
 
+class TriviaGameFragment{
+    FragmentTitleBinding binding;
+    Listener listener;
+    --
+    public View onCreateView()
+}
+
 class ITriviaGameView {
     interface Listener:
-        void onClickedNext()
+    void onGameDone()
 }
- 
 
-Controller .> Player
-Controller .> Character
-Controller .> Minigame
-Controller .> Endings
-Controller .> IActivityMainView
-Controller .> ICharacterView
-Controller .> IDateView
-Controller .> IEndingView
-Controller .> IKissingGameView
-Controller .> IMapView
-Controller .> INameView
-Controller .> IRiddleView
-Controller .> ISelectionView
-Controller .> ITitleView
-Controller .> ITriviaGameView
-
-
+ActivityMainView - IActivityMainView
+CharacterFragment - ICharaceterView
+DateFragment - IDateView
+EndingFragment - IEndingFragment
+KissingGameFragment - IKissingGameView
+MapFragment - IMapView
+RiddleGameFragment - IRiddleGameView
+SelectionFragment - ISelectionView
+TriviaGameFragment - ITriviaGameView
+TitleFragment - ITitleView 
+NameFragment - INameView
 
 @enduml
+
+
+
+
