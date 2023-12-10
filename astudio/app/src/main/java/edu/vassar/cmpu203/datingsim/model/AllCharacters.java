@@ -53,7 +53,8 @@ public class AllCharacters implements java.io.Serializable {
         shruckd.add("ARGG, ARGG you glad you came?");
         shruckd.add("Roses are red, violets are blue, I just farted, phew.");
         shruckd.add("Shruck poofs and before you is not the original shruck that you've seen so often.");
-        shruckd.add("bad ending");
+        shruckd.add("Shruck takes one good look at you, pauses to silently open his mouth, and all of a sudden you see chunks of his breakfast, lunch, and dinner all" +
+                "spill out over you.");
         this.shruck = new Character("Shruck", 0, shruckd, R.drawable.shruck, 0,
                 R.drawable.shreknotkiss, R.drawable.shrekkiss, R.drawable.donkeyleft, R.drawable.donkeywarning,
                 R.drawable.donkeyright, R.drawable.dragon, R.drawable.shruck_goodending, R.drawable.shruck);
@@ -67,9 +68,9 @@ public class AllCharacters implements java.io.Serializable {
                 "Afraid of what will happen if you refuse, you take the fake pizza and pretend to eat it. After seeing you play along " + "\n" +
                 "the purple animatronic looks and you and slowly says 'Bonny'.");
         bonnyd.add("har har har har" );
-        bonnyd.add("DUYGI^GD*@(@EHxUHJNJOI");
-        bonnyd.add("good ending");
-        bonnyd.add("bad ending");
+        bonnyd.add("DUYGI^GD*@(@EHxUHJNJOI CANNOLI??? *Y(HYD#(8");
+        bonnyd.add("Bonny jumps up and down in all her rusty and clangy glory. HAA AH AK is all she can make out due to pure excitement");
+        bonnyd.add("Bonny emerges from the darkness ever so slowly, takes one long look at you, then slwoly backs away in dissapointment. HARR HAR   HAR....");
         this.bonny = new Character("Bonny", 0, bonnyd, R.drawable.bonny, 0,
                 R.drawable.bonnynotkiss, R.drawable.bonnykiss, R.drawable.boyleft, R.drawable.boywarning,
                 R.drawable.boyright, R.drawable.collapsedfreddy, R.drawable.bonny, R.drawable.bonny);
@@ -81,8 +82,9 @@ public class AllCharacters implements java.io.Serializable {
                 "wink at you. 'Or maybe its just you' she says while pointing at you. You can only help but think Hell yea.");
         satand.add("hell of a surprise to see you again :)");
         satand.add("try not to get hot and bothered :)))");
-        satand.add("good ending");
-        satand.add("bad ending");
+        satand.add("Why of course you'd choose me. Temptation? I invented her ;)");
+        satand.add("Satan looks at you in total disgust. She lifts a finger to your face and all of a sudden you are engulfed in flames so hot your body immediately melts away." +
+                "Tsk tsk tsk good riddance.");
         this.satan = new Character("Satan", 0, satand, R.drawable.satan, 0,
                 R.drawable.yunonotkiss, R.drawable.yunokiss, R.drawable.akiseleft, R.drawable.akisewarning,
                 R.drawable.akiseright, R.drawable.murumuru, R.drawable.satan, R.drawable.satan);
@@ -96,8 +98,9 @@ public class AllCharacters implements java.io.Serializable {
                 "and disappears in the Tokyo skyline.");
         jojosond.add("What are you doing back here? ");
         jojosond.add("*kicks you*");
-        jojosond.add("good ending");
-        jojosond.add("bad ending");
+        jojosond.add("Our love, as taboo as it is, is inevitable. You have my a hold of my ice cold heart.");
+        jojosond.add("Scarlet Jojoson swiftly moves in your direction. You don't notice until she backs away and leaps back into the Tokyo Skyline, that she just stabbed you with " +
+                "her dagger. You fall back onto the alley in which the two of you first met. You close your eyes forever.");
         this.jojoson = new Character("Scarlet Jojoson", 0, jojosond, R.drawable.jojoson, 0,
                 R.drawable.jojosonnotkiss, R.drawable.jojosonkiss, R.drawable.polarexpressgirlleft, R.drawable.polarexpressgirlwarning,
                 R.drawable.polarexpressgirlright, R.drawable.holk,R.drawable.jojoson, R.drawable.jojoson );
@@ -105,8 +108,8 @@ public class AllCharacters implements java.io.Serializable {
         List<String> aloned = new ArrayList<>();
         aloned.add("Phew, glad this is the case. Who even needs people? " +
                 "Am I right?");
-        aloned.add("");
-        aloned.add("");
+        aloned.add("WOOHOO YOU'RE FREE! FREE AS A BIRD WHO HAS JUST BEEN RELEASED FROM A LIFETIME OF BEING CAGED! SINGLE IS THE WAY TO GO");
+        aloned.add("Self love... that's where it's at. Good job! :D");
         aloned.add("You inhale deeply. The dates were nice but ultimately " +
                 "you aren't ready to settle down and choose anyone right now. You walk down " +
                 "the beach and smile while remembering the people you've met. ");
