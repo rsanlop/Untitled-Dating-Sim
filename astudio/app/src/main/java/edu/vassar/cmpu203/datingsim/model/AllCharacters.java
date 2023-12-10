@@ -104,7 +104,7 @@ public class AllCharacters implements java.io.Serializable {
         satand.add("Satan leans in, her voice a sultry whisper, \"You must be addicted to the sizzling company and the eternal warmth. I don't blame you; I've got a \n" +
                 "hell of a charm, haven't I? Now, what's the sin that brings you back to my fiery embrace?\"");
         satand.add("She raises an eyebrow, her lips curling into a mischievous smile. \"Oh, you're positively devilish in your return. Perhaps you're just here to \n" +
-                "indulge in the forbidden fruits, or maybe you're hoping for a taste of something even spicier?\"");
+                "indulge in the forbidden fruits, or maybe you're hoping for a taste of something even sweeter?\"");
         satand.add("Why of course you'd choose me. Temptation? I invented her ;)");
         satand.add("Satan looks at you in total disgust. She lifts a finger to your face and all of a sudden you are engulfed in flames so hot your body immediately melts away." +
                 "Tsk tsk tsk good riddance.");
